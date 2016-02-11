@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Activitat d'aprenetatge per introduir el concepte de funció i la operativa bàsica per a declarar-les i fer-les servir durant la codificació.">
+    <meta name="author" content="Josep Cañellas i Alicia Vila">
+    <title>A404. UF2 Projecte I</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css"/>
+<!--    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">-->
+    <link rel="stylesheet" href="../js/styles/default.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Custom CSS -->
+    <!--link to css slides-->
+    <link href="../css/m03b2Activities.css" rel="stylesheet">
+    <link href="../css/scrolling-slides.css" rel="stylesheet">
+    <link href="../css/highlightActivities.css" rel="stylesheet">
+</head>
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top">
+<!-- Navigation hidden panel -->
+    <aside>
+        <a id="menu-toggle" href="#" class="btn btn-dark toggle after-top-menu" title="Informació"><i class="glyphicon glyphicon-info-sign"></i></a>
+        <nav id="sidebar-wrapper" class=" after-top-menu">           
+            <ul class="sidebar-nav">
+                <a id="menu-close" href="#" class="btn btn-light pull-right toggle">
+                    <i class="glyphicon glyphicon-remove-circle"></i>
+                </a>
+                <li class="sidebar-brand">
+                    <a href="#slc-toStart"  onclick = '$("#menu-close").click();' >Inici activitat</a>
+                </li>
+                <li>
+                    <a href="#" onclick = 'return $("#goals_info").togglePanelOnClick();'>Objectius</a>
+                </li>
+                <li>
+                    <a class="toProjectStatement" onclick = '$("#menu-close").click();' >Enunciat del projecte</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_reinforcement").togglePanelOnClick(); '>Per reforçar</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_info").togglePanelOnClick(); '>Més informació per ampliar</a>
+                </li>
+            </ul>
+        </nav>
+        <nav id="bottom-wrapper">
+             <!-- SCROLL PREVIOUS BUTTON -->
+            <span id="prevArrow" class="btn arrownav previousSection" ></span>
+            <!-- END SCROLL PREVIOUS BUTTON -->
+             <!-- SCROLL NEXT BUTTON -->
+            <span id="nextArrow" class="btn arrownav nextSection" ></span>
+            <!-- END SCROLL NEXT BUTTON -->
+        </nav>        
+    </aside>
+    <!--=========== BEGIN HEADER SECTION ================-->
+     <header id="header">
+         <!-- BEGIN TOP MENU -->
+        <div class="menu_area">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+                <!-- LOGO -->
+                <span class="navbar-brand navbar-left logo-nav"><img src="../images/logo.png" title="{{$LOGO_TITLE}}" /></span>
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                    <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                          <span class="sr-only">Menú</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
+                          <li class="active"><a href="#slc-toStart">Inici</a></li> 
+                          <li><a href="#slc-individuals">Tasques a realitzar</a></li> 
+                          <li><a href="#slc-toDelivery">Lliurament</a></li> 
+                          <li><a href="#slc-toContinue">Com continuar</a></li> 
+                        </ul>           
+                    </div>
+                </div>     
+            </nav>  
+        </div>
+        <!-- END TOP MENU -->
+   </header>
+    <!--=========== END HEADER SECTION ================-->
+    
+    <!--=========== BEGIN MAIN SLIDER SECTION ================-->    
+    <div id="mainSlider" class="iocMainPanel">
+        <div class="slides">
+            <!--=========== BEGIN SECTION toStart ================-->    
+            <section id="slc-toStart" class="section">
+                <div class="container">  <!--Bootstrap container-->
+                    <!-- header -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Inici activitat A404 - UF2 Projecte I</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- body -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <div class=bodySlide>
+                                <p>Aquesta activitat us servirà per començar a implementar alguna funcionalitat senzilla del projecte que heu de desenvolupar individualment per la UF2, posant en pràctica el que heu aprés fins el moment.</p>
+                                <p>El primer pas que heu de realitzar és consultar l'enunciat del projecte en el següent enllaç: <a class="toProjectStatement">enunciat del projecte</a>. Així us podeu fer una idea del que se us demanarà.</p>
+                                <p>En relació a la implementació d'una funcionalitat senzilla del projecte, a l'apartat <a href="#slc-individuals">tasques a realitzar</a> se us proposarà fer tres funcions que més endavant podreu utilitzar en el vostre projecte. Així podeu practicar implementant codi que reutilitzareu en algun moment.</p>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toStart ================-->    
+
+            <!--=========== BEGIN SECTION individuals ================-->    
+            <section id="slc-individuals" class="vsections">
+            <!--=========== BEGIN SUBSECTION grup col.laboratiu ================-->    
+                <section id="slc-individuals0" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar- Projecte I</h2>
+                                     <h3> Tria grup col.laboratiu projecte</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Un dels objectius de la UF2 és que sigueu capaços d'implementar una aplicació modular en JAVA. Per a això, haureu de realitzar un projecte que anireu construint, de forma individual, al llarg del semestre.
+                                    Tot i que el desenvolupament i lliurament del projecte sigui individual, és molt important que pugueu treballar amb altres companys i compartir dubtes. Per aquest motiu, hi haurà uns fòrums col.laboratius formats per grups de companys on, sota la supervisió del professor, 
+                                    podreu anar treballant conjuntament el projecte.</p>
+                                    <p>Per tant, la primera tasca que haureu de realitzar serà <strong>Triar grup col.laboratiu</strong>. Cada grup estarà format per 10 persones i, és convenient que abans d'apuntar-vos, us presenteu al fòrum general per tal de trobar afinitats amb altres companys (franges d'hores de connexió a l'aula,...) i seleccionar el grup en funció d'aquesta informació.</p>  
+                                    <p>És important que tingueu en compte que aquest grup de col.laboració té l'objectiu de que pugueu treballar en grup i compartir els dubtes que us vagin sorgint al llarg de la implementació del projecte, no obstant, el projecte s'ha de realitzar de forma individual.</p>
+                                    
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION grup col.laboratiu ================-->
+                <!--=========== BEGIN SUBSECTION individuals0 ================-->    
+                <section id="slc-individuals0" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar- Projecte I</h2>
+                                     <h3> Lectura enunciat</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Obriu l'<a class="toProjectStatement">enunciat del projecte</a> i llegiu-lo atentament. Es tracta d'una lectura inicial que us ajudarà a situar-vos en el context del projecte. </p>
+                                    <p>Abans de començar a codificar és important fer-se una idea mental de com funcionarà l'aplicació. Com veieu, es tracta d'una aplicació prou gran com per reflexionar-hi una mica abans de començar a escriure el codi.</p>
+                                    <p>A aquestes alçades de curs, és normal que encara no sapigueu com codificar tota l'aplicació, però amb el que heu aprés fins ara, sí que podeu començar a intuir funcions que podreu necessitar més endavant quan calgui encarar tota la implementació. </p>
+                                    <p>El projecte que heu de desenvolupar és una aplicació que gestiona la informació d'una volta ciclista, amb totes les dades corresponents a ciclistes, equips i etapes, així com el tractament dels resultats una vegada realitzada la competició.</p>
+                                    <p>Al llarg de les successives fases del projecte, s'aniran detallant les funcionalitats a realitzar per tal que, quan hagueu de desenvolupar el projecte complert, tingueu clara l'estructura del programa. </p>
+                                    <p>En les següents pantalles teniu detallades les tasques a realitzar que, bàsicament, seran funcions del projecte a implementar. Passa a la següent pantalla per veure les propostes.</p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION individuals0 ================-->    
+                
+                <!--=========== BEGIN SUBSECTION individuals10  ================-->    
+                <section id="slc-individuals10" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar - Projecte I</h2>
+                                     <h3> Tasca 1 - Funció <em>entrarText</em></h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Inspirant-te en la funció implementada a l'activitat <a href="../A402_funcions2.html#slc-toDo__slc-toDo21" target="_blank">A402</a>, es demana que codifiquis una funció que rebi un missatge de text a mostrar per la pantalla i un cop mostrat esperi l'entrada per teclat de l'usuari fins que aquest premi la tecla [ENTRAR].</p>
+                                    <p>La funció comprovarà que el text entrat no sigui una cadena buida. Si l'entrada no fos correcta, caldria indicar a l'usuari que no s'accepten valors de text buits i que caldrà que escrigui de nou un text i premi [ENTRAR]. Quan l'entrada sigui correcta, es retornarà el valor i s'abandonarà la funció.</p>
+                                    <p>Per codificar la funció creeu un projecte de Netbeans on hi afegireu un fitxer de codi contenint la funció <em>entrarText</em>. Complementeu la codificació amb la funció main i un funció <em>prova</em> que us permeti provar el bon funcionament de funció <em>entrarText</em>.</p>
+
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals10" 
+                                            data-selector-clue="#slc-individuals10-clue1">
+                                        Pista
+                                    </button>                                        
+                                    <div id="slc-individuals10-clue1" class="iocClue hidden">
+                                        <h2>Pista</h2>
+                                        <p>Tenint en compta que un text pot ser una combinació de qualsevol caràcter (lletres, números, signes de puntuació, espais en blanc etc.), creus que serviria d'alguna cosa validar si l'entrada ha estat o no correcta amb un <em>hasNextLine</em>?</p>
+                                        <p>Si penses que no, quina hauria de ser la comparació alternativa que permetés verificar que l'entrada de l'usuari no és una cadena buida?</p>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION individuals10 ================-->    
+                <!--=========== BEGIN SUBSECTION individuals20  ================-->    
+                <section id="slc-individuals20" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar - Projecte I</h2>
+                                     <h3> Tasca 2 - Funció <em>obteDorsalCiclista</em> </em> </h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Com heu llegit a l'enunciat del projecte, una de les funcionalitats que ha de tenir el programa és la inscripció de ciclistes. Una vegada s'han emmagatzemat les dades dels ciclistes, el programa retornarà un codi de dorsal que serà l'identificador del ciclista.</p>
+                                    <p>Per realitzar aquesta activitat es demana:</p>
+                                    <p>Suposant que les dades d'un ciclista estan emmagatzemades, implementeu la funció <em>obteDorsalCiclista</em>.
+                                    Recordeu que, segons podeu consultar a l'enunciat,
+                                    el valor del dorsal del ciclista s'obté concatenant les <em>tres primeres lletres del nom del ciclista + numero ordre inscripcio + tres primeres lletres de l'equip al que pertany</em>.
+                                    Per exemple, si el ciclista Perico Indurain s'ha inscrit el 4t i és de l'equip ONZE, el seu dorsal serà: Per4ONZ.</p>
+                                    <p>Intenteu esbrinar quins paràmetres haurà de rebre la funció. El retorn de la funció serà una cadena de caràcters que ens donarà el dorsal.</p>
+                                    <p>Per codificar la funció caldrà crear un projecte de Netbeans on hi afegireu un fitxer de codi contenint la funció <em>obteDorsalCiclista</em>. 
+                                    Complementeu la codificació amb la funció main i un funció <em>prova</em> que us permeti provar el bon funcionament de funció <em>obteDorsalCiclista</em>.</p>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals20" 
+                                            data-selector-clue="#slc-individuals20-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-individuals20-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Tenint en compte quines dades dels ciclistes s'han de tractar per generar el dorsal, nom del ciclista(cadena caracters), ordre inscripció(enter), nom de l'equip(cadena de caracters), quins paràmetres haurà de rebre la funció?</p>
+                                    </div>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals20" 
+                                            data-selector-clue="#slc-individuals20-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-individuals20-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Per extreure informació d'una cadena de caràcters, hi ha diferents mètodes a la classe String que podem fer servir. </p>
+                                        <p>Un dels mètodes que ens permet extreure un determinat nombre de caràcters és: 
+													<code>substring(posicióInicial, posicióFinal)</code>                                         
+                                        </p>
+                                    </div>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals20" 
+                                            data-selector-clue="#slc-individuals20-clue3">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-individuals20-clue3" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
+                                        <p>El resultat de la funció ha de ser el dorsal del ciclista, de quin tipus serà el retorn de la funció?</p>
+                                        
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION individuals20 ================-->    
+                <!--=========== BEGIN SUBSECTION individuals30  ================-->    
+                <section id="slc-individuals30" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar - Projecte I</h2>
+                                     <h3> Tasca 3 - Funció <em>maxKMEtapa i maxJMXEtapa</em> </h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>En aquesta tasca se us proposa la implementació de dues funcions que correspondran, per una banda, al càlcul de l'etapa més llarga, és a dir, quina etapa té més kilòmetres (<em>maxKMEtapa</em>). Per altra banda, es demanarà calcular el màxim de kilòmetres per cada etapa individual segons el tipus <em>maxKMXEtapa</em>.</p>
+                                    <p>Com heu vist a l'enunciat, la competició ciclista consta de 7 etapes de diferents tipus: plana, mitja muntanya i muntanya. Suposeu que teniu definits els següents arrays on emmagatzemeu les dades generals de les etapes (nom, tipus i km): </p>
+												<p>Els tipus generals de les etapes seran:</p>
+                  							<code> String[] tipusGeneralEtapa={"Plana","Mitja Muntanya","Muntanya"};</code>     
+                  						<p>Les dades de les etapes seran:</p>	                                
+                                     <ul>
+                                            <li><code>double[] kmEtapa ={185.2, 191.8, 156.6, 188.4, 195.4, 194.1, 126.6}</code></li>
+                                            <li><code>String[] etapa={"1aEtapa","2aEtapa","3aEtapa","4aEtapa","5aEtapa","6aEtapa","7aEtapa"}</code></li>
+                                            <li><code>String[] tipusEtapa={"Mitja muntanya","Mitja muntanya","Muntanya","Mitja muntanya","Plana","Mitja muntanya",""Plana"}</code></li>
+                                     </ul>
+                                    <p>Es demana:</p>
+                                   <ul>
+                                    <li>Implementar la funció maxKMEtapa que permet esbrinar quina és l'etapa amb major nombre de kilòmetres i de quin tipus és.</li>
+                                    <li>Implementar la funció maxKMXEtapa que calcula el màxim de kilòmetres per cada etapa segons el tipus. </li>  
+												</ul>
+												 
+                                    <p>En tots dos casos, caldrà poder visualitzar la informació per pantalla. No us oblideu de fer la verificació del funcionament de la funció, afegint en el fitxer de codi la funció <code>main</code> i la funció <code>prova</code> amb suficients casos per fer la verificació.</p>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-warning btn-lg toggle-off  btn-3d" 
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals30" 
+                                            data-selector-advice="#slc-individuals30-consells">
+                                        Consell
+                                    </button>                                        
+                                    <div id="slc-individuals30-consells" class="iocClue hidden">
+                                        <h2>Consell</h2>
+                                        <p>A partir dels arrays definits que emmagatzemen la informació de l'etapa, cal que tingueu en compte que en el cas del càlcul de l'etapa màxima, haureu de recórrer l'array de km per esbrinar quin és el màxim i recollir la posició per tal de referenciar-la als arrays del nom i tipus d'etapa.
+                                        En el cas del càlcul del màxim de km per tipus d'etapa, és una mica més complicat i caldrà que, primer esbrineu el tipus d'etapa i després, recorreu els km de cadascuna per tal de calcular el màxim. Reflexioneu sobre les diferents maneres de realitzar aquestes accions.
+                                            </p>
+                                    </div>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals30" 
+                                            data-selector-clue="#slc-individuals30-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-individuals30-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Reflexioneu i si fos necessari discutiu-ho al fòrum, quina informació us interessa retornar a cada funció? </p>
+                                    </div>
+
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals30" 
+                                            data-selector-clue="#slc-individuals30-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-individuals30-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Si suposeu que els arrays estan definits a la funció 'prova', reflexioneu i si fos necessari discutiu-ho al fòrum, quants paràmetres i de quin tipus rebran les funcions tenint en compte que heu de recórrer els diferents arrays? </p>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION individuals20 ================-->
+            </section>
+            <!--=========== END SECTION individuals ================-->    
+            
+            <!--=========== BEGIN SECTION toDelivery ================-->    
+            <section id="slc-toDelivery">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Lliurament - Projecte I</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>En aquesta <b>activitat 404</b> heu de lliurar els fitxers corresponents a les tres tasques a realitzar.Podeu comprimir en un ZIP (A404ProjecteI) els tres fitxers i lliurar-lo a la <span class="bustiaLliurament"></span>. Heu de tenir en compte que aquesta bústia és multilliurament, per tant, si ja teniu fet algun enviament anterior no us preocupeu que no s’esborrarà.</li>
+										</ul>
+
+								<p>Es recomana lliurar aquestes activitats abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class='dataLimit'></strong></p>
+								<p>És molt important per avançar en el vostre aprenentatge i seguiment de la UF2 que feu aquests exercicis proposats i els lliureu. Teniu en compte que aquestes activitats formen part del desenvolupament del projecte i, si no les realitzeu, després serà més complicat fer la següent part del desenvolupament. Per altra banda, el professor també podrà avaluar l’evolució del vostre aprenentatge. A més, i molt important, les <b>tasques</b> esmentades són <b>qualificables</b>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toDelivery ================-->    
+            <!--=========== BEGIN SECTION toContinue ================-->    
+            <section id="slc-toContinue">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Com continuar</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+                                <p>Passeu a la següent <a class="toNextActivity">activitat</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toContinue ================-->    
+        </div>
+    </div>
+    <!--=========== END MAIN SLIDER SECTION ================-->    
+
+    <!--=========== BEGIN META-INFO PANELS ================-->    
+    <div id="sidepanel-wrapper" class="left-position after-top-menu">
+        <a id="panel-close" href="#" class="panel-close btn btn-light pull-right toggle"><i class="glyphicon glyphicon-remove-circle"></i></a>
+        <div id="goals_info" class="bodySlide hidden"> 
+            <h2>Objectius d'aprenentatge de l'activitat</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran els objectius específics d'aprenentatge treballats en aquesta activitat</p>
+
+            <h2>Resultats d'aprenentatge del mòdul treballats en aquesta activitat</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran els resultats d'aprenentatge del mòdul que es treballen en aquesta activitat</p>
+        </div>
+        <div id="more_reinforcement" class="hidden"> 
+            <h2>Més activitats i idees per reforçar l'aprenentatge</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran exercicis, activitats, lectures o referencies externes per tal que l'estudiant, pugui reforçar el conceptes estudiats </p>
+        </div>
+        <div id="more_info" class="hidden"> 
+            <h2>Informació sobre funcions  per ampliar</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran lectures, activitats referències externes o bibliografia on l'estudiant, pugui ampliar l'aprenentatge si ho desitja</p>
+        </div>
+    </div>
+    <!--=========== END META-INFO PANELS ================-->    
+    
+    <!--=========== BEGIN EMPTY PANEL ================-->    
+    <div id="emptypanel-wrapper" class="right-position after-top-menu">
+    </div>
+    <!--=========== END EMPTY PANEL ================-->    
+    
+    <!--=========== BEGIN EMPTY MODAL WINDOW ================-->    
+    <div id="modalWindow" class="iocModal hidden">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-selector-to-set-class="#modalWindow" data-class-to-set-class="iocModal hidden" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--=========== END EMPTY MODAL WINDOW ================-->    
+
+    <!--=========== BEGIN EMPTY LEFT COLUMN PANEL ================-->    
+    <div id="leftColumnPanel" class="left-position column-panel after-top-menu">
+    </div>
+    <!--=========== END EMPTY LEFT COLUMN PANEL ================-->    
+
+    <!--=========== BEGIN EMPTY HIDDEN PANEL ================-->    
+    <div id="hiddenContent" class="hidden">
+    </div>
+    <!--=========== END EMPTY HIDDEN PANEL ================-->    
+
+    <!--=========== BEGIN SCRIPTS ================-->    
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- highlight.js plugin -->
+    <script src="../js/highlight.pack.js"></script>
+
+    <!-- jssor.js plugin -->
+    <script src="../js/jssor.js"></script>
+    <script src="../js/jssor.slider.js"></script>
+    
+    <!-- to run jssor here-->
+    <script src="../js/jssorActivities.js"></script>
+
+    <!-- slides functionality-->
+    <script src="../js/scrolling-slides.js"></script>
+
+    <!-- specific functionality for IOC activities-->
+    <script src="../js/m03b2Activities.js"></script>
+
+    <!-- specific functionality for this activ¡ty-->
+    <script>
+        $(document).ready(function(){
+            var activityManager = new ActivityManager();
+            
+            activityManager.init("../data/toReplace.json", "A404");
+            var iocSlider = new IocSlider();
+            activityManager.updateDisplayButtons(iocSlider);
+        });
+
+        /*
+        iocSlider = new IocSlider();
+        
+        $("[data-display-on-set-slide]").each(function(){
+            var slide;
+            var self = this;
+            var slideId = this.dataset.displayOnSetSlide; 
+            iocSlider.watch("onSetCurrentSlide", function(e){
+                var slide;
+                var oldSlide =e.oldValues.vindx!=-1
+                                    ?e.oldValues.vslides[e.oldValues.vindx]
+                                    :e.oldValues.hslides[e.oldValues.hindx];
+                if($(oldSlide).attr("id")===slideId){
+                   $(self).hide();
+                   if($(self).hasClass("active")){
+                        $(self).click();
+                   }
+                }
+                slide = this.hasVerticalSlides()
+                                    ?this.vslides[this.vindx]
+                                    :this.hslides[this.hindx];
+                if($(slide).attr("id")===slideId){
+                   $(self).show();
+                }
+            });
+    
+            slide = iocSlider.hasVerticalSlides()
+                                ?iocSlider.vslides[iocSlider.vindx]
+                                :iocSlider.hslides[iocSlider.hindx];
+            if($(slide).attr("id")===slideId){
+               $(this).show();
+            }
+        });
+
+        hljs.addLineNumbers();
+        hljs.initHighlightingOnLoad();
+        
+        $(document).ready(function(){
+            toReplaceOnLoad("../data/toReplace.json", "A404");
+        });
+        */
+    </script>
+    <!--=========== END SCRIPTS ================-->    
+
+</body>
+
+</html>
+
