@@ -291,14 +291,14 @@
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Tasques a realitzar - Projecte I</h2>
-                                     <h3> Tasca 3 - Funció <em>maxKmEtapa</em> </h3>
+                                     <h3> Tasca 3 - Funció <em>posEtapaMesLlarga</em> </h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Com haureu vist a l'enunciat, la competició ciclista està formada per un conjunt d'etapes de les quals coneixem, entre altres, el nombre de kilòmetres que tenen. En aquesta tasca se us proposa la implementació d'una funció que correspondrà al càlcul de l'etapa més llarga, és a dir, quina etapa té més kilòmetres (<em>maxKmEtapa</em>).</p>
+                                    <p>Com haureu vist a l'enunciat, la competició ciclista està formada per un conjunt d'etapes de les quals coneixem, entre altres, el nombre de kilòmetres que tenen. En aquesta tasca se us proposa la implementació d'una funció que correspondrà al càlcul de l'etapa més llarga, és a dir, quina etapa té més kilòmetres (<em>posEtapaMesLlarga</em>).</p>
                                     <p>Així, tenim que la competició ciclista consta de 7 etapes de diferents tipus: plana, mitja muntanya i muntanya. Suposeu que teniu definits els arrays que se us especifiquen a l'enunciat en referència a les dades generals de les etapes (nom, tipus i km): </p>
 												<p>Els tipus generals de les etapes seran:</p>
                                                 
@@ -317,13 +317,9 @@
                     
                                     <p>Es demana:</p>
                                    <ul>
-                                    <li>Implementar, en un fitxer de codi anomenat <em>Tasca3.java</em>, la funció maxKmEtapa que calculi quina és l'etapa amb major nombre de kilòmetres i de quin tipus és, i mostrar per pantalla aquests informació.</li>
-                                    <!-- li>[JOSEP: Jo especificaria més el que es demana] Implementar en un fitxer de codi anomenat <em>Tasca3.java</em>, una funció anomenada maxKmEtapa que busqui quina és l'etapa més llarga i retorni la posició en la que aquesta es troba dins l'array d'etapes.</li -->
-     											<li>Mostrar per pantalla, les distàncies i el nom de totes les etapes del mateix tipus que l'etapa més llarga.</li>
-     											<!-- li>[JOSEP: Aquesta funcionalitat els servirà pel projecte? Jo no la demanaria. Per contra es pot demanar aquí la funció prova] Implementau també una funció de prova que cridi a maxKmEtapa i mostri per pantalla les dades de l'etapa.</li -->
-												</ul>
-												 
-                                    <p> <!-- p>[JOSEP: jo eliminaria aquest paràgraf] --> No us oblideu de fer la verificació del funcionament de la funció, afegint en el fitxer de codi la funció <code>main</code> i la funció <code>prova</code> amb suficients casos per fer la verificació.</p> 
+                                    <li>Implementar, en un fitxer de codi anomenat <em>Tasca3.java</em>, la funció posEtapaMesLlarga que que busqui quina és l'etapa més llarga i retorni la posició en la que aquesta es troba dins l'array d'etapes.</li>
+     											<li>Implementeu també una funció de prova que cridi a posEtapaMesLlarga i mostri per pantalla les dades de l'etapa (nom, distància i tipus).</li>
+									 		  </ul>
 
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-warning btn-lg toggle-off  btn-3d" 
@@ -334,9 +330,7 @@
                                     </button>                                        
                                     <div id="slc-individuals30-consells" class="iocClue hidden">
                                         <h2>Consell</h2>
-                                        <p>A partir dels arrays definits que emmagatzemen la informació de l'etapa, cal que tingueu en compte que en el cas del càlcul de l'etapa màxima, haureu de recórrer l'array de km per esbrinar quin és el màxim i recollir la posició per tal de referenciar-la als arrays del nom i tipus d'etapa. <!-- [JOSEP: trobar la posició és un consell o un requeriment?] -->
-                 
-                                            </p>
+                                        <p>A partir dels arrays definits que emmagatzemen per una banda, la informació de l'etapa per una banda i, per altra, la distància de cadascuna d'elles, cal que tingueu en compte que en el cas del càlcul de l'etapa màxima, haureu de recórrer l'array de distàncies per esbrinar quin és el màxim i recollir la posició per tal de referenciar-la a l'array que conté les dades de les etapes i mostrar el nom, la distància i el tipus d'etapa. </p> 
                                     </div>
                                  <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
@@ -348,9 +342,12 @@
                                     </button>                                        
                                     <div id="slc-individuals30-clue1" class="iocClue hidden">
                                         <h2>Pista 1</h2>
-                                        <p>Reflexioneu i si fos necessari discutiu-ho al fòrum, quina informació us interessa retornar a cada funció? <!-- [JOSEP: Jo detallaria el que han de discutir. Així queda ambigu?] --> </p>
-                                    </div>
-
+                                        <p>En els casos en que definiu un array de més d'una dimensió, com és el cas de l'array d'etapes definit a l'enunciat, és una bona pràctica definir constants què descriguin cadascuna de les components per tal que el codi sigui més entenedor. Per exemple,
+													si definirem les dades d'un alumne (nom i mòdul matriculat) de la següent manera: <code>String[][] dadesAlumnes={{"Joan","M03"},{"Pep","M03"}}</code>, seria bo que, al codi, definim:
+													<code>public static final int NOM_ALU=0;
+													public static final int NOM_MODUL=1;</code></p>
+													<p>Així, quan vulguem conèixer un valor determinat de l'array farem, per exemple: <code>dadesAlumne[0][NOM_ALU]</code> que serà el nom del primer alumne de l'array, és a dir, Joan. </p>	                                        
+                              			<p>Reflexioneu i, si cal comenteu-ho al <span class="forumDeDiscussio">[FALTA TEXT: forum de discussió]</span>, com podeu aplicar aquests arguments a l'array d'etapes.</p>
                                  <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                             data-toggle="button"
@@ -361,7 +358,7 @@
                                     </button>                                        
                                     <div id="slc-individuals30-clue2" class="iocClue hidden">
                                         <h2>Pista 2</h2>
-                                        <p>Si suposeu que els arrays estan definits a la funció 'prova', reflexioneu i si fos necessari discutiu-ho al fòrum, quants paràmetres i de quin tipus rebran les funcions tenint en compte que heu de recórrer els diferents arrays? <!-- [JOSEP: jo només parlaria de la funció maxKmEtapa] --> </p>
+                                        <p>Si suposeu que els arrays estan definits a la funció 'prova', reflexioneu i si fos necessari discutiu-ho al fòrum, quants paràmetres i de quin tipus rebrà la funció posEtapaMesLlarga, tenint en compte que heu de recórrer els diferents arrays? </p>
                                     </div>
                                 </div> 
                             </div>
@@ -383,8 +380,8 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Una de les funcionalitats de la gestió d'equips del prototipus que heu de desenvolupar serà llistar les dades dels equips. És a dir, s'haurà de mostrar per pantalla la informació dels equips (codi, nom de l'equip i nombre de ciclistes que ha inscrit <!-- [JOSEP: Vàrem dir que hi havia d'haver cadenes i també números, no?'] -->) però, compte, la informació a mostrar per pantalla ha de tenir un determinat format.</p>
-                                    <p>Per realitzar aquesta activitat es demana que,suposant que les dades dels equips siguin conegudes, implementeu la funció <em>mostrarLlistaEquips.</em></p>
+                                    <p>Una de les funcionalitats de la gestió d'equips del prototipus que heu de desenvolupar serà llistar les dades dels equips. És a dir, s'haurà de mostrar per pantalla la informació dels equips (codi, nom de l'equip i nombre de ciclistes que ha inscrit) però, compte, la informació a mostrar per pantalla ha de tenir un determinat format.</p>
+                                    <p>Per realitzar aquesta activitat es demana que, suposant que les dades dels equips i ciclistes inscrits siguin conegudes, implementeu la funció <em>mostrarLlistaEquips.</em></p>
                                     <p>Cal que tingueu en compte que el resultat a obtenir ha de ser semblant a aquest:</p>
 <div class= "iocexample single">
 <pre>
@@ -413,7 +410,12 @@
                                     </button>                                        
                                     <div id="slc-individuals40-clue1" class="iocClue hidden">
                                         <h2>Pista 1</h2>
-                                        <p>Tenint en compte quines són les dades dels equips que volem llistar per pantalla, quins paràmetres haurà de rebre la funció? Quin tipus de retorn tindrà la funció?</p>
+                                        <p>Tenint en compte que coneixem les dades dels equips, suposarem que coneixem també les dades dels ciclistes inscrits a cada equip. Caldrà, doncs, que definiu l'array adient per emmagatzemar aquestes dades i proporcionar-les a la funció mostrarLlistaEquips.</p>
+                                        <p>Per tal que d'orientar-vos, a com definir aquest array, fixeu-vos en un exemple en el que volem emmagatzemar les dades dels alumnes (nom, mòdul matriculat i notes). Com que les dades a enregistrar són de diferents tipus, una proposta seria la següent:</p>
+                                        <p><code>String[][] dadesAlumnes={{"Joan","M03"},{"Pep","M03"}};</code></p>
+														<p><code>double[] notes={2.9,5.8};   </code></p>                              
+                                       	<p>Penseu en quina seria l'opció més adient per implementar les dades dels ciclistes inscrits.</p>
+                                        
                                     </div>
                                  <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
@@ -425,17 +427,24 @@
                                     </button>                                        
                                     <div id="slc-individuals40-clue2" class="iocClue hidden">
                                         <h2>Pista 2</h2>
-                                        <p>Per donar format a la informació que es mostrarà per pantalla podem fer servir una funció <code>String.format()</code>, de manera que la primera component marca el patró a mostrar, i en les següents components indicarem les variables a mostrar en número i ordre adient al patró, per exemple:</p>
+                                        <p>Per als casos en que volem mostrar per pantalla una llista amb un determinat format, el llenguatge JAVA disposa de la funció <code>format</code> de la biblioteca <code>String</code>. Aquesta funció rep un primer paràmetre contenint el patró d'alineació i seguidament tants paràmetres com entrades haguem inclòs en el patró. El paràmetres poden ser de qualsevol tipus (cadenes, enters, doubles, ...) i la sortida serà sempre una cadena de text amb les dades passades alineades (amb número i ordre) d'acord amb el patró.
+El patró és una cadena de text que ha de contenir marcades les posicions de tots els paràmetres que se li passaran, així com el tipus de dada corresponent, la mida que caldrà donar-li per alinear-la correctament i en cas que sigui un valor decimal, el nombre de decimals que es desitja visualitzar.
+Cada entrada s'identifica amb el símbol <strong>"%"</strong> i una lletra que discrimina el tipus de dada (d, s, c, f corresponent als tipus enter, cadena de text, caràcter, o double respectivament). Cal aclarir que la lletra d significa dígit, s significa String, c és Character i f, Float. A més, opcionalment, entre el símbol % i la lletra, podem indicar amb números la mida de l'entrada. Per exemple e patró "%10s %8d %c" ens diu que espera 3 entrades la primera de tipus String, la segona, un enter i la tercera, un caràcter. Si la primera cadena de text no conté 10 caràcters, s'ompliran (per l'esquerra) amb espais en blanc, fins aconseguir la mida correcta. El mateix passarà amb el valor enter, si conté menys de 8 dígits, s'afegiran (per l'esquerra) tants espais com calgui. En canvi el caràcter, en no especificar mida s'escriurà sempre a continuació de la segona entrada. 
+Les entrades no es tallaran mai, si alguna dada sobrepassés la mida del patró, es respectaria la mida original, no es tallaria. Això és així per evitar confusions de pèrdua de dades. També cal notar que quan s'afegeixen espais, es fa sempre per l'esquerra. En cas que es desitgi fer de diferent manera, cal indicar-ho canviant de signe el valor numèric "%-10s" començarà a escriure el text 10 posicions a l'esquerra d'on es troba la marca i en cas que la mida de la cadena no arribi a 10 caràcters, s'omplirà (per la dreta) amb espais en blanc.</p>
+                                        <p>Així, per exemple, si teniu el següent fragment de codi:</p>
                                         <pre><code class="java">
+...
 String nom="Pep";
-String formatText="%3s   %-10s";
-String salutacio="Bon dia";
-String resultat= String.format(formatText,nom,salutacio);
+String formatText="%3s   %-10s  %d";
+String dia="Avui som ";
+int num=25;
+String resultat= String.format(formatText,nom,dia,num);
 System.out.println(resultat);
+...
                                         </code></pre>
-                                      <p>Segons el patró formatText, tindrem una expressió amb dos variables de tipus cadena de manera que la primera té com a màxim 3 caràcters justificats a la dreta, en el cas de la segona variable la justificació és a l'esquerra. La sortida per pantalla en aquest cas seria:</p>
-                                      <code>Pep   Bon dia </code>
-                                      <!-- [JOSEP: crec que cal explicar més. Consultar el document A415_MostrarLlistaAlineada.odt ] -->
+                                      <p>Segons el patró formatText definit, la sortida per pantalla en aquest cas seria:</p>
+                                      <code>Pep   Avui som    25 </code>
+                            <p>A partir d'aquest exemple, penseu en quina seria l'opció més adient per mostrar el llistat dels equips.</p>
                                     </div>
                                 
                                 </div> 
