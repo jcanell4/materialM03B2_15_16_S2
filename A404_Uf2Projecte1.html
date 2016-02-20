@@ -125,32 +125,6 @@
 
             <!--=========== BEGIN SECTION individuals ================-->    
             <section id="slc-individuals" class="vsections">
-            <!--=========== BEGIN SUBSECTION grup col.laboratiu ================-->    
-                <section id="slc-individuals0" class=" section">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class= "headSlide">
-                                     <h2 >Tasques a realitzar- Projecte I</h2>
-                                     <h3> Tria grup col.laboratiu projecte</h3>
-                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class=bodySlide>
-                                    <p>Un dels objectius de la UF2 és que sigueu capaços d'implementar una aplicació modular en JAVA. Per a això, haureu de realitzar un projecte que anireu construint, de forma individual, al llarg del semestre.
-                                    Tot i que el desenvolupament i lliurament del projecte sigui individual, és molt important que pugueu treballar amb altres companys i compartir dubtes. Per aquest motiu, hi haurà uns fòrums col.laboratius formats per grups de companys on, sota la supervisió del professor, 
-                                    podreu anar treballant conjuntament el projecte.</p>
-                                    <p>Per tant, la primera tasca que haureu de realitzar serà <strong>Triar grup col.laboratiu</strong>. Cada grup estarà format per 10 persones com a màxim i, és convenient que abans d'apuntar-vos, us presenteu al fòrum general per tal de trobar afinitats amb altres companys (franges d'hores de connexió a l'aula,...) i seleccionar el grup en funció d'aquesta informació.</p>  
-                                    <p>És important que tingueu en compte que aquest grup de col.laboració té l'objectiu de que tingueu un grup de suport per compartir els dubtes que us vagin sorgint al llarg de la implementació del projecte, no obstant, el projecte s'ha de realitzar de forma individual.</p>
-                                    
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!--=========== END SUBSECTION grup col.laboratiu ================-->
                 <!--=========== BEGIN SUBSECTION individuals0 ================-->    
                 <section id="slc-individuals0" class=" section">
                     <div class="container">
@@ -596,48 +570,6 @@ System.out.println(resultat);
             var iocSlider = new IocSlider();
             activityManager.updateDisplayButtons(iocSlider);
         });
-
-        /*
-        iocSlider = new IocSlider();
-        
-        $("[data-display-on-set-slide]").each(function(){
-            var slide;
-            var self = this;
-            var slideId = this.dataset.displayOnSetSlide; 
-            iocSlider.watch("onSetCurrentSlide", function(e){
-                var slide;
-                var oldSlide =e.oldValues.vindx!=-1
-                                    ?e.oldValues.vslides[e.oldValues.vindx]
-                                    :e.oldValues.hslides[e.oldValues.hindx];
-                if($(oldSlide).attr("id")===slideId){
-                   $(self).hide();
-                   if($(self).hasClass("active")){
-                        $(self).click();
-                   }
-                }
-                slide = this.hasVerticalSlides()
-                                    ?this.vslides[this.vindx]
-                                    :this.hslides[this.hindx];
-                if($(slide).attr("id")===slideId){
-                   $(self).show();
-                }
-            });
-    
-            slide = iocSlider.hasVerticalSlides()
-                                ?iocSlider.vslides[iocSlider.vindx]
-                                :iocSlider.hslides[iocSlider.hindx];
-            if($(slide).attr("id")===slideId){
-               $(this).show();
-            }
-        });
-
-        hljs.addLineNumbers();
-        hljs.initHighlightingOnLoad();
-        
-        $(document).ready(function(){
-            toReplaceOnLoad("../data/toReplace.json", "A404");
-        });
-        */
     </script>
     <!--=========== END SCRIPTS ================-->    
 
