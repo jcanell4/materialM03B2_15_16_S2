@@ -114,8 +114,14 @@
                         <div class="col-lg-12">
                              <div class=bodySlide>
                                 <p>A l'activitat A404-Projecte I, es va treballar amb els conceptes de funcions i la seva aplicació al prototipus d'aplicació de la competició ciclista 'CicliCAT'. En aquesta activitat Projecte II, treballarem els conceptes de disseny descendent vists en anteriors activitats i seguirem implementant funcionalitats del projecte.</p>
-                                
-                                <p>Llegiu amb atenció les tasques encomanades i feu el lliurament en la data recomanada. Com sabeu, teniu una data límit posterior a la data recomanada per lliurar l'activitat, però només l'heu de tenir en compte per situacions molt extremes ja que sinó us retardareu en el seguiment de les posteriors activitats. </p>
+                                <p>Concretament us demanarem la implementació de tres funcionalitats:</p>
+                                <ol>
+                                    <li><em>Verificació del format de la data de naixement dels ciclistes a inscriure</em>. Durant la fase d'inscripció, es demana la data de naixement del ciclista. Aquí se us demanarà però, la funcionalitat que permeti verificar un format correcte de la data i evitar errades o males interpretacions.</li>
+                                    <li><em>Verificació de l'equip ciclista</em> durant la fase d'inscripció dels participants. Recordeu que l'enunciat ens indica que per poder inscriure un ciclista aquest ha de pertànyer a un equip prèviament inscrit. A més, els organitzadors de la prova volen limitar el nombre de ciclistes d'un mateix equip a un nombre màxim de 5. Concretament el que seus demanarà és que dissenyeu i implementeu la funcionalitat que permeti verificar l'existència d'un equip en les dades del sistema i en cas afirmatiu comprovar també que el nombre de ciclistes prèviament inscrits arriba al límit definit.</li>
+                                    <li><em>Obtenció del ciclista guanyador</em>, un cop s'hagin corregut totes les etapes i s'hagin entrat els temps que cada ciclista hagi emprat en els diferents etapes. En aquest cas la funcionalitat demanada implica només el procediment que permeti esbrinar qui és el guanyador de la competició.</li>
+                                </ol>                                
+                                <p>Es tracta de funcionalitats una mica més complexes que les anteriors i per tant serà indispensable realitzar una anàlisi i un disseny descendent que ens ajudin a descompondre la complexitat.</p>
+                                <p>Intenteu de fer el lliurament abans de la data recomanada. Com sabeu, teniu una data límit posterior a la data recomanada per lliurar l'activitat, però només l'heu de tenir en compte per situacions molt extremes ja que sinó us retardareu en el seguiment de les posteriors activitats. </p>
                                 <p>Recordeu que, des del menú lateral (i), podreu accedir a l’enunciat del projecte sense necessitat de sortir de l'apartat en que esteu treballant.</p>
                              </div>
                         </div>
@@ -126,105 +132,130 @@
 
             <!--=========== BEGIN SECTION individuals ================-->    
             <section id="slc-individuals" class="vsections">
-                <!--=========== BEGIN SUBSECTION individuals0 ================-->    
-                <section id="slc-individuals0" class=" section">
+            <!--=========== BEGIN SUBSECTION individuals21  ================-->    
+                <section id="slc-individuals21" class="tasca section">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Tasques a realitzar - Projecte II</h2>
-                                     <h3> Anàlisi inicial de l'enunciat del prototipus CicliCAT</h3>
+                                     <h3> <span class="tascaTitle">Tasca</span> - Implementació de la funció <em>validarDataNaixement</em> </h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                   <p>Si en aquests moments hagéssiu de començar a desenvolupar el prototipus de l'aplicació CicliCAT, el primer que hauríeu de fer és una planificació de la informació que teniu que gestionar. 
-                                   Aquesta planificació, en la pràctica, seria un esquema que s'hauria de representar en diferents nivells de descomposició fins a arribar al detall de la descripció de funcionalitats a implementar. Per exemple, un nivell de descomposició seria la gestió de ciclistes, altre nivell de descomposició dintre d'aquest seria la introducció i verificació de les dades dels ciclistes, i així successivament aniríem baixant fins a l'últim nivell de descomposició. </p>
-                                    <p>Una vegada llegiu i enteneu l'enunciat, cal que reflexioneu sobre l'esquema a realitzar. És possible que després de fer-ho, el vostre esquema s'assembli al següent:</p>
-                                    <div class="iocexample single em small">
-                                        <ol>
-                                            <li>Gestionar les dades de la volta ciclista</li>
-                                            <li>Gestionar les dades de la competició ciclista</li>
-                                            <li>Processar i analitzar els resultats de la classificació</li>
-                                        </ol>
-                                    </div>
-                                    <p>Així, abans de gestionar i analitzar els resultats de la competició, caldrà disposar de la informació general de la volta ciclista; dades dels equips que hi participen, ciclistes, etapes, etc. </p>
-                                    <p>Després, una vegada realitzada la competició, caldrà enregistrar els resultats. És a dir, anotar els temps realitzats per cada ciclista a cada etapa i altres dades de les curses realitzades a cada etapa (observacions).</p>
-                                    <p>Finalment, caldrà realitzar els corresponents càlculs dels diversos requeriments del prototipus: ciclista guanyador de la competició, ciclista guanyador per etapa, etc. Un cop realitzats els càlculs, es donarà la possibilitat de mostrar tota la informació dels resultats de la classificació. </p>
-                                    <p>Si seguiu realitzant altre nivell de descomposició, la vostra proposta hauria de ser semblar a la següent:</p>
-                                    <div class="iocexample single em  small">
+                                    <p>A l'enunciat podeu veure que entre d'altres dades, durant la inscripció de ciclistes, es demana la seva data de naixement. La introducció de dates per part de l'usuari, sol ser un font de conflictes i errades, ja que habitualment podem escriure uns data de molt diverses maneres, la interpretació de les quals no representa cap problema per nosaltres, però si per un ordinador, ja que implementar un algoritme que pugui reconèixer qualsevol dels formats que emprem resulta molt costós i sovint la majoria d'aplicacions exigeixen l'entrada de dates seguin uns pocs formats ben definits. En el nostre cas i tractant-se d'un prototip, es reconeixerà només el següent format: "dd/mm/aaa". És a dir s'exigirà a l'usuari que escrigui les dates amb dos dígits obligatoris per indicar el dia,  dos dígits obligatoris per indicar el més i 4, també obligatoris, per indicar l'any. Com a caràcter separador només s'admetrà la barra '/'. En aquest primer prototip, no caldrà validar els rangs dels dies ni dels mesos. És a dir no caldrà verificar que el valor del mes es trobi entre 1 i 12, ni que el valor de dia no sobrepassi el nombre màxim de dies del mes. Deixarem això per quan siguem més experts.</p>
+                                    <p>Així considerarem dates que s'ajusten al format les cadenes: '12/01/1990', '37/15/2256' o '05/23/2012'. En canvi caldrà considerà invalides les cadenes '1/3/1526', '05-11-2016' o '12/gen/1396'.</p>
+                                    <p>En tractar-se de la primera tasca, us facilitarem un disseny descendent ja elaborat que us servirà de base per a fer la implementació.</p>
+                                    <p>Disseny descendent de la validació del format d'una data entesa com a seqüència de caràcters:</p>
+                                     <div class="iocexample single em  small">
                                         <ol class="nestedCounter">
-                                            <li>Gestio de dades de la volta ciclista
+                                            <li>Verificar que una seqüencia de caràcters segueix el format de data.
                                                 <ol>
-                                                    <li>Inicialitzar les dades, corresponents als equips, etapes i patrocinadors tot definint el sistema de dades adients.</li>
-                                                    <li>Sol.licitar a l'usuari les dades dels ciclistes i realitzar les comprovacions adients per tal de poder-los enregistrar, és a dir, que no hi hagi ciclistes repetits, que l'equip al que s'assigna el ciclista existeixi, així com altres controls d'errors.</li>
-                 
+                                                    <li>Verificar la mida de la cadena</li>
+                                                    <li>Verificar la composició de cada posició de la cadena
+                                                        <ol>
+                                                            <li>Verificar que els dos primers caràcters son dígits numèrics</li>
+                                                            <li>Verificar que el tercer caràcter és una barra</li>
+                                                            <li>Verificar que el quart i cinquè caràcters son dígits numèrics</li>
+                                                            <li>Verificar que el sisè caràcter és una barra</li>                                                        </ol>
+                                                            <li>Verificar que des del setè caràcter fins al final son dígits numèrics</li>
+                                                    </li>                                                    
+                                                    <li>Validar positivament si es passen totes les verificacions anteriors</li>
+                                                    <li>Desestimar la validació en cas que alguna de les verificacions falli</li>
                                                 </ol>
                                             </li>
-                                            <li>Gestionar les dades de la competició ciclista
-                                                <ol>
-                                                    <li>Enregistrar els temps realitzats per cada ciclista en cada etapa i altres dades que es requereixin dels resultats d'etapa. </li>                                        
-                                                </ol>
-                                            </li>
-                                            <li>Processar i analitzar els resultats i tornar al punt d'inici</li>
-                                              <ol>
-                                             <li>Mostrar la informació que especifiqui les diverses funcionalitats requerides: càlcul del ciclista guanyador de la competició, llistat de premis atorgats i per qui han estat patrocinats,... </li>
-                                             <li>Realitzar els càlculs dels requeriments establerts als punts de classificació final i informes. </li>
-                                             </ol>
                                         </ol>
                                     </div>
-                                    
-                                    <p>Farem servir aquest anàlisi per proposar-vos, a les tasques d'aquesta activitat, que aprofundiu en la descomposició d'alguns dels processos dels punts anteriors i implementeu algunes funcions que us resultaran útils per a la implementació final del projecte.</p>
-                                    <p>Deixarem per a més endavant tot el relacionat amb la interfície d'usuari. Aquí, volem que us centreu només en els processos d'algun nivell de descomposició que detallarem en les següents activitats.</p>
-                                   
-                                </div>                             
+                                    <p>El que se us demana, és que implementeu una funció anomenada <em>verificarDataNaixement</em> que verifiqui que el format d'una cadena de caràcters contenint una data és el permès. Us demanem només la funció que verificarà la cadena. Per tant la introducció de la cadena des de teclat no s'ha de fer pas dins la funció. Aquesta només s'ha d'encarregar de la verificació.</p>
+                                    <p>A més de la funció demanada, caldrà també que escriviu una funció anomenada <em>prova</em> que us permeti constatar el bon funcionament del què implementeu. Per tal de facilitar la comprovació podeu declarar en el mateix codi, el valor i les variables necessàries per fer un joc de proves adequat.</p>
+                                     <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals21" 
+                                            data-selector-clue="#slc-individuals21-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-individuals21-clue1" class="iocClue hidden">
+                                        <h2>Pista 1 </h2>
+                                    <p>Abans de començar a implementar cal que reflexioneu sobre quina informació necessitareu, quins paràmetres haurà de rebre la funció i si serà necessari habilitar el retorn d'un valor, o no. En cas afirmatiu, esbrineu quin tipus de dada caldria retornar.</p>
+                                    </div>
+                                     <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals21" 
+                                            data-selector-clue="#slc-individuals21-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-individuals21-clue2" class="iocClue hidden">
+                                        <h2>Pista 2 - </h2>
+                                        <p>Per verificar si la informació i el format de la cadena és correcta, caldrà analitzar el valor de cada un dels caràcters que la composen. Per fer això, podem usar un mètode de la llibreria String anomenat <em>charAt</em>. Aquest mètode rep com a paràmetre un valor numèric i retorna el caràcter que ocupa la posició indicada per paràmetre. Recordeu que les cadenes comencen a numerar-se pel valor zero.</p>
+                                        <p>Per exemple: </p>
+                                        <pre><code>
+String nom="Joan";                                        
+char resultat = nom.charAt(2);
+                                        </code></pre>. 
+                                        <p>En aquest exemple la variable resultat valdrà el caracter 'a'.</p>    
+                                    </div>
+                                     <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals21" 
+                                            data-selector-clue="#slc-individuals21-clue5">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-individuals21-clue5" class="iocClue hidden">
+                                        <h2>Pista 3 - Funció prova</h2>
+                                        <p>Recordeu que un bon joc de proves és aquell que comprova un nombre de casos significatiu, a fi de poder assegurar que la funció provada funciona correctament i es pot utilitzar en qualsevol implementació amb garantia de funcionament.</p>
+                                        <p>A continuació us passem un tros de codi que conté inicialitzat un conjunt de valors de dates vàlides i invàlides a fi que les feu servir per a la vostra comprovació. Si copieu això, només haureu de completar la funció <em>prova</em> amb el que cregueu convenient.</p>
+                                        <pre><code class="java">
+    public static void main(String[] args) {
+        Tasca3 prg = new Tasca3();
+        prg.prova();
+    }
+    
+    public void prova() {        
+        
+        String[] datesValides = {"12/10/1996","28/01/1939", "01/01/0001"};
+     	String[] datesInvalides = {"123/10/1996","11/105/1978", "11/04/78", "24-04-3657", "15/gen/1345"};
+     	
+       //Escriviu aquí el codi de la funció prova que verifiqui el que heu implementat
+   }
+                                        </code></pre>
+                                    </div>
+                                </div> 
                             </div>
                         </div>
                     </div>
                 </section>
-                <!--=========== END SUBSECTION individuals10 ================-->    
-
+                <!--=========== END SUBSECTION individuals21 ================-->    
                 <!--=========== BEGIN SUBSECTION individuals10 ================-->    
-                <section id="slc-individuals10" class=" section">
+                <section id="slc-individuals10" class=" section tasca">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Tasques a realitzar - Projecte II</h2>
-                                     <h3> Tasca 1 - Disseny descendent del proces que permeti validar l'equip al que s'inscriu un ciclista</h3>
+                                     <h3> <span class="tascaTitle">Tasca</span> - Disseny descendent del proces que permeti validar l'equip al que s'inscriu un ciclista</h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>En el marc de la gestió de les dades generals de la volta ciclista, hi ha una funcionalitat que haureu de desenvolupar més endavant que és la d'enregistrar les dades d'un ciclista. Això vol dir que, a banda de les dades generals (DNI, nom,...) cal introduir per teclat també a quin equip pertany i, com que l'enunciat ens imposa alguns requeriments en referencia a aquests,  abans d'assignar un ciclista a un equip caldrà verificar que aquest equip es trobi entre els equips participants a la volta i que el nombre de ciclistes inscrits no superi el màxim permès. És a dir, caldrà comprovar que cada equip tingui menys de 5 ciclistes associats.  </p>
-                                    <p>En aquesta tasca, us proposem centrar-vos en el disseny d'un procés que permeti fer la validació de l'equip que volem assignar al ciclista. Així doncs, a partir de la proposta de disseny descendent indicat a l’anàlisi inicial, ens caldria baixar un nivell de descomposició més a fi de situar la validació dins l'esquema general. A l'esquema següent s'ha marcat en negreta:</p>
-			            <ol class="nestedCounter">
-                            <li>Gestionar les dades de la volta ciclista
-                                <ol>
-                                    <li>...</li>
-                                    <li>Sol.licitar a l'usuari les dades dels ciclistes i realitzar les comprovacions adients per ...
-                                        <ol>
-										    <li>...</li>
-                                            <li>
-                                                <strong>Validar equip ciclista</strong>
-                                            </li>
-                                            <li>...</li>
-                                        </ol>
-                                    </li>
-                                </ol>
-                            </li>
-                            <li>... </li>
-                     </ol>
-			         <p>Es demana que obriu el document de resposta d'aquesta tasca (<a href="docs/dissenyDescendentTasca1A407.odt">dissenyDescendentTasca1A407.odt</a>) i hi descompongueu aquest procés usant la tècnica del disseny descendent que ja coneixeu. El resultat hauria de ser un esquema que representi la descomposició del procés de forma semblant als esquemes vistos a l'activitat A405.</p>
+                                    <p>D'acord amb l'enunciat del projecte, per poder inscriure ciclistes, aquest ha de pertànyer a un equip prèviament inscrit a les dades del sistema i a més la normativa de la competició exigeix que el nombre de ciclistes adscrits a un equip no sobrepassi un llindar màxim (5 concretament).</p>                                
+                                    <p>Per poder assegurar aquests requeriments caldrà desenvolupar una funcionalitat que permeti verificar que donat un equip, aquest existeix dins el sistema i el nombre de ciclistes que té adscrits, prèviament inscrits a la competició no arriba al llindar definit.</p>
+                                    <p>En aquesta tasca, us proposem que us centreu en el disseny descendent d'aquest procés. Concretament es demana que obriu el document de resposta d'aquesta tasca (<a href="docs/dissenyDescendentTasca1A407.odt">dissenyDescendentTasca1A407.odt</a>) i hi descompongueu aquest procés usant la tècnica del disseny descendent que ja coneixeu. El resultat hauria de ser un esquema que representi la descomposició del procés de forma semblant als esquemes vistos a l'activitat A405.</p>
 				    <p>Per realitzar aquest disseny descendent, cal que tingueu en compte els següents aspectes: </p>
 				    <ul>
-				        <li>Aquí, us centrareu únicament en el procés que permetrà validar un equip. Això és, com ja s'ha dit, validar si l'equip introduït per teclat existeix i si conté menys de 5 ciclistes. No cal validar la resta de dades generals del ciclista com dni, nom, ...</li> 
-				        <li>Partiu de que coneixeu les dades dels equips que participen en la competició i també les dades del nombre de ciclistes inscrits a cada equip. És a dir suposeu que ja es troben introduïdes al sistema. </li>
-				        <li>El procés ha de permetre que donat un codi d'equip, es puguin realitzar les comprovacions adients per tal d'obtenir una resposta de vertader o fals, segons la validació sigui correcta o no. </li>
+				        <li>Centreu-vos únicament en el procés concret de validació d'un equip. No cal que aquí us preocupeu de demanar les dades a l'usuari. Suposeu que aquestes s'ha introduït ja prèviament. </li> 
+				        <li>Suposeu que les dades del sistema estan introduïdes en algun lloc i són accessibles des de la funcionalitat que voleu dissenyar. És a dir disposeu d'accés a la col·lecció d'equips inscrits i al nombre que ciclistes adscrits  a cada equip.</li>
+				        <li>El procés obtindrà una resposta de vertader o fals, segons la validació hagi estat positiva o o negativa respectivament.</li>
 				    </ul>
                                      <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
@@ -236,7 +267,8 @@
                                     </button>                                        
                                     <div id="slc-individuals10-clue1" class="iocClue hidden">
                                         <h2>Pista 1</h2>
-                                        <p>Per començar a realitzar el disseny descendent d'aquest procés s'ha de tenir en compte de quines dades partim (dades dels equips existents i dades del nombre de ciclistes per equip), i quina és la primera acció a realitzar: esbrinar si l'equip existeix. Posteriorment, si aquest equip existeix, esbrinar si el nombre de ciclistes d'aquell equip és inferior a 5</p>
+                                        <p>El problema consisteix en saber quines accions a grans trets cal realitzar per poder estimar o desestimar la verificació d'un equip donat. Mantingueu al cap la metàfora de les caixes. Podem desglossar aquesta gran caixa en altres de meś petites de manera un cop obertes totes puguem obtenir el resultat esperat? </p>
+                                        <p>No tingueu pressa en arribar als nivells més baixos. Descriviu les primeres descomposicions posicionat-vos en un nivell alt i aneu baixant poc a poc.</p>
                                     </div>
                                      <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
@@ -248,25 +280,11 @@
                                     </button>                                        
                                     <div id="slc-individuals10-clue2" class="iocClue hidden">
                                         <h2>Pista 2</h2>
-                                        <p>Per tal de validar l'equip, s'haurà de realitzar un procés que recorri l'array d'equips i localitzi el codi a cercar indicant-nos si l'ha trobat o no. Per fer això, es pot pensar en altre procés que retorni la posició de l'array on l'ha trobat, si és el cas. 
-                                        D'igual manera, pot haver-hi altre procès que comprovi el nombre de ciclistes d'aquell equip i verifiqui que compleix el requisit.</p>
-                                    </div>
-                                    <!-- Button trigger pannel -->
-                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
-                                            data-toggle="button"
-                                            data-parent-selector="#leftColumnPanel"
-                                            data-display-on-set-slide="slc-individuals10" 
-                                            data-selector-clue="#slc-individuals10-clue3">
-                                        Pista 3
-                                    </button>                                        
-                                    <div id="slc-individuals10-clue3" class="iocClue hidden">
-                                        <h2>Pista 3</h2>
-
-                                        <p>Cal recordar que només es demana el procés que verifiqui la validesa de l'equip, per tant, tot i que aquest procés està dintre del nivell de descomposició de la gestió de dades dels ciclistes, no hem de tenir en compte cap dada dels ciclistes, només el codi de l'equip introduït per teclat, les dades dels equips enregistrats i el nombre de ciclistes per equip.</p>
-              
-                                    </div>
-                                    <!-- Button trigger pannel -->
-                                    
+                                        <p>Us passem un esquema de disseny descendent incomplert. En ell falten items, però estem segurs que els definits us poden ajudar a centrar el disseny final.</p>
+                                        <figure>
+                                            <img width="80%" src="images/dissenyDescendentTasca2.png" alt="Esquema parcial del disseny descendent demanat">
+                                        </figure>
+                                    </div>                                    
                                 </div> 
                             </div>
                         </div>
@@ -275,13 +293,13 @@
                 <!--=========== END SUBSECTION individuals10 ================-->    
                 
                 <!--=========== BEGIN SUBSECTION individuals20  ================-->    
-                <section id="slc-individuals20" class=" section">
+                <section id="slc-individuals20" class="tasca section">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Tasques a realitzar - Projecte II</h2>
-                                     <h3> Tasca 2 - Implementació de la funció <em>validarEquipCiclista</em> </h3>
+                                     <h3> <span class="tascaTitle">Tasca</span> - Implementació de la funció <em>validarEquipCiclista</em> </h3>
                                  </div>
                             </div>
                         </div>
@@ -290,18 +308,44 @@
                                 <div class=bodySlide>
                                     <p>En aquesta tasca se us demana que implementeu una funció anomenada <em>validarEquipCiclista</em>. Es tracta de la implementació del disseny descendent realitzat a la tasca anterior.</p>
                                     <p>Per tal d'implementar aquesta funció cal que reflexioneu sobre quina informació necessiteu, quins paràmetres haurà de rebre la funció i si és una funció amb o sense retorn. </p>
-                                    
+                                     <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals20" 
+                                            data-selector-clue="#slc-individuals20-clue4">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-individuals20-clue4" class="iocClue hidden">
+                                        <h2>Pista 1 - Paràmetres de la funció principal</h2>
+                                        <p>Un dels aspectes més importants a l'hora de definir una funció és saber quina informació es necessitarà manipular dins la funció, en quins tipus de dades es concreta i quina d'aquesta ha d'arribar des de l'exterior. És a dir a través de paràmetres. Tenint en compte que el que us cal es trobar si existeix un equip en el sistema i sabent que aquest emmagatzema la informació textual dels equips en un array multidimensional de text semblant al següent:</p>
+                                        <pre><code class="java">
+ String[][] equips = {
+         {"ONZ", "ONZE"}
+        ,{"TNK", "Tinkof"}
+        ,{"BCH", "Biancho"}
+        ,{"BRW", "Bartoloworld"}
+        ,{"MVX", "Movixtar"}
+        ,{"BIC", "Bich"}
+        ,{"CFD", "Cofidos"}
+        ,{"FON", "Fono"}
+        ,{"MTX", "Matrix"}
+    };                                            
+                                        </code></pre>
+                                        <p>Que el sistema haurà de tenir també, un comptador de ciclistes inscrits per equip, de forma que sigui fàcil saber quants ciclistes estan adscrits a un o altre equip i que aquests són valors de tipus numèric, plantejeu-vos quin tipus de dada caldrà   </p>
+                                        <p>Tenint en compte també, que encara no sabem on emmagatzemarem aquet array</p>
+                                    </div>                                    
                                      <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                             data-toggle="button"
                                             data-parent-selector="#leftColumnPanel"
                                             data-display-on-set-slide="slc-individuals20" 
                                             data-selector-clue="#slc-individuals20-clue1">
-                                        Pista 1
+                                        Pista 2
                                     </button>                                        
                                     <div id="slc-individuals20-clue1" class="iocClue hidden">
-                                        <h2>Pista 1 - Funcions a crear durant la implementació</h2>
-                                        <p>Tenint en compte les accions a realitzar a la funció validarEquipCiclista, podeu definir més d'una funció. Analitzeu i decidiu quins dels punts del disseny descendent que heu escrit a la tasca 1, podrien ser candidats a convertir-se en funció.</p>
+                                        <h2>Pista 2 - Funcions a crear durant la implementació</h2>
+                                        <p>Tenint en compte les accions a realitzar a la funció validarEquipCiclista, podeu definir més d'una funció. Analitzeu i decidiu quins dels punts del disseny descendent que heu escrit a la <span class="tascaTitle">Tasca</span>, podrien ser candidats a convertir-se en funció.</p>
                                         <p>Recordeu que si tenim una funció amb diversos objectius independents, és aconsellable descompondre la funció amb tantes altres com objectius tingui la primera. Així per exemple, si ens plantegéssim implementar un funció que sumi totes les compres mensuals d'un client i apliqui un descompte específic en funció de les compres realitzades, segurament seria bona idea descompondre la implementació en diverses funcions: una que sumi les compres d'un més d'un client, una altra que calculi el percentatge de descompte que li correspondria en base al total de compres fetes i una darrera que emmagatzemés el descompte en el client</p>
                                         <p>Seguint aquesta lògica, analitzeu el disseny descendent i plantegeu quantes funcions creieu que necessitareu.</p>
                                     </div>
@@ -383,96 +427,8 @@ if (equip1.equalsIgnoreCase(equip2))
                         </div>
                     </div>
                 </section>
-                <!--=========== END SUBSECTION individuals21 ================-->    
+                <!--=========== END SUBSECTION individuals20 ================-->    
                 
-<!--=========== BEGIN SUBSECTION individuals21  ================-->    
-                <section id="slc-individuals21" class=" section">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class= "headSlide">
-                                     <h2 >Tasques a realitzar - Projecte II</h2>
-                                     <h3> Tasca 3 - Implementació de la funció <em>validarDataNaixement</em> </h3>
-                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class=bodySlide>
-                                 	<p>Seguint en el nivell de descomposició "<em>1.2. Sol.licitar les dades dels ciclistes</em>", altra de les dades que caldrà introduir, és la data de naixement del ciclista. A fi d'evitar errors durant el procés d'introducció, s'ha decidit que només s'acceptaran les dates que tinguin el format <em>dd/mm/aaaa</em>.</p>
-                                    <p>En aquesta tasca se us demana que implementeu una funció anomenada <em>verificarDataNaixement</em> que verifiqui que el format introduït és el permès.</p>
-                                    <p>A fi de simplificar la verificació donarem per vàlides qualsevol cadena composta per:</p>
-                                    <ol>
-                                        <li>dos dígits numèrics amb independència del seu valor. <strong>No</strong> caldrà comprovar si el valor del dia es troba dins el rang del mes</li>
-                                        <li>el caràcter separador '/'</li>
-                                        <li>dos dígits numèrics amb independència del seu valor. <strong>No</strong> cal comprovar si el valor es troba entre 1 i 12</li>
-                                        <li>el caràcter separador '/'</li>
-                                        <li>quatre dígits numèrics amb independència del seu valor.</li>
-                                    </ol>
-                                    <p>Així considerarem dates que s'ajusten al format les cadenes: '12/01/1990', '37/15/2256' o '05/23/2012'. En canvi caldrà considerà invalides les cadenes '1/3/1526', '05-11-2016' o '12/gen/1396'.</p>
-                                   <p>Per tal d'implementar aquesta funció cal que reflexioneu sobre quina informació necessiteu, quins paràmetres haurà de rebre la funció i si és una funció amb o sense retorn. </p>
-
-                                    <p>A banda de la funció demanada, caldrà també que escriviu una funció anomenada <em>prova</em> que us permeti constatar el bon funcionament del què implementeu. Per tal de facilitar la comprovació podeu declarar conjuntament en el codi, el valor i les variables de prova necessàries.</p>
-                                     <!-- Button trigger pannel -->
-                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
-                                            data-toggle="button"
-                                            data-parent-selector="#leftColumnPanel"
-                                            data-display-on-set-slide="slc-individuals21" 
-                                            data-selector-clue="#slc-individuals21-clue1">
-                                        Pista 1
-                                    </button>                                        
-                                    <div id="slc-individuals21-clue1" class="iocClue hidden">
-                                        <h2>Pista 1 </h2>
-                                        <p>Cal tenir en compte què vol dir 'verificar data de naixement', i quin resultat volem obtenir de la funció a implementar. Ens és suficient un resultat 'si' o 'no' (1 o 0, vertader o fals) per tal de saber si el format de la data és o no correcte.</p>
-                                        
-                                    </div>
-                                     <!-- Button trigger pannel -->
-                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
-                                            data-toggle="button"
-                                            data-parent-selector="#leftColumnPanel"
-                                            data-display-on-set-slide="slc-individuals21" 
-                                            data-selector-clue="#slc-individuals21-clue2">
-                                        Pista 2
-                                    </button>                                        
-                                    <div id="slc-individuals21-clue2" class="iocClue hidden">
-                                        <h2>Pista 2 - </h2>
-                                        <p>Per verificar si la informació i el format de la cadena és correcta, caldrà recórrer-la caràcter a caràcter i comprovar la correctessa de cada dígit. Per fer això, podem fer servir un mètode de la llibreria String:
-                                        <code>public char charAt(int index)</code> que el que fa és retornar el caràcter de la posició 'index'. Per exemple: <code>String nom="Joan";                                        
-char resultat = nom.charAt(2);</code>. En aquest exemple la variable resultat valdrà el caracter 'a'.</p>    
-                                    </div>
-                                     <!-- Button trigger pannel -->
-                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
-                                            data-toggle="button"
-                                            data-parent-selector="#leftColumnPanel"
-                                            data-display-on-set-slide="slc-individuals21" 
-                                            data-selector-clue="#slc-individuals21-clue5">
-                                        Pista 3
-                                    </button>                                        
-                                    <div id="slc-individuals21-clue5" class="iocClue hidden">
-                                        <h2>Pista 3 - Funció prova</h2>
-                                        <p>Per tal de provar les funcions que implementeu, se us ha demanat que feu una petita prova creant una funció anomenada <em>prova</em> que cridareu des del <em>main</em>. Així podreu executar i provar el que escriviu.</p>
-                                        <p>A continuació us passem un tros de codi que conté inicialitzat un conjunt de valors de dates de naixement per fer la crida des del <em>main</em>. Si copieu això, només haureu de completar la funció <em>prova</em> amb el que cregueu convenient.</p>
-                                        <pre><code class="java">
-    public static void main(String[] args) {
-        Tasca3 prg = new Tasca3();
-        prg.prova();
-    }
-    
-    public void prova() {        
-        
-         String[] dataNaixement = {"12/10/1996","1111/10/19"};
-     	
-       //Escriviu aquí el codi de la funció prova que verifiqui el que heu implementat
-   }
-                                        </code></pre>
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!--=========== END SUBSECTION individuals21 ================-->    
-
                 <!--=========== BEGIN SUBSECTION individuals30  ================-->  
                 <section id="slc-individuals30" class=" section">
                     <div class="container">
