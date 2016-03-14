@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Activitat d'aprenetatge per introduir el concepte de funció i la operativa bàsica per a declarar-les i fer-les servir durant la codificació.">
-    <meta name="author" content="Alicia" >
+    <meta name="author" content="Josep Cañellas" >
     <title>A407. UF2 Projecte II</title>
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -250,7 +250,7 @@ char resultat = nom.charAt(2);
                                 <div class=bodySlide>
                                     <p>D'acord amb l'enunciat del projecte, per poder inscriure ciclistes, aquest ha de pertànyer a un equip prèviament inscrit a les dades del sistema i a més la normativa de la competició exigeix que el nombre de ciclistes adscrits a un equip no sobrepassi un llindar màxim (5 concretament).</p>                                
                                     <p>Per poder assegurar aquests requeriments caldrà desenvolupar una funcionalitat que permeti verificar que donat un equip, aquest existeix dins el sistema i el nombre de ciclistes que té adscrits, prèviament inscrits a la competició no arriba al llindar definit.</p>
-                                    <p>En aquesta tasca, us proposem que us centreu en el disseny descendent d'aquest procés. Concretament es demana que obriu el document de resposta d'aquesta tasca (<a href="docs/dissenyDescendentTasca1A407.odt">dissenyDescendentTasca1A407.odt</a>) i hi descompongueu aquest procés usant la tècnica del disseny descendent que ja coneixeu. El resultat hauria de ser un esquema que representi la descomposició del procés de forma semblant als esquemes vistos a l'activitat A405.</p>
+                                    <p>En aquesta tasca, us proposem que us centreu en el disseny descendent d'aquest procés. Concretament es demana que obriu el document de resposta d'aquesta tasca (<span class="respostaTasca2"><a href="docs/dissenyDescendentTasca2A407.odt">dissenyDescendentTasca2A407.odt</a></span>) i hi descompongueu aquest procés usant la tècnica del disseny descendent que ja coneixeu. El resultat hauria de ser un esquema que representi la descomposició del procés de forma semblant als esquemes vistos a l'activitat A405.</p>
 				    <p>Per realitzar aquest disseny descendent, cal que tingueu en compte els següents aspectes: </p>
 				    <ul>
 				        <li>Centreu-vos únicament en el procés concret de validació d'un equip. No cal que aquí us preocupeu de demanar les dades a l'usuari. Suposeu que aquestes s'ha introduït ja prèviament. </li> 
@@ -280,7 +280,7 @@ char resultat = nom.charAt(2);
                                     </button>                                        
                                     <div id="slc-individuals10-clue2" class="iocClue hidden">
                                         <h2>Pista 2</h2>
-                                        <p>Us passem un esquema de disseny descendent incomplert. En ell falten items, però estem segurs que els definits us poden ajudar a centrar el disseny final.</p>
+                                        <p>Us passem un esquema de disseny descendent incomplert. En ell falten ítems, però estem segurs que els definits us poden ajudar a centrar el disseny final.</p>
                                         <figure>
                                             <img width="80%" src="images/dissenyDescendentTasca2.png" alt="Esquema parcial del disseny descendent demanat">
                                         </figure>
@@ -308,6 +308,27 @@ char resultat = nom.charAt(2);
                                 <div class=bodySlide>
                                     <p>En aquesta tasca se us demana que implementeu una funció anomenada <em>validarEquipCiclista</em>. Es tracta de la implementació del disseny descendent realitzat a la tasca anterior.</p>
                                     <p>Per tal d'implementar aquesta funció cal que reflexioneu sobre quina informació necessiteu, quins paràmetres haurà de rebre la funció i si és una funció amb o sense retorn. </p>
+                                    <p>Partiu de la base que el sistema emmagatzema la informació textual dels equips en un array multidimensional de text semblant al següent:</p>
+                                    <pre><code class="java">
+String[][] equips = {
+     {"ONZ", "ONZE"}
+    ,{"TNK", "Tinkof"}
+    ,{"BCH", "Biancho"}
+    ,{"BRW", "Bartoloworld"}
+    ,{"MVX", "Movixtar"}
+    ,{"BIC", "Bich"}
+    ,{"CFD", "Cofidos"}
+    ,{"FON", "Fono"}
+    ,{"MTX", "Matrix"}
+};                                            
+                                    </code></pre>
+                                    <p>A més, el sistema haurà de tenir un comptador de ciclistes inscrits per cada equip. Això implica també, disposar d'un array de comptadors semblant a:</p>
+                                    <pre><code class="java">
+int[] comptadorCiclEquip={2,3,1,5,4,4,5,1,3}; 
+                                    </code></pre>
+                                    <p>Es tracta d'un array que conté tants comptadors com equips hi hagi.</p>
+                                    <p>Suposeu també que la introducció de dades per teclat és fa en un moment anterior. És a dir, que en executar la funció <em>validarEquipCiclista</em>, ja es coneix quin equip es vol validar.</p>
+                                    <p>Finalment, caldrà també definir aquí com portarem a la pràctica la comprovació de si dos equips són o no el mateix. Sovint, les entitats tractades a les aplicacions es representen per un conjunt més o menys gran de dades. Determinar si dues entitats són o no la mateixa cosa implicaria validar cada una de les dades d'ambdues entitats. Això però és un procés massa costós i a la pràctica, la majoria d'aplicacions simplifiquen el procés prenent com element identificador una de les dades específiques de la entitat. En el nostre cas, considerarem el codi de l'equip, el seu element identificador i per tant, per comprovar si un equip existeix o no en el sistema n'hi haurà prou fent servir una cadena contenint el codi de 3 lletres que identifiqui l'equip.</p>
                                      <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                             data-toggle="button"
@@ -318,22 +339,13 @@ char resultat = nom.charAt(2);
                                     </button>                                        
                                     <div id="slc-individuals20-clue4" class="iocClue hidden">
                                         <h2>Pista 1 - Paràmetres de la funció principal</h2>
-                                        <p>Un dels aspectes més importants a l'hora de definir una funció és saber quina informació es necessitarà manipular dins la funció, en quins tipus de dades es concreta i quina d'aquesta ha d'arribar des de l'exterior. És a dir a través de paràmetres. Tenint en compte que el que us cal es trobar si existeix un equip en el sistema i sabent que aquest emmagatzema la informació textual dels equips en un array multidimensional de text semblant al següent:</p>
+                                        <p>Un dels aspectes més importants a l'hora de definir una funció és saber quina informació es necessitarà manipular en executar-la, en quins tipus de dades es concreta aquesta, quina part ha d'arribar des de l'exterior, és a dir a través de paràmetres d'entrada i quina haurà de sortir a l'exterior (paràmetres de sortida o resultat). Rellegiu de nou aquesta tasca i esbrineu quins paràmetres d'entrada seran necessaris i de quin tipus serà la sortida.</p>
+                                        <p>Recordeu que els tipus de dades dels paràmetres han de coincidir amb els tipus de dades que es passar quan es faci la crida. Recordeu també que el nom dels paràmetres és absolutament indiferent respecte el nom de les dades a passar. Tot i així, escollir un nom amb sentit ens ajudarà molt a reconèixer la seva utilitat.</p>
+                                        <p>Recordeu també, que el tipus de sortida haurà de coincidir amb l'esperada, la qual es defineix a la mateixa declaració de la funció. Per exemple, la funció que vau fer a l'activitat A402: </p>
                                         <pre><code class="java">
- String[][] equips = {
-         {"ONZ", "ONZE"}
-        ,{"TNK", "Tinkof"}
-        ,{"BCH", "Biancho"}
-        ,{"BRW", "Bartoloworld"}
-        ,{"MVX", "Movixtar"}
-        ,{"BIC", "Bich"}
-        ,{"CFD", "Cofidos"}
-        ,{"FON", "Fono"}
-        ,{"MTX", "Matrix"}
-    };                                            
+ double calcularAreaTriangle(double base, double alcada) ...
                                         </code></pre>
-                                        <p>Que el sistema haurà de tenir també, un comptador de ciclistes inscrits per equip, de forma que sigui fàcil saber quants ciclistes estan adscrits a un o altre equip i que aquests són valors de tipus numèric, plantejeu-vos quin tipus de dada caldrà   </p>
-                                        <p>Tenint en compte també, que encara no sabem on emmagatzemarem aquet array</p>
+                                        <p>Indica que ha de rebre per paràmetres d'entrada dues dades de tipus <em>double</em> i que el seu resultat serà també un valor de tipus double.</p>
                                     </div>                                    
                                      <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
@@ -345,9 +357,9 @@ char resultat = nom.charAt(2);
                                     </button>                                        
                                     <div id="slc-individuals20-clue1" class="iocClue hidden">
                                         <h2>Pista 2 - Funcions a crear durant la implementació</h2>
-                                        <p>Tenint en compte les accions a realitzar a la funció validarEquipCiclista, podeu definir més d'una funció. Analitzeu i decidiu quins dels punts del disseny descendent que heu escrit a la <span class="tascaTitle">Tasca</span>, podrien ser candidats a convertir-se en funció.</p>
-                                        <p>Recordeu que si tenim una funció amb diversos objectius independents, és aconsellable descompondre la funció amb tantes altres com objectius tingui la primera. Així per exemple, si ens plantegéssim implementar un funció que sumi totes les compres mensuals d'un client i apliqui un descompte específic en funció de les compres realitzades, segurament seria bona idea descompondre la implementació en diverses funcions: una que sumi les compres d'un més d'un client, una altra que calculi el percentatge de descompte que li correspondria en base al total de compres fetes i una darrera que emmagatzemés el descompte en el client</p>
-                                        <p>Seguint aquesta lògica, analitzeu el disseny descendent i plantegeu quantes funcions creieu que necessitareu.</p>
+                                        <p>Tenint en compte les accions o operacions que caldrà realitzar en executar la funció validarEquipCiclista, podeu definir més d'una funció. Analitzeu i decidiu quins dels punts del disseny descendent que heu escrit a la Tasca anterior, podrien ser candidats a convertir-se en funció.</p>
+                                        <p>Recordeu que si tenim una funció amb diversos objectius independents, és aconsellable descompondre la funció amb tantes altres com objectius tingui la primera. Així per exemple, si ens plantegéssim implementar un funció que sumi totes les compres mensuals d'un client i apliqui un descompte específic en funció de les compres realitzades, segurament seria bona idea descompondre la implementació en diverses funcions: una que sumi les compres d'un més d'un client, una altra que calculi el percentatge de descompte que li correspondria en base al total de compres fetes i una darrera que emmagatzemés el descompte en el client.</p>
+                                        <p>No escatimeu en funcions, sobretot ara que esteu començant. Convé que us acostumeu a crear-les i fe-les servir amb fluïdesa.</p>
                                     </div>
                                      <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
@@ -355,13 +367,12 @@ char resultat = nom.charAt(2);
                                             data-parent-selector="#leftColumnPanel"
                                             data-display-on-set-slide="slc-individuals20" 
                                             data-selector-clue="#slc-individuals20-clue2">
-                                        Pista 2
+                                        Pista 3
                                     </button>                                        
                                     <div id="slc-individuals20-clue2" class="iocClue hidden">
-                                        <h2>Pista 2 - Validar el codi d'equip</h2>
-                                        <p>Cal tenir en compte què vol dir 'validar l'equip', i quin resultat volem obtenir de la funció a implementar. Ens és suficient un resultat 'si' o 'no' (1 o 0, vertader o fals) per tal de saber si l'equip existeix i si conté menys de 5 ciclistes.</p>
-                                        <p>A banda d'aquesta, per resoldre la validació anterior, caldrà definir una funció que recorri l'array, cerqui el codi a avaluar i retorni la posició on es troba, si és el cas.
-                                        A més, en cas de que s'hagi trobat el codi, seria bo definir altra funció per validar que el nombre de ciclistes d'aquell equip compleix els requisits establerts.</p>
+                                        <h2>Pista 3 - Funcions intermèdies</h2>
+                                        <p>Un altre aspecte important a plantejar-se, són els paràmetres d'entrada i sortida de les funcions intermèdies (de nivells inferiors a l'arrel del disseny descendent). La importància radica en el fet que sovint la sortides d'unes són les entrades d'altres. Cal doncs valorar adequadament quins tipus de dades ens resultaran millor com entrada o sortida de cada una d'aquestes funcions.</p>
+                                        <p>Tingueu en compte que a vegades una mateixa dada ens pot donar diverses informacions. Per exemple, una funció que retorni una posició d'un array, a més d'indicar-nos el lloc on es troba un element concret de l'array, podem deduir que si la posició es troba fora del rang de l'array (entre el valor zero i per sota de la longitud de l'array), l'element <strong>no existirà</strong> ja que no és possible accedir a un element situat fora de rang. Per contra si el retorn es troba dins del rang, a més de saber que  podrem accedir al valor de l'ítem ens informa de la posició on es troba.</p>
                                     </div>
                                      <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
@@ -369,18 +380,22 @@ char resultat = nom.charAt(2);
                                             data-parent-selector="#leftColumnPanel"
                                             data-display-on-set-slide="slc-individuals20" 
                                             data-selector-clue="#slc-individuals20-clue3">
-                                        Pista 3
+                                        Pista 4
                                     </button>                                        
                                     <div id="slc-individuals20-clue3" class="iocClue hidden">
-                                        <h2>Pista 3 - Com comparar cadenes de caràcters</h2>
-                                        <p>Per esbrinar si el codi d'equip introduït per teclat es troba a l'array d'equips que participen a la volta, caldrà comparar aquest codi amb tots els de l'array. Per realitzar aquesta acció s'hauran de comparar cadenes de caràcters.</p>
-                                        <p>Per comparar cadenes de caràcters cal que feu servir uns mètodes específics. La classe String ofereix diferents mètodes per comparar cadenes de text, entre altres:<code>equalsIgnoreCase(text)</code> que ens retornarà vertader o fals segons si les cadenes són iguals o no. Per exemple,</p>                                        
+                                        <h2>Pista 4 - Com comparar cadenes de caràcters</h2>
+                                        <p>Recordeu que les cadenes no es poden comparar fent servir el símbol <em>==</em>.  Per comparar cadenes disposeu de les funcions <em>equals</em> i <em>equalsIgnoreCase</em>. La primera indica si dues cadenes són iguals diferenciant entre caràcters minúscula i majúscula. La segona en canvi, no ho diferencia. Per exemple:</p>                                        
                                         <div class="iocexample single em">
                                         <pre><code class="java">
-if (equip1.equalsIgnoreCase(equip2))
-	System.out.println("Cert!");
+String cadena1 = "Valor";
+String cadena2 = "valor";
+String cadena3 = "valor";
+boolean resultat;
+
+resultat = cadena1.equalsIgnoreCase(cadema2) //Aquí el valor resultat valdrà cert,
+resultat = cadena1.equals(cadema2) //Aquí el valor resultat valdrà fals,
+resultat = cadena3.equalsIgnoreCase(cadema2) //Aquí el valor resultat valdrà cert,
                                         </code></pre>
-                                        <p>Podeu fer servir aquest mètode per realitzar les comparacions entre els codis d'equips.</p>
                                         </div>
                                      <!-- Button trigger pannel -->
                                   
@@ -390,36 +405,38 @@ if (equip1.equalsIgnoreCase(equip2))
                                             data-parent-selector="#leftColumnPanel"
                                             data-display-on-set-slide="slc-individuals20" 
                                             data-selector-clue="#slc-individuals20-clue5">
-                                        Pista 4
+                                        Pista 5
                                     </button>                                        
                                     <div id="slc-individuals20-clue5" class="iocClue hidden">
-                                        <h2>Pista 4 - Funció prova</h2>
+                                        <h2>Pista 5 - Funció prova</h2>
                                         <p>Per tal de provar les funcions que implementeu, se us ha demanat que feu una petita prova creant una funció anomenada <em>prova</em> que cridareu des del <em>main</em>. Així podreu executar i provar el que escriviu.</p>
                                         <p>A continuació us passem un tros de codi que conté inicialitzat un conjunt de codis d'equips i també la crida des del <em>main</em>. Si copieu això, només haureu de completar la funció <em>prova</em> amb el que cregueu convenient.</p>
                                         <pre><code class="java">
-    public static void main(String[] args) {
-        Tasca2 prg = new Tasca2();
-        prg.prova();
-    }
-    
-    public void prova() {        
-        
- String[][] equips = {
-         {"ONZ", "ONZE"}
-        ,{"TNK", "Tinkof"}
-        ,{"BCH", "Biancho"}
-        ,{"BRW", "Bartoloworld"}
-        ,{"MVX", "Movixtar"}
-        ,{"BIC", "Bich"}
-        ,{"CFD", "Cofidos"}
-        ,{"FON", "Fono"}
-        ,{"MTX", "Matrix"}
-  };
-  int[] comptadorCiclEquip={2,3,1,5,4,4,5,1,3}; 
-    
-       //Definiu aqui la variable que emmagatzemarà el codi d'equip introduït per teclat 
-       //Escriviu aquí el codi de la funció prova que verifiqui el que heu implementat
-       }
+public static void main(String[] args) {
+    Tasca2 prg = new Tasca2();
+    prg.prova();
+}
+
+public void prova() {        
+     Sring codiEquipAValidar; 
+     
+     String[][] equips = {
+             {"ONZ", "ONZE"}
+            ,{"TNK", "Tinkof"}
+            ,{"BCH", "Biancho"}
+            ,{"BRW", "Bartoloworld"}
+            ,{"MVX", "Movixtar"}
+            ,{"BIC", "Bich"}
+            ,{"CFD", "Cofidos"}
+            ,{"FON", "Fono"}
+            ,{"MTX", "Matrix"}
+      };
+      int[] comptadorCiclEquip={2,3,1,5,4,4,5,1,3}; 
+
+       //Doneu valors aquí a la variable que emmagatzemarà el codi d'equip a validar i  
+       //feu les crides necessàries a la funció <em>validarEquipCiclista</em> i mostra per pantalla els resultat 
+       //a fi de verificar el bon funcionament. 
+}
                                         </code></pre>
                                     </div>
                                 </div> 
@@ -430,28 +447,23 @@ if (equip1.equalsIgnoreCase(equip2))
                 <!--=========== END SUBSECTION individuals20 ================-->    
                 
                 <!--=========== BEGIN SUBSECTION individuals30  ================-->  
-                <section id="slc-individuals30" class=" section">
+                <section id="slc-individuals30" class="tasca section">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Tasques a realitzar - Projecte II</h2>
-                                     <h3>Tasca 4 - Disseny descendent del ciclista guanyador de la competició</h3>
+                                     <h3> <span class="tascaTitle">Tasca</span> - Disseny descendent del ciclista guanyador de la competició</h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>En aquesta tasca treballarem un dels processos del nivell de descomposició corresponent al processament de dades de la competició en funció de les etapes realitzades i, en particular el disseny del procés que mostra les dades del ciclista guanyador.</p>
-                                    <p>Per començar a reflexionar sobre com realitzar el disseny descendent d'aquesta informació, cal que tingueu en compte els següents aspectes:
-                                    <ul>
-													<li>Per iniciar la descomposició partiu del supòsit que el temps invertit en cada etapa de cada ciclista, es troba enregistrat en les estructures de dades corresponents de l'aplicació, que hauran introduït els organitzadors de l'esdeveniment esportiu.</li>
-													<li>Per cada etapa es vol saber qui és el guanyador provisional, és a dir, el ciclista que menys temps ha invertit en les etapes realitzades.</li>
-													<li>Es considera que el guanyador provisional és aquell ciclista que porti menys temps acumulat en totes les etapes realitzades</li>                                    
-                                    </ul>
-                                     </p>
-                                     <p>Us demanem que obriu el document de resposta d'aquesta tasca (<a href="docs/dissenyDescendentTasca3A407.odt">dissenyDescendentTasca3A407.odt</a>) i hi descomponeu aquest procés usant la tècnica del disseny descendent que ja coneixeu.  El resultat hauria de ser un esquema que representi la descomposició del procés de forma semblant als esquemes vistos a l'activitat A405.</p>
+                                    <p>Una altra funcionalitat del projecte que haureu d'acabar implementant és la obtenció dels ciclistes guanyadors dels diferents premis: general i per tipus d'etapa. En aquesta tasca us demanarem que dissenyeu la obtenció del ciclista guanyador de la competició general.</p>
+                                    <p>Per començar el disseny suposeu que els temps s'han introduït amb anterioritat, ja que aquí només ens haurem de concentrar en el problema de descobrir qui és el ciclista guanyador de la competició. Recordeu que els temps els omplen els jutges després de cada etapa. Per tant les dades de partida del vostre anàlisi hauria de ser tots els temps de tots els ciclistes invertits per cada etapa.</p>
+                                    <p>L'objectiu és descobrir quin ciclista ha invertit menor temps en recórrer totes les etapes.</p>
+                                     <p>Us demanem que obriu el document de resposta d'aquesta tasca (<span class="respostaTasca4"><a href="docs/dissenyDescendentTasca3A407.odt">dissenyDescendentTasca3A407.odt</a></span>) i hi descomponeu aquest procés, usant la tècnica del disseny descendent que ja coneixeu.  El resultat hauria de ser un esquema que representi la descomposició del procés de forma semblant als esquemes vistos a l'activitat A405.</p>
                                      <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                             data-toggle="button"
@@ -462,7 +474,7 @@ if (equip1.equalsIgnoreCase(equip2))
                                     </button>                                        
                                     <div id="slc-individuals30-clue1" class="iocClue hidden">
                                         <h2>Pista 1</h2>
-                                        <p>Cal que penseu en quins serien els nivells de descomposició a realitzar, tenint en compte que, per cada ciclista, s'han d'emmagatzemar el temps acumulat a totes les etapes realitzades i, per altra banda, s'haurà de calcular el mínim d'aquests temps i esbrinar a quin ciclista correspon.</p>                                    
+                                        <p>Cal que penseu en quins serien els nivells de descomposició a realitzar, tenint en compte que, per cada ciclista, s'han d'emmagatzemar el temps acumulat a totes les etapes realitzades i, per altra banda, s'haurà de trobar el mínim d'aquests temps i esbrinar a quin ciclista correspon.</p>                                    
                                     </div>
                                      <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
@@ -474,7 +486,10 @@ if (equip1.equalsIgnoreCase(equip2))
                                     </button>                                        
                                     <div id="slc-individuals30-clue2" class="iocClue hidden">
                                         <h2>Pista 2</h2>
-                                        <p>Cal que penseu com emmagatzemar el temps acumulat de cada ciclista a les etapes realitzades per tal de poder aprofitar l'estructura de dades i la funció per conèixer també el guanyador de cada etapa.</p>
+                                        <p>Us passem un esquema de disseny descendent incomplert. Hi falten ítems, però estem segurs que els definits us poden ajudar a centrar el disseny final.</p>
+                                        <figure>
+                                            <img width="80%" src="images/dissenyDescendentTasca4.png" alt="Esquema parcial del disseny descendent demanat">
+                                        </figure>
                                     </div>
                                 </div> 
                             </div>
@@ -484,34 +499,26 @@ if (equip1.equalsIgnoreCase(equip2))
                 <!--=========== END SUBSECTION individuals30 ================-->    
 
                 <!--=========== BEGIN SUBSECTION individuals40  ================-->    
-                <section id="slc-individuals40" class=" section">
+                <section id="slc-individuals40" class="tasca section">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Tasques a fer - Projecte II</h2>
-                                     <h3> Tasca 5 - Implementació del ciclista guanyador de la competició</h3>
+                                     <h3><span class="tascaTitle">Tasca</span>  - Implementació del ciclista guanyador de la competició</h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Un cop dissenyada la descomposició del procés de calcular el ciclista guanyador de la competició segons les etapes realitzades, caldrà fer la implementació en forma de funció.</p>
-                                    <p>Es demana:</p>
+                                    <p>Un cop dissenyada la descomposició del procés de calcular el ciclista guanyador de la competició, es demana:</p>
                                     <ul>
-                                        <li>Implementar una funció anomenada <em>ciclistaGuanyadorCompeticio</em> seguint el disseny descendent creat a la Tasca 4.</li>
+                                        <li>Implementar una funció anomenada <em>ciclistaGuanyadorCompeticio</em> seguint el disseny descendent creat a la Tasca 4 que retorni la posició a la que es troba el ciclista guanyador dins l'array d'inscripcions.</li>
                                         <li>Implementar una funció prova, per comprovar el correcte funcionament de l’anterior funció, de forma semblant a com es va fer a la Tasca 2 i 3.</li>
                                     </ul>       
-                                                                        
-                                    <p>La funció <em>ciclistaGuanyadorCompeticio</em> tindrà com a objectiu mostrar al ciclista guanyador, és a dir, aquell que ha realitzat la competició per les etapes realitzades fins al moment, en menys temps. Per tant, a l'hora de realitzar la implementació, es pot tenir en compte la següent informació: </p>
-												<ul>
-													<li>De la funció requerida voldrem conèixer la posició on es troba el ciclista guanyador.</li>
-													<li>Caldrà que realitzeu els càlculs adients per obtenir el temps a realitzat per cada ciclista a totes les etapes i ho emmagatzemeu en l'estructura de dades adient. Plantegeu-vos si cal emmagatzemar els temps acumulats a l'estructura per agilitzar els càlculs futurs.</li>
-													<li>Per descobrir el guanyador, caldrà que localitzeu el ciclista (o ciclistes) que hagin fet el menor temps.</li>												
-													<li>Per provar la funció, suposarem un nombre determinat de ciclistes. Caldrà que definiu un sistema de dades adient per emmagatzemar el temps de cada ciclista en cadascuna de les etapes i els doneu valor directament en el codi de la prova.</li>												
-												</ul>                                     
-                                     
+                                    <p>Tal com heu suposat a la tasca anterior, cal que implementeu aquesta funció tenint en compta que els temps per ciclista i etapa s'han introduït en un altre moment. Aquí podeu suposar que us arribarà un array multidimensional amb els temps (per exemple en segons) de cada etapa i cada ciclista.</p> 
+                                    <p>Per fer la comprovació de la funció <em>ciclistaGuanyadorCompeticio</em> a la funció de prova, podeu declarar un array multidimensional en el mateix codi i inicialitzar-lo amb dades inventades que us ajudin a deduir si la funció es comporta adequadament o no.</p>
                                      <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                             data-toggle="button"
@@ -521,25 +528,9 @@ if (equip1.equalsIgnoreCase(equip2))
                                         Pista 1
                                     </button>                                        
                                     <div id="slc-individuals40-clue1" class="iocClue hidden">
-                                        <h2>Pista 1 - Funcions a crear durant la implementació</h2>
-                                        <p>Analitza el disseny descendent de la tasca 3 i intenta discernir quins processos són candidats a ser implementats usant una funció, doncs no és aconsellable fer tota la implementació en una única funció.
-                                        De la mateixa manera, reflexioneu sobre quin paràmetres i de quins tipus necessiteu per implementar la funció requerida i si és necessari o no que tingui retorn. Cal tenir en compte que la informació que volem conèixer d'aquesta funció és la posició del ciclista guanyador.</p>
-                                    </div>
-                                     <!-- Button trigger pannel -->
-                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
-                                            data-toggle="button"
-                                            data-parent-selector="#leftColumnPanel"
-                                            data-display-on-set-slide="slc-individuals40" 
-                                            data-selector-clue="#slc-individuals40-clue3">
-                                        Pista 2
-                                    </button>                                        
-                                    <div id="slc-individuals40-clue3" class="iocClue hidden">
-                                        <h2>Pista 2</h2>
-                                        <p>Segons l'enunciat, el temps a enregistrar fa referència al valor en hores, minuts i segons obtinguts per cada ciclista en cada etapa. 
-En aquests moments, i per tal de simplificar els càlculs, podeu definir un array que emmagatzema el temps en segons realitzats per cada ciclista a cada etapa, per exemple, si suposem dues etapes i quatre ciclistes tindríem:</p>
-<code>int[][] tempsEnSegonsCiclistesXEtapes={{3422,4502,4382,4022},
-                                               {3023,3323,2723,2663}};</code>
-<p>A partir d'aqui reflexioneu sobre com haureu de fer servir aquest array per tal de calcular el temps que ha realitzat cada ciclista en totes les etapes. </p>                  
+                                        <h2>Pista 1 - Retorn de la funció <em>ciclistaGuanyadorCompeticio</em></h2>
+                                        <p>Tal com indica aquesta tasca, la funció ha de retornar la posició dins l'array d'inscripcions, del ciclista guanyador. Malgrat que encara no heu dissenyat l'estructura de dades de l'aplicació, podeu suposar que la posició dels ciclistes a l'array d'inscripcions coincideix exactament amb la posició dels ciclistes a la dimensió dels ciclistes a l'array multidimensional de temps.</p>
+                                        <p>Efectivament, l'array de temps ha de ser una matriu on una de les dimensions siguin cada una de les etapes i l'altra dimensió, cada un dels ciclistes. Així el temps invertit pel ciclista de la posició 4 (de la llista d'inscrits) a l'etapa 3 hauria d'estar contingut a la posició <em>[3][4]</em> de la matriu, suposant que les etapes són la primera dimensió i els ciclistes la segona.</p>
                                     </div>
                                      <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
@@ -547,14 +538,51 @@ En aquests moments, i per tal de simplificar els càlculs, podeu definir un arra
                                             data-parent-selector="#leftColumnPanel"
                                             data-display-on-set-slide="slc-individuals40" 
                                             data-selector-clue="#slc-individuals40-clue2">
-                                        Pista 3
+                                        Pista 2
                                     </button>                                        
                                     <div id="slc-individuals40-clue2" class="iocClue hidden">
-                                        <h2>Pista 3</h2>
-                                        <p>Heu de tenir en compte que, a banda de la funció requerida seria bo crear una funció que calculi el total de temps realitzat per cada ciclista a totes les etapes. 
-Igualment, podríem pensar en altres funcions com per exemple, la que calculi el mínim del total de temps invertit per cada ciclista.	                                        
-                                        </p>
+                                        <h2>Pista 2 - Paràmetres</h2>
+                                        <p>Sabent que els temps per etapa i ciclista s'introdueixen abans d'executar la funció <em>ciclistaGuanyadorCompeticio</em> i que el retorn ha de ser la posició del ciclista guanyador, plantegeu-vos quins paràmetres d'entrada i sortida caldrà definir. De quins tipus de dades estaríem parlant?</p>
+                                        <p>A diferència del nombre d'etapes, que és conegut a priori, en el moment d'escriure aquest codi, el nombre de ciclistes inscrits és desconegut, perquè aquests es van afegint mentre s'executa l'aplicació i per tant, mai podem saber quants ciclistes s'acabaran inscrivint. Com veureu més endavant, per aconseguir inscriure un nombre desconegut de ciclistes, partirem d'un array d'inscripcions sobredimensionat (amb capacitat d'emmagatzemar una quantitat de ciclistes superior a les previsions existents). Això ens permetrà poder afegir ciclista a ciclista, sense desbordar la memòria del sistema. Ara bé, per conèixer quants ciclistes acaben inscrivint, necessitarem una dada extra, un comptador de ciclistes, ja que la mida de l'array d'inscripcions, com s'ha comentat, està sobredimensionada.</p>
+                                        <p>No us oblideu de passar també per paràmetre el comptador de ciclistes, a fi de saber quantes posicions de la dimensió <em>ciclistes</em> cal comptabilitzar quan cerquem el ciclista guanyador, doncs de forma semblant a l'array d'inscripcions, la matriu de temps estarà també sobredimensionada. El comptador indicarà la posició a partir de la que ja no cal tenir en compte els temps.</p>
+                                        <p>Vegem un exemple clarificador. Imaginem que tenim una matriu de mesures de pes i alçada d'un nombre desconegut (a priori) d'individus. La matriu de mesures està sobredimensionada a un màxim de 10 individus, ja que la previsió havia estat analitzar les mesures de pes i alçada de 6 individus. Durant la introducció de les dades s'ha anat actualitzant un comptador de participants i al final del procés les dades presentaven uns valors equivalents a:</p>
+                                        <pre><code class="java">
+static final int PES=0;
+static final int ALCADA=1;
+
+int[][] mesures = {
+    { 75.36,  85.54,  69.87,  87.61,  65.19, 0.0, 0.0, 0.0, 0.0, 0.0},
+    {178.10, 172.30, 165.00, 180.40, 160.60, 0.0, 0.0, 0.0, 0.0, 0.0}
+};
+
+int comptadorParticipants = 5;
+                                        </code></pre>
+                                        <p>On la matriu <em>mesures</em> conté una fila amb tots els pesos dels participants i una altra amb totes les seves mesures. Si volguéssim determinar el pes mínim, no s'hauria de comptar mai les posicions a partir de la cinquena (inclosa), ja que si ho féssim el pes mínim l'atorgaríem sempre erròniament, a alguna de les posicions compreses entre la posició 5 i 9.</p>
                                     </div>
+                                     <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals40" 
+                                            data-selector-clue="#slc-individuals40-clue4">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-individuals40-clue4" class="iocClue hidden">
+                                        <h2>Pista 3 - Funcions a crear durant la implementació</h2>
+                                        <p>Analitzeu el disseny descendent de la tasca anterior i intente discernir quins processos són candidats a ser implementats com una funció. Segur que els primers nivells de descomposició són candidats adequats. Ara bé, penseu que tant important com decidir quins nivells són candidats a funcions, és descobrir quines dades caldrà passar a cada un d'elles i quines caldrà retornar per tal de poder acabar donant la resposta requerida.</p>
+                                    </div>
+                                     <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals40" 
+                                            data-selector-clue="#slc-individuals40-clue3">
+                                        Pista 4
+                                    </button>                                        
+                                    <div id="slc-individuals40-clue3" class="iocClue hidden">
+                                        <h2>Pista 4 - Funció prova</h2>
+                                        <p>Tal com es diu en aquesta tasca, usa la funció prova per declarar, inicialitzar en el mateix codi, les dades necessàries per provar la funció implementada. No cal que declaris una matriu amb totes les etapes, ni amb un gran nombre de ciclistes. Es tracta només d'una prova. Pot partir de la convicció que la funció s'executarà correctament o no amb independència de la mida de la matriu de temps.</p>
+                                   </div>
                                 </div> 
                             </div>
                         </div>
@@ -577,7 +605,7 @@ Igualment, podríem pensar en altres funcions com per exemple, la que calculi el
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-                                <p>En aquesta <b>activitat 407</b> cal que envieu les tasques corresponents a la <span class="bustiaLliurament"></span> . Heu de tenir en compte que aquesta bústia és multilliurament, per tant, si ja teniu fet algun enviament anterior no us preocupeu que no s’esborrarà.</p> 
+                                <p>En aquesta <b>activitat 407</b> cal que envieu els documents de resposta de les tasques 2 i 4, junt amb el codi de la resta a la <span class="bustiaLliurament"></span>. Comprimiu tots els fitxers en un ZIP (A407Projecte2.zip) abans de fer l'enviament. Heu de tenir en compte que aquesta bústia és multilliurament, per tant, si ja teniu fet algun enviament anterior no us preocupeu que no s’esborrarà.</p> 
                                 <p> Es recomana lliurar aquestes activitats abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class='dataLimit'></strong></p>
 										  <p>És molt important per avançar en el vostre aprenentatge i seguiment de la UF2 que feu aquests exercicis proposats i els lliureu. Teniu en compte que aquestes activitats formen part del desenvolupament del projecte i, si no les realitzeu, després serà més complicat fer la següent part del desenvolupament. Per altra banda, el professor també podrà avaluar l’evolució del vostre aprenentatge. A més, i molt important, aquestes tasques esmentades són <b>qualificables</b>.</p>
                             </div>
