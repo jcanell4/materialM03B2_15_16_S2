@@ -80,8 +80,7 @@
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
                           <li class="active"><a href="#slc-toStart">Inici</a></li> 
-                          <li><a href="#slc-integracio">Intengració</a></li>
-                          <li><a href="#slc-planificacio">Planificació</a></li>
+                          <li><a href="#slc-toDo">Tasques a realitzar</a></li>
                           <li><a href="#slc-toDelivery">Lliurament</a></li> 
                           <li><a href="#slc-toContinue">Com continuar</a></li> 
                         </ul>           
@@ -127,124 +126,252 @@
                 </div>
             </section>
             <!--=========== END SECTION toStart ================-->    
-            <!--=========== BEGIN SECTION discussion ================-->    
-            <section id="slc-discussion" class="vsections">
-                <!--=========== BEGIN SUBSECTION Fòrum 0 ================-->    
-                <section id="slc-discussion0" class=" section">
+            <!--=========== BEGIN SECTION implementació ================-->    
+            <section id="slc-toDo" class="vsections">
+                <!--=========== BEGIN SUBSECTION estructura de dades ================-->    
+                <section id="slc-estructuraDeDades" class="tasca section">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
-                                     <h2 >Fòrums sobre anàlisi i disseny d'aplicacions</h2>
-                                     <h3 >Introducció</h3>
+                                     <h2 >Tasques a realitzar-Implementació I</h2>
+                                     <h3 > <span class="tascaTitle">Tasca</span> - Implementació de l'estructura de dades</h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>A l'activitat <span class="A501"></span> vàreu veure que una classe que contingui variables, pot constituir un tipus compost i que els tipus compostos són la base de les estructures de dades de les aplicacions. Es aquesta mateixa activitat, a la tasca 3, vàreu veure diferents implementacions d'una mateixa estructura. Com ja vau constatar, les estructures complexes poden implementar-se de múltiple maneres, i segurament no existeix una única implementació millor que les altres, sinó més aviat, cal adonar-se que unes implementacions faciliten uns tractaments en detriment dels altres. L'ideal és poder escollir aquella implementació que suposi més avantatges que inconvenients per els tractaments a realitzar a la nostra aplicació.</p>
-                                    <p>Aquí us donarem ...</p>
-                                    <ol>
-                                        <li>Prengui la forma que pregui, la implementació final d'una estructura de dades, cal assegurar-se que conté totes les dades  </li>
+                                    <p>A l'activitat <span class="A501"></span> vàreu veure que una classe que contingui variables, pot constituir un tipus compost i que els tipus compostos són la base de les estructures de dades de les aplicacions. Es aquesta mateixa activitat, a la tasca 3, vàreu veure diferents implementacions d'una mateixa estructura. Com ja vau constatar, les estructures complexes poden implementar-se de múltiple maneres, i segurament no existeix una única implementació millor que les altres, sinó més aviat, cal adonar-se que unes implementacions faciliten uns tractaments en detriment dels altres. L'ideal és poder escollir aquella implementació que suposi més avantatges que inconvenients per els tractaments que caldrà realitzar a la nostra aplicació.</p>
+                                    <p>En primer lloc, donarem una ullada ràpida als criteris principals que haurem de tenir en compte en el disseny de l'estructura de dades de l'aplicació CicliCat. Després analitzarem amb una mica més de profuditat aquells criteris que ho requereixin i finalment us demanarem que implementeu el/s tipus compost/os que defineixi/n l'estructura de dades. Comencem enunciant el criteris principals: </p>
+                                    <ol class="nestedCounter">
+                                        <li>
+                                            Prengui la forma que pregui la implementació final d'una estructura de dades, cal assegurar-se que conté totes les dades. Valoreu doncs, les dades que seran necessàries per emmagatzemar la informació requerida a cada apartat que trobeu a l'enunciat del projecte. Recordeu els apartats:
+                                            <ol>
+                                                <li>Gestió d'equips</li>
+                                                <li>Gestió de ciclistes</li>
+                                                <li>Gestió d'etapes</li>
+                                                <li>Gestió de  patrocinadors (i premis)</li>
+                                                <li>Gestió de la competició</li>
+                                                <li>Gestió d'informes</li>
+                                            </ol>
+                                        </li>
+                                        <li>Cal intentar que la informació dins de l'estructura estigui ben organitzada, entenent per informació organitzada, l'estructura que es dóna a les dades per tal de facilitar la seva interpretació i mantenir la seva independència sense perdre la seva interrelació. Aquí no hi ha receptes explícites, per això us aconsellem que us deixeu guiar pel sentit comú, i si en algun moment dubtem entre dues opcions, us aconsellem que escolliu sempre la que considereu que es pot interpretar de forma més clara i més explicita. Intenteu sempre que pugueu posar noms significatius i fer servir els tipus de dades que millor s'ajustin a la informació que estan representant. Si tornem a l'exemple del joc de dames vist a l'activitat A501, constatareu que els enters que identifiquen si les caselles del tauler estan buides o contenen una fitxa han d'estar disposats d'alguna forma que s'intueixi que entre tots conformen una entitat més gran (el tauler). Això s'aconsegueix fent servir una matriu, perquè aquest tipus de dades organitza el seus elements en files i columnes de manera similar a com ho fa una tauler d'escacs.</li>
+                                        <li>No us conformeu amb la primera solució que us vingui al cap. Intenteu trobar diverses alternatives sempre que sigui possible. <a href="../A501_ClassesBiblioteques.html?dam#slc-toDo__slc-toDo30" target="_blank">A la tasca 3 de l'activitat A501</a>,trobeu un exemple clar de diverses formes per solucionar la  necessitat de mantenir una col·lecció  de dades on els seus elements hagin de contenir dades de diferent tipus (els noms i el nombre de partides guanyades de cada jugador.). A l'aplicació Ciclicat també hi ha casos semblants. No us precipiteu prenent la solució.  Valoreu per exemple, si heu fet servir algunes d'aquestes dades en alguna de les funcions que ja tingueu implementades i intenteu ser coherent amb els tipus usats.</li>
+                                        <li>
+                                            Recordeu que per aquest prototipus, algunes de les dades es poden declarar directament al codi, ja que no s'implementarà encara la seva gestió via interfície d'usuari. En aquest cas es troben:
+                                            <ol>
+                                                <li>Els equips</li>
+                                                <li>Les etapes</li>
+                                                <li>Els premis i els patrocinadors</li>
+                                            </ol>
+                                            En aquests casos (consulteu l'enunciat per a més detall), haureu d'incloure les dades directament a la declaració  del tipus compost.
+                                        </li>
+                                        <li><p>Feu servir constants , sempre que sigui possible, per identificar elements específics dins d'una matriu, en comptes de fer servir la posició. Per exemple, si en una matriu de cadenes emmagatzemem <em>el dni</em> i <em>el nom</em> dels alumnes del IOC, podem definir dins la mateixa estructura la constant DNI (=0) i la constant NOM (=1), de forma que sigui totalment intuïtiu discernir entre una o altre dada. Així per exemple <em><pre>alumnes[5][NOM]</pre></em> fa referència inequívocament, al nom de l'alumne que es troba a la posició 5.</p> <p>En canvi si fem servir directament la posició: <em><pre>alumnes[5][1]</pre></em> serem més proclius a l'error.</p></li>
+                                        <li>En cas que alguna col·lecció pugui presentar un nombre desconegut d'elements, caldrà preveure com es pot identificar el nombre real d'elements. Tingueu en compte que la solució adoptada repercutirà de ben segur en el tipus compost quan sigui necessari afegir-hi dades extres que permetin  esbrinar quants i quins elements són reals.  Aquest és el cas, per exemple dels ciclistes. Com que no se sap a priori quants ciclistes acabaran inscrivint-se,  no es pot preveure la mida de l'array que contingui les seves dades.</li>
+                                        <li>Ús de dades redundants. Malgrat que no és gaire aconsellable posar dades redundants a l'estructura de dades, a vagades, pot resultat indicat per evitar la realització de càlculs de forma reiterada. Per exemple, imagineu que una aplicació per gestionar les notes d'alumnes, ha d'emmagatzemar les notes de les diferents assignatures mantenint 2 decimals. Malgrat tot, a l'hora de calcular el valor mitjà de la titulació o de mostrar cada  nota en els certificats oficials, es treballa sempre amb arrodoniments a valors enters. Malgrat  tot, és necessari mantenir els decimals a les notes per poder desempatar en cas d'atorgament de beques, d'assignació de matrícules d'honor i per poder mostrar-les als alumnes. En aquest cas caldria plantejar-se emmagatzemar la nota amb els decimals dins l'estructura de dades i calcular l'arrodoniment cada cop que sigui necessari; o bé plantejar la possibilitat d'emmagatzemar dues notes a l'estructura, la nota que inclou els decimals i també l'arrodoniment a fi d'escollir una o altra dada segons calgui o no arrodoniment evitant així reiterar el mateix càlcul a cada petició.</li>
+                                        <li>Emmagatzematge de resultats. De fet aquest és un cas particular del punt anterior. Quan els càlculs per obtenir resultats són farragosos, es pot optar per emmagatzemar-los també dins l'estructura de dades a fi de no haver d'evitar realitzar el càlcul cada cop que es demanin els resultats. Aquesta opció, però contempla un dificultat. Cal disposar d'indicadors que marquin si el calcul ja s'ha realitzar o està encara pendent. A vagades, per evitar algunes incoherències, por ser aconsellable emmagatzemar només càlculs intermedis però el resultat final. </li>
                                     </ol>
-                                
-                                
-                                
-                                    <p>La modularització es basa en la segregació del codi en diversos fitxers i biblioteques. En JAVA, això suposa la creació  de múltiples classes addicionals. cada classe s'escriu en un fitxer propi.</p>
-                                    <p>La modularització ha representat per el desenvolupament d'aplicacions una gran avantatge ja que ha permès crear aplicacions molt més complexes del que seria possible sense ella. Tot i així, cal anar molt en compte a l'hora de definir els mòduls i dissenyar les biblioteques, ja que la divisió implicarà inevitablement incrementar el nombre de funcions, que quedaran dispersades en múltiples fitxers. Si fem divisions sense criteri, o fem servir un criteri erroni, correm el risc d'incrementar la complexitat en lloc de reduir-la.</p>
-                                    <p>A continuació us presentarem un seguit de lectures que us ajudaran a centrar l'atenció en els elements importants que cal tenir en compte a l'hora d'encarar un disseny modular.</p>
-                                    <p>En tots els casos se us demana que participeu també en el <span class="forumDeDiscussio"></span>. Es tracta de fer-vos reflexionar i prendre consciència de tot el que caldria tenir en compte a l'hora de fer la planificació. No és necessari que arribeu a consens ni que discutiu les vostes propostes. N'hi ha prou en que les enuncieu per tal que en quedi canstància pública i puguin, en algun cas, donar una visió alternativa als vostres companys o si més no, ratificar-los les seves mateixes reflexions.</p>
+                                    <p>Com podeu suposar, davant dels dubtes, no hi ha varetes màgiques que ens determinin quina és la millor solució, però en qualsevol cas, si valorem de forma raonada cada opció i prenem una decisió ben argumentada, potser no encertem la millor solució, però de ben segur que haurem descartat les tries inviables.</p>
+                                    <p>Seguint els consells que us hem donat aquí, obriu el projecte de netbeans en el que heu començat a implementar l'esquelet del projecte i afegiu-hi al menys, una nova classe anomenada DadesCicliCat, on hi implementareu el tipus compost que definirà l'estructura de dades del projecte.</p>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-estructuraDeDades" 
+                                            data-selector-clue="#slc-estructuraDeDades-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-estructuraDeDades-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Repasseu mentalment el disseny descendent elaborat a l'anterior activitat, tingueu també present l'enunciat i amb tot, intenteu imaginar quines dades seran necessàries a l'hora d'implementar cada una de les tasques dels mòduls del projecte. Comproveu en cada cas si les dades necessàries es poden obtenir a partir de l'estructura de dades que estigueu dissenyant.</p>
+                                    </div>  
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-estructuraDeDades" 
+                                            data-selector-clue="#slc-estructuraDeDades-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-estructuraDeDades-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Un vector, a diferencia d'un tipus de dada simple (int double, boolean, char, etc.), no té una mida predeterminada sinó que la seva ocupació a la memòria RAM dependrà de la quantitat d'elements que contingui i del tipus de dades d'aquests. Quan declarem un tipus de dada simple, el compilador ja sap la quantitat de memòria que cal reservar, per això no ens cal especificar-la. Així, quan declarem una variable de tipus enter, el compilador sap que cal reservar 4 bytes a la RAM per contenir-hi el seu valor. Quina memòria però, cal reservar amb una declaració del tipus <em>double[] notesCurs</em>? Creieu que es possible saber-ho sense indicar res més? Òbviament, la resposta és NO. Caldrà indicar quantes notes d'un curs cal emmagatzemar per poder calcular la dimensió a la memòria RAM. En JAVA és necessari usar una comanda addicional anomenada new on especificarem la mida desitjada. Així una instrucció de l'estil:
+<pre><code class="java">
+double[] notesCurs = new double[10];   
+</code></pre>
+o bé
+<pre><code class="java">
+double[] notesCurs;
+...
+notesCurs = new double[10];
+</code></pre>
+Indicarà al compilador la quantitat de memòria a reservar, 10 vegades el que ocupi un tipus double (64*10 = 640 bytes). .</p>
+<p>Sovint però, no resulta fàcil saber a priori quants elements d'un vector necessitarem durant l'execució d'una aplicació. Si el vector anterior en comptes de guardar les notes de les matèries d'un curs hagués de guardar les dels alumnes. Com podríem saber a priori quants alumnes se'ns matricularien? Què hem de fer en aquest casos? Us proposem diverses solucions.</p>
+                                         <h3>Opció 1</h3>
+                                         <p>La biblioteca Arrays, disposa de la instrucció <em>copyOf</em> que permet crear una copia del contingut d'una array qualsevol, incrementant o reduint la mida de l'original. Això permet crear per cada inserció, un array de mida major a fi que hi càpiga la nova dada i copiar-hi el contingut antic, obtenint un array idèntic a l'original però amb capacitat per una element més.</p>
+                                         <p>Aquesta opció, presenta diversos inconvenients: d'una banda, haver de copiar cada cop que inserim un nou element, tot el contingut original, suposa un cost important que redueix l'eficiència de l'aplicació; d'altra banda, trobem també problemes de memòria, perquè en repetir reiteradament aquesta instrucció, incrementant només, un element cada cop, es pot malmetre la memòria i de retruc empitjorar el rendiment de la màquina on s'executa. Per tant, no és aconsellable anar incrementant una a un els elements. En canvi, si seria adequat de fer servir per obtenir arrays que siguin subconjunts d'un original. Per exemple, si a partir d'un array d'alumnes i un de notes, volem obtenir el subconjunt d'alumnes que hagin aprovat, podríem declarar un variable de dimensió igual al nombre d'alumnes, per si haguessin aprovat tots; després caldria recorre les notes identificant els aprovats i afegint a l'array nou, els alumnes respectius. Un cop incorporats tots els aprovats, es podria reduir l'array generat a la mida ajustada del subconjunt.</p>
+                                             <h3>Opció 2</h3>
+                                             <p>Una altra opció pot passar per establir una mida màxima i mantenir-la sempre, però incorporar un comptador que indiqui quants elements són reals. La resta d'elements, malgrat estiguin disponibles, no s'hauran de fer servir. Aquesta opció presenta l'inconvenient que necessitem saber quina serà la capacitat màxima de l'array, o si més no atribuir-ne una prou gran, a fi de no quedar-nos curts i sense memòria. En el cas de les matrícules d'alumnes, podem suposar que a les aules, el nombre d'alumnes no superarà mai la quantitat de 100. Així, hauríem de crear un vector inicial de 100 posicions i un comptador d'alumnes matriculats. Per indicar que en el moment de la creació el vector és buit, donarem el valor de zero al comptador d'alumnes. Cada cop que afegim un nou element caldrà incrementar el valor d'aquesta variable per tal de fer-lo coincidir amb el nombre d'ítems (alumnes) realment ocupats.</p>
+                                             <p>Gràficament representarem el vector com una successió d'elements consecutius identificats per una posició entre zero i el nombre màxim d'elements menys 1 (doncs incloem el valor zero com a posició vàlida). El comptador del nombre d'elements realment ocupats la representarem amb una fletxa. El valor del comptador serà la posició del vector on assenyali. Inicialment, la representació gràfica d'un vector buit serà:'</p>
+
+<figure>
+    <img src="images/arrayBuit.png" alt="array buit">
+</figure>
+Cada cop que inserim un nou valor, haurem de modificar el valor del comptador. 
+<figure>
+    <img src="images/arrayUnElement.png" alt="array amb un element">
+</figure>
+
+<p>La ocupació real del vector ara val 1 perquè acabem d'inserir un element a la posició zero. </p>
+</br>
+<p>De forma semblant, quan inserim el següent element, ho farem a la posició 1 i la ocupació real (comptador) passarà a valer 2</p>
+<figure>
+    <img src="images/arrayDosElements.png" alt="array amb un element">
+</figure>
+
+<p>És fàcil veure que el valor de la variable ens indica la ocupació real ens indica també la posició on cal guardar cada element nou per tal d'evitar fer malbé les dades ja existents.</p>
+<p>Aquesta opció implica necessàriament fer servir una variable extra, el comptador, a més de l'array. 
+</p>
+<pre><code class="java">
+double[] vectorDeDades = new double[10];
+int midaRealVectorDeDades = 0;    
+</code></pre>
+<p>.</p>
+                                    </div>  
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <!--=========== END SUBSECTION Fòrum 0 ================-->    
-            </section>
-            <!--=========== END SECTION discussion ================-->    
-
-
-            <!--=========== BEGIN SECTION integracio ================-->    
-            <section id="slc-integracio" class="section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class= "headSlide">
-                                 <h2 > Implementació I - integració</h2>
-                             </div>
+                <!--=========== END SUBSECTION estructura de dades  ================-->    
+                <!--=========== BEGIN SECTION gestor de dades ================-->    
+                <section id="slc-gestorDeDades" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar-Implementació I</h2>
+                                     <h3 > <span class="tascaTitle">Tasca</span> - Implementació del gestor dades</h3>
+                                 </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class=bodySlide>
-                                <p>La integració ha de tenir dos objectius finals:</p>
-                                <ul>
-                                    <li>La creació d'un projecte de Netbeans on ajuntar i adaptar els esquelets que cada un de vosaltres ha realitzat com especialista a l'activitat A502, a fi d'aconseguir un projecte únic i preparat per començar la següent fase d'implementació.</li>
-                                    <li>La comprensió, per part de tots els membres, del codi final del projecte a fi de poder-se encarregar de forma individual del que li correspongui del següent període d'implementació.</li>
-                                    
-                                </ul>
-                                <p>Per tal de fer més eficient la reunió,es demana que cada un dels membres hagi llegit els informes de la resta  (informeEspecialista.odt que cada especialista ha enviat al fòrum) i hagi preparat una bateria de preguntes a fi de clarificar els dubtes que li hagin pogut sorgir en fer la lectura. A més, seguint les indicacions de la taula situada a l'apartat d'avaluació dels informes llegits, cal que feu l'avaluació d'un d'ells (el que us toqui ser avaluador), el complimenteu i el retorneu a l'autor per tal que el pugui lliurar a la bústia de lliuraments</p>
-                                <p>Durant la reunió cada un de vosaltres ha de vetllar i assegurar-se que els demés membres entenen l'esquelet presentat i el paper que juga en la globalitat del projecte. Concretament l'especialista en disseny modular ha de procurar que quedin ben clares:</p>
-                                <ul>
-                                    <li>La seqüencialitat del seu disseny plasmada en el mapa de punts de control.</li>
-                                    <li>La coherència de la informació i dels paràmetres en cada funció de l'esquelet. Concretament caldrà:
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Mantenir les dades juntes i organitzades en una estructura, no garanteix però, la coherència interna d'aquestes. La organització de les dades juga un paper molt important, però quan implementem aplicacions usant estructures de dades, serà també important vetllar per la coherència de les mateixes. Tenir un disseny de dades amb una estructura impecable, amb contingut incoherent vindria a ser com redactar una frase sintàcticament ben escrita però semànticament sense sentit ("la casa caminava lentament" és un exemple de frase ben construïda sintàcticament, però semànticament errònia).</p>
+                                    <p>Malauradament, els errors deguts a una incoherència interna de les dades d'una estructura són molt comuns i cal trobar maneres d'evitar-los. Ja sabem que no disposem de cap vareta màgica per trobar la solució, però sempre que codifiquem ens hauríem d'imposar trobar maneres d'evitar la incoherència o si més no de reduir-ne la possibilitat.</p>
+                                    <h4>incoherència en modificar les dades</h4>
+                                    <p>Les incoherències solen produir-se perquè sovint una acció sobre les dades pot implicar canvis en diversos elements de l'estructura. Si durant la codificació ens oblidem de fer algun dels canvis necessaris, ens trobarem davant d'un error realment difícil de detectar.</p>                                    
+                                    <p>Hi ha una manera d'evitar aquest tipus d'errades. Consisteix en crear operacions específiques que s'encarreguin de fer tots els canvis a la vegada. Caldrà identificar aquelles accions que modifiquin l'estructura en diversos llocs i en conseqüència siguin susceptibles de generar incoherències, i crear per aquestes una funció encarregada de fer l'acció de forma sempre complerta i correcta. És aconsellable mantenir totes les funcions específiques d'una mateixa estructura de dades agrupades en una classes que podem anomenar <em>gestorDeDades</em>.</p>
+                                    <p>Imaginem que hem de gestionar una estructura que contingui una llista variable de dades. Per exemple, imaginem que hem de codificar el registre d'alumnes matriculats d'una escola. El nombre d'alumnes que es matricularan és impossible de saber a priori. Si s'opta per crear una estructura amb un comptador de matriculats, a més de l'array de dades dels alumnes, tindrem una estructura semblant a:</p>
+                                    <pre><code class="java">
+package ioc.m03.uf2;
+
+public class DadesAlumnes {
+    public String[] alumnes;
+    public int matriculats;
+}
+                                    </code></pre>
+                                    <p>Com es pot suposar, cada cop que fem una matrícula, cal afegir el nom de l'alumne a una posició lliure de l'array <em>alumnes</em> i cal actualitzar el valor de l'element matriculats. També caldria fer quelcom semblant per donar de baixa una matrícula, etc.</p>
+                                    <p>Per gestionar aquestes accions sense errades, decidim crear una classe específica, anomenada GestorDadesAlumnes, encarregada d'implementar accions d'alt nivell sobre instancies del tipus compost <em>DadesAlumnes</em>:</p>
+                                    <pre><code class="java">
+package ioc.m03.uf2;
+
+public class GestorDadesAlumnes {
+    
+    public void novaMatriculaAlumne(DadesAlumnes dades, String alumne){
+        dades.alumnes[dades.matriculats]=alumne;
+        dades.matriculats++;
+    }
+    
+    public void baixaAlumne(DadesAlumnes dades, int posicio){
+        for(int i=posicio; i&lt;dades.matriculats; i++){
+            dades.alumnes[i]=dades.alumnes[i+1];
+        }
+        dades.matriculats--;
+    }
+    
+    ...
+}
+                                    </code></pre>
+                                    <p>D'aquesta manera, si a la implementació de l'aplicació es fa servir sempre la funció del gestor, les dades seran sempre coherents.</p>
+                                    <h4>incoherència en la inicialització de les dades</h4>
+                                    <p>La inicialització de les dades d'una estructura també acostuma a ser una font d'incoherències i errades, ja que algunes vegades, abans de fer servir una instancia de tipus compost és necessari donar valors específics a alguns dels seus elements per tal que les seves dades siguin coherents, o s'ajustin al que s'espera. En ocasions n'hi haurà prou només inicialitzant un array a la dimensió correcta o instanciant els tipus compostos interns.</p>
+                                    <p>Per exemple, en el cas anterior de la gestió de matrícules, necessitarem dimensionar l'array d'alumnes a la mida màxima abans de començar a treballar. Com que la mida màxima dependrà del renom de l'escola, del municipi/barri on estigui i fins i tot de l'any en que es faci la matrícula, es pot optar per deixar la dimensió configurable en el moment de començar. Podem encarregar al gestor de dades GestorDadesAlumnes l'acció de crear i d'inicialitzar una instancia dimensionada a una mida especificada des de paràmetre, estimada per l'ajuntament:
+</p>
+                                    <pre><code class="java">
+  public DadesAlumnes crearDadesAlumnes(int dimensio){
+        DadesAlumnes dades = new DadesAlumnes();
+        dades.alumnes=new String[dimensio];
+        return dades;
+    }
+                                    </code></pre>
+                                    <p>Noteu que a JAVA, tots els tipus simples (short, int, long, float, double, char, ...) s'inicialitzem sempre a zero i per tant no és necessari indicar-ho a la inicilització.</p>
+                                    <h4>altres usos del gestor de dades</h4>
+                                    <p>La classe especifica de gestió de les dades de l'estructura, pot contenir a més de les funcions que que ajudin a minimitzar la incoherència, totes aquelles altres que considerem útils per ajudar-nos a manipular l'estructura de dades. De fet aquestes classes poden admetre funcions de consulta, de càlcul, etc. Sovint és molt més senzill cridar una funció i esperar el resultat que haver de pensar con tractar l'estructura per obtenir el resultat desitjat, sobretot si cal repetir diverses vegades un tractament determinat. Tot allò que ens ajudi a tractar les dades específiques de l'estructura pot tenir cabuda dins la classe.</p>      
+                                    <p>Seguint doncs, els consells que acabeu de llegir, implementeu un classe anomenda GestorDeDadesCicliCat on hi posareu totes les funcions que us ajudin a mantenir la coherència de l'estructura creada i us ajudin a tractar les seves dades.</p>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-gestorDeDades" 
+                                            data-selector-clue="#slc-gestorDeDades-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-gestorDeDades-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Repasseu mentalment el disseny descendent elaborat a l'anterior activitat, tingueu també present l'estructura elaborada i amb tot, intenteu trobar quines funcions necessitareu per fer el tractament de les dades:</p>
                                         <ul>
-                                            <li>Adaptar el paràmetres que representaven una estructura de dades, a les estructures reals codificades per l'especialista d'estructures.</li>
-                                            <li>Assegurar que la informació continguda a l'estructura és la que es va suposar quan es va realitzar l'esquelet. En cas que no fos així caldrà consensuar la millor solució entre tots.</li>
+                                            <li><p>Plantegeu-vos quines dades de l'estructura necessitaran un valor específic, a quines els caldrà crear una instancia, dimensionar un array, etc.
+                                          imaginar quines dades seran necessàries a l'hora d'implementar cada una de les tasques dels mòduls del projecte. Comproveu en cada cas si les dades necessàries es poden obtenir a partir de l'estructura de dades que estigueu dissenyant.</p></li>
+                                            <li>Plantegeu-vos també en quins cases cal manipular diverses dades, les qual han de relacionar-se coherentment amb la resta.</li>
+                                            <li>Cerqueu també quins tractaments especials requereixen les dades: funcions de consulta, de verificació de dades de la pròpia estructura, etc. </li>
                                         </ul>
-                                    </li>
-                                    <li>La raó de la divisió de classes i paquets a fi que tothom tingui molt clar de què s'encarrega cada classe i quin és l'objectiu de cada funció. Per aconseguir-ho, pot ajudar-se del seu javadoc.</li>
-                                </ul>
-                                
-                                <p>L'especialista d'Estructura de dades, per la seva banda haurà d'assegurar que que tots entenen:</p>
-                                <ul>
-                                    <li>El perquè de l'estructura. Quin paper juga cada element de l'estructura en referència a la informació que l'aplicació necessita</li>
-                                    <li>Com accedir a l'estructura. És a dir, en quins casos es pot accedir directament als elements de l'estructura i en quins caldrà usar el gestor de dades per assegurar la coherència interna.</li>
-                                    <li>Deixar clar on s'ha d'instanciar l'estructura (o estructures) de dades de l'aplicació i quantes instancies calen.</li>
-                                    <li>Assegurar que la informació planificada (cada un dels ítems de l'estructura) arribarà allà on es va preveure durant el disseny i per tant existeix una funció en l'esquelet de l'especialista del disseny modular que fa el que es va preveure malgrat es desconeixia encara la funció. A més, caldrà assegurar que des del punt on s'instanciarà l'estructura de dades, existeix un seqüencia de crides amb el pas de paràmetres adient a fi de fer arribar la instancia correctament inicialitzada a les funcions on realment siguin necessàries (seqüència de pas de paràmetres).</li>
-                                </ul>
-                                
-                                <p>Finalment, l'especialista de biblioteques també vetllarà per deixar clara la seva visió:</p>
-                                <ul>
-                                    <li>Necessitat de crear interfícies amb certa estandardització: Quins elements podem identificar en una interfície de consola?</li>
-                                    <li>Utilitat de les funcions de les biblioteques que heu planificat. Quan i com es poden fer servir. Segur que el javadoc us serà útil en aquest cas.</li>
-                                </ul>
-                                <p>Al final d'aquesta sessió cal deixar constància dels canvis que requerirà el codi per tal de fer-se compatible (reanomenament de paràmetres, paquets i funcions, fusió/divisió de classes o paquets, re-ubicació de classes en paquets i de funcions en classes diferents a les previstes, etc). En cas que els canvis siguin molt petits es podria optar per realitzar-los durant la reunió, però en tot cas malgrat es posposin per tenir-los en compte durant la planificació, cal deixar constància escrita els canvis a realitzar</p>
-                                
-                                
-                            </div> 
+                                    </div>  
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-gestorDeDades" 
+                                            data-selector-clue="#slc-gestorDeDades-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-gestorDeDades-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>En pro de la reutilització, no és un bona idea que les funcions mostrin les dades per la pantalla. És preferible que les dades calculades o els resultats obtinguts es retornin com a paràmetres de sortida, mitjançant la opció de retorn o bé fent servir tipus de dades que passin com a paràmetres per referència.</p>
+                                    </div>  
+                                </div> 
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <!--=========== END SECTION integracio ================-->    
+                </section>
+                <!--=========== END SECTION gestor de dades ================-->    
+                <!--=========== BEGIN SECTION biblioteques ================-->    
+                <section id="slc-integracio" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar-Implementació I</h2>
+                                     <h3 > <span class="tascaTitle">Tasca</span> - Implementació de les biblioteques</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Per últim, i malgrat que no sigui imprescindible, resulta molt aconsellable  </p>
+                                
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SECTION integracio ================-->    
 
-            <!--=========== BEGIN SECTION planificacio ================-->    
-            <section id="slc-planificacio" class="section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class= "headSlide">
-                                 <h2 >Integració I- planificació</h2>
-                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class=bodySlide>
-                                <p>El bloc de planificació consisteix en avaluar la feina a fer durant el següent període i repartir-la equitativament entre tots els membres.</p>
-                                <p>El nou coordinador assumirà la creació del projecte de netbeans afegint tot el fitxers de codi dels companys, amb els canvis acordats en el bloc anterior. A banda d'això, durant el proper període està previst de codificar les funcions planificades per l'especialista de <em>biblioteques</em> i també las del gestor de l'estructura de dades, planificades per l'especialista en <em>estructura de dades</em>.</p>
-                                <p>En general les funcions de biblioteques reutilitzables i dels gestors de dades són peces de codi molt independents que probablement podran implementar-se per separat de forma completa. És important començar la implementació per les peces de codi més independents perquè això facilitarà la codificació de funcions que hagin de fer crides a les primeres, doncs podran ser funcionals (faran el que han de fer i per tant es podran provar) des de la primera línia de codi.</p>
-                                <p>Tot i així, de vegades, podem trobar-nos que certes funcions de les biblioteques reutilitzables han de cridar altres funcions de biblioteques que s'estaran implementant a l'hora. En cas que això succeeixi, si fos possible, a l'hora de fer el repartiment intenteu atorgar a una mateixa persona les funcions dependents de manera per tal de reduir el problema. Si no fos possible, degut a que la càrrega de feina quedés molt descompensada, podreu dur a terme la implementació de les funcions dependent fent servir l'esquelet, ja que podreu fer crides sense que això doni error. El problema d'aquesta alternativa és que obliga a tornar a fer proves un cop s'implementi la funció cridada per verificar el bon funcionament real.</p>
-                                <p>Feu el repartiment de tal manera que la càrrega de feina quedi ben equilibrada, comptant també la feina extra del coordinador que haurà de fer immediatament després d'aquesta reunió (creació del projecte netbeans i realització dels canvis acordats), per tal de facilitar la feina dels altres assegurant que tothom parteix de la mateixa versió inicial i evitar així posteriors problemes d'incompatibilitat. Així que el coordinador hagi creat el projecte amb els canvis acordats, ho enviarà al <span class="forumTreball">fòrum del grup de treball  </span> per tal que pugueu començar a treballar l'abans possible.</p>
-                            </div> 
-                        </div>
-                    </div>
-                </div>
             </section>
-            <!--=========== END SECTION planificació ================-->    
-
+            <!--=========== END SECTION implementació ================-->    
             <!--=========== BEGIN SECTION toDelivery ================-->    
             <section id="slc-toDelivery">
                 <div class="container">
@@ -296,21 +423,21 @@
         <a id="panel-close" href="#" class="panel-close btn btn-light pull-right toggle"><i class="glyphicon glyphicon-remove-circle"></i></a>
         <div id="goals_info" class="bodySlide hidden"> 
             <h2>Objectius d'aprenentatge de l'activitat</h2>
-            <div class="marquee centerSlide iocwarning"> <img src="images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
             <p>Aquí s'afegiran els objectius específics d'aprenentatge treballats en aquesta activitat</p>
 
             <h2>Resultats d'aprenentatge del mòdul treballats en aquesta activitat</h2>
-            <div class="marquee centerSlide iocwarning"> <img src="images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
             <p>Aquí s'afegiran els resultats d'aprenentatge del mòdul que es treballen en aquesta activitat</p>
         </div>
         <div id="more_reinforcement" class="hidden"> 
             <h2>Més activitats i idees per reforçar l'aprenentatge</h2>
-            <div class="marquee centerSlide iocwarning"> <img src="images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
             <p>Aquí s'afegiran exercicis, activitats, lectures o referencies externes per tal que l'estudiant, pugui reforçar el conceptes estudiats </p>
         </div>
         <div id="more_info" class="hidden"> 
             <h2>Informació sobre funcions  per ampliar</h2>
-            <div class="marquee centerSlide iocwarning"> <img src="images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
             <p>Aquí s'afegiran lectures, activitats referències externes o bibliografia on l'estudiant, pugui ampliar l'aprenentatge si ho desitja</p>
         </div>
     </div>
