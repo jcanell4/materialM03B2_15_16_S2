@@ -111,15 +111,9 @@
                         <div class="col-lg-12">
                              <div class=bodySlide>
                                 <p>Abans de començar a implementar l'esquelet que heu dissenyat a l'activitat anterior, convindria plantejar-se aquí, quina estructura de dades acabarem fent servir i quines funcions específiques necessitarem per tractar aquestes dades de forma coherent. També ens plantejarem quines funcions de biblioteca creiem que necessitarem i intentarem implementar-les.</p>
-
-
-
+                                <p>Us proposem 3 tasques, dues d'obligatòries i una d'opcional. A la primera tasca se us demanarà de dissenyar i implementar l'estructura de dades seguint uns criteris que us poden ajudar. A la segona haureu d'implementar funcions bàsiques de manipulació de les dades de l'estructura.</p>
+                                <p>La tercera tasca és opcional. Malgrat tot, us aconsellem que intenteu fer-la per poc que pugueu, ja que us pot ser de gran ajuda per implementar l'aplicació de forma més ràpida i amb menys errors.</p>
                                 
-                                <p>Aquesta és la primera activitat d'integració. L'activitat consisteix en dur a terme una reunió per tal d'aconseguir integrar tota la feina realitzada de forma individual, en un únic projecte, fer els canvis pertinents per tal d'aconseguir coherència i compatibilitat de totes les parts i fer la planificació de les tasques individuals del següent període.</p>
-                                <p>La reunió doncs estarà dividia en dos blocs, el bloc d'integració i el bloc de planificació. En els següents apartats teniu les instruccions per guiar cadascun dels blocs.</p>
-                                <p>El coordinador del grup convocarà un reunió, així que tots els informes de l'activitat A502 s'hagin publicat en el fòrum de grup. És responsabilitat del coordinador, vetllar per a complir els objectius del període en que us trobeu i en darrer terme, per a finalitzar el projecte amb èxit. Per tant, haurà de procurar que tothom lliuri l'informe puntualment per tal de poder finalitzar el període sense retards i en cas que no sigui possible avaluar els possibles riscos, comunicant-ho a la resta de membres i si fos necessari al professor de l'aula per tal de poder reconduir situacions complicades amb el mínim perjudici possible.</p>
-                                <p>Cal que abans d'iniciar la reunió cada membre del grup s'hagi llegit l'informe dels seus companys i prepari una bateria de preguntes amb les clarificacions que consideri necessàries. L'objectiu final, ha de ser que tothom entengui la feina realitzada pels seus companys i el paper que aquesta juga en la globalitat  del projecte.</p>
-                                <p>Com és habitual, en finalitzar ambdós blocs de la reunió, el vigent secretari haurà de realitzar l'acta de la reunió i escriure-la en un fil del fòrum anomenat <em>A503 Acta d'integració I</em>.</p>
                              </div>
                         </div>
                     </div>
@@ -310,7 +304,7 @@ public class GestorDadesAlumnes {
                                     <p>Noteu que a JAVA, tots els tipus simples (short, int, long, float, double, char, ...) s'inicialitzem sempre a zero i per tant no és necessari indicar-ho a la inicilització.</p>
                                     <h4>altres usos del gestor de dades</h4>
                                     <p>La classe especifica de gestió de les dades de l'estructura, pot contenir a més de les funcions que que ajudin a minimitzar la incoherència, totes aquelles altres que considerem útils per ajudar-nos a manipular l'estructura de dades. De fet aquestes classes poden admetre funcions de consulta, de càlcul, etc. Sovint és molt més senzill cridar una funció i esperar el resultat que haver de pensar con tractar l'estructura per obtenir el resultat desitjat, sobretot si cal repetir diverses vegades un tractament determinat. Tot allò que ens ajudi a tractar les dades específiques de l'estructura pot tenir cabuda dins la classe.</p>      
-                                    <p>Seguint doncs, els consells que acabeu de llegir, implementeu un classe anomenda GestorDeDadesCicliCat on hi posareu totes les funcions que us ajudin a mantenir la coherència de l'estructura creada i us ajudin a tractar les seves dades.</p>
+                                    <p>Seguint doncs, els consells que acabeu de llegir, implementeu un classe anomenda GestorDeDadesCicliCat on hi posareu totes les funcions que us ajudin a mantenir la coherència de l'estructura creada i us ajudin a tractar les seves dades. Recordeu que algunes d'aquestes funcions ja les heu implementat a les activitats A404 i A407.</p>
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                             data-toggle="button"
@@ -348,7 +342,7 @@ public class GestorDadesAlumnes {
                 </section>
                 <!--=========== END SECTION gestor de dades ================-->    
                 <!--=========== BEGIN SECTION biblioteques ================-->    
-                <section id="slc-integracio" class="tasca section">
+                <section id="slc-biblioteques" class="tasca section">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
@@ -361,8 +355,69 @@ public class GestorDadesAlumnes {
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Per últim, i malgrat que no sigui imprescindible, resulta molt aconsellable  </p>
-                                
+                                    <p>Per últim, i malgrat que no sigui imprescindible, pot resultar molt aconsellable implementar també un biblioteca d'utilitats i funcions reutilitzables que ens pugui facilitar la codificació de l'aplicació. A l'activitat A501, ja vàreu començar a implementar una biblioteca estàtica d'utilitats per tractar cadenes. Aquí us proposem que de manera opcional implementeu una biblioteca reusable que us serveixi d'ajuda per crear qualsevol interfíci d'usuari de tipus consola. A les activitats A404 i A405, vareu implementar les funcions <em>EntrarText</em> i <em>EntrarUnEnter</em>. Si t'hi fixes, són funcions que faciliten la demanda de dades (text o enters) a través de consola i son prou genèriques i estan prou parametritzades com per poder-les usar en qualsevol situació.</p>
+                                    <p>Agrupeu doncs, ambdues funcions en una classe i amplieu la implementació amb altres funcions que us puguin ajudar a crear interfícies d'usuari. Recordeu que aquí les funcions ha de ser genèriques i han d'estar parametritzades per tal que es puguin fer servir en múltiples contextos i situacions. </p>
+                                    <p>Per exemple, podeu implementar una funció que us ajudi a mostrar les opcions d'un menú i demani a l'usuari que seleccioni una de les opcions mostrades. O potser podeu implementar una funció que permeti mostrar per pantalla, en un format determinat els títols d'una pantalla a fi que l'usuari pugui identificar sempre on es troba. O mostrar un missatge d'error fent servir un format específic d'errades. També podríeu implementar una funció que permeti escriure un nombre fix de salts de línia de forma que simuli una neteja de pantalla a fi de poder començar a escriure amb la consola neta de missatges anteriors. </p>
+                                     <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-biblioteques" 
+                                            data-selector-clue="#slc-biblioteques-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-biblioteques-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Suposa que la funció menú pugui mostrar per pantalla totes les opcions d'un menú identificades per un número o un caràcter i després de demanar a l'usuari que seleccioni una opció, retorni la opció escollida. Quins paràmetres creieu que hauria de rebre una funció que pugui ajudar a implementar menús, tenint en compte que cada menú tindrà diferents opcions? Intenta sistematitzar la presentació dels menús. Què creus que pot identificar cada una de les opcions del menú? Tenint en compte això, quin tipus de dada caldria demanar a l'usuari? I per tant, quin tipus de dada creus que hauria de retornar la funció</p>
+                                    </div>  
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-biblioteques" 
+                                            data-selector-clue="#slc-biblioteques-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-biblioteques-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>A l'hora de crear interfícies d'usuari de qualsevol aplicació, és important que els usuaris puguin identificar la categoria dels diferents missatges i textos de la pantalla gràcies a la seva situació i format. Aquesta identificació permet a l'usuari cercar la informació de forma més ràpida i predisposar-se a llegir el text amb major o menor atenció, segons l'activitat del moment.</p>
+                                        <p>Així, per exemple podríem definir que cada pantalla de la nostra aplicació contingués a a la part superior dos títols identificant l'aplicació o la pantalla. Per tal d'identificar fàcilment els títols, es podrien formatar d'una forma específica que ajudés a identificar-los. Per exemple: </p>
+                                        <pre>
+************************************************************
+**               Volta Ciclista a Catalunya               **
+**                     Menú principal                     **
+************************************************************                                        </pre>
+                                        <p>També podem identificar de forma específica els missatges informatius que indiquin com ha anat una determinada operació:</p>
+                                        <pre>
+------------------------------------------------------------
+Inscripció realitzada correctament
+------------------------------------------------------------
+                                        </pre>
+                                        <p>O ressaltar els errors de forma prou contrastada per captar l'atenció del client:</p>
+                                        <pre>
+************************************************************
+************************************************************
+**                         ERROR                         **
+************************************************************
+************************************************************
+************************************************************
+L'equip al que voleu inscriure el ciclista
+ ja està complert. La inscripció no és possible.
+************************************************************
+************************************************************                                        
+                                        </pre>
+                                    </div>  
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-biblioteques" 
+                                            data-selector-clue="#slc-biblioteques-clue3">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-biblioteques-clue3" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
+                                        <p>Podeu ampliar les funcions segons se us vagin acudint idees. Per exemple potser us podria ser útil afegir una funció que demani prémer la tecla [ENTRAR] per continuar executant. Segur que resulta molt útil per deixar que l'usuari pugui llegir textos llargs com llistes o informes, abans de tornar a demanar noves opcions d'un menú.</p>
+                                    </div>  
                                 </div> 
                             </div>
                         </div>
@@ -378,15 +433,17 @@ public class GestorDadesAlumnes {
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Lliurament - Integració I</h2>
+                                 <h2 >Lliurament -Implementació I</h2>
                              </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-                                <p>En aquest cas, caldrà empaquetar en format zip, el vostre informe degudament avaluat, junt amb una copia de l'informe en que heu estat avaluador i lliurar-lo a la <span class="bustiaLliurament"></span>.</p>
-                                <p>És molt important seguir el calendari establert a fi de facilitar la feina de l'equip i evitar retards que puguin comportar conseqüències negatives. Per tant, procureu  lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
+                                <p>Baixa't l'<span class="informeLliurament"></span> d'aquesta activitat i omple'l per poder fer el lliurament, ja que bàsicament, aquesta és una activitat de seguiment que serveix com indicador per verificar que avanceu correctament. El professor restarà atent al lliurament de l'informe on indicaràs si has aconseguit implementar l'estructura de dades, les funcions del gestor de dades i les biblioteques que se t'han demanat a les diverses tasques. En cas que hagis tingut dificultats, pots exposar-les a l'informe a fi que puguem donar-te una resposta durant la retroacció.</p>
+                                <p>Només cal que enviïs l'informe. Malgrat tot, si ho creus necessari, pots enviar més d'un fitxer empaquetant-los tots junts en un fitxer ZIP que penjareu a la <span class="bustiaLliurament"></span>.</p>
+                                <p>Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
+                                <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu, ja que el professor podrà avaluar l'evolució del projecte i si cal us donarà un cop de mà. </p>
                             </div>
                         </div>
                     </div>
@@ -399,14 +456,14 @@ public class GestorDadesAlumnes {
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Com continuar</h2>
+                                 <h2 >Com continuar - Implementació I</h2>
                              </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-            <div class="marquee centerSlide iocwarning"> <img src="images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
                                 <p>Passeu a la següent <a class="toNextActivity">activitat</a></p>
                             </div>
                         </div>
