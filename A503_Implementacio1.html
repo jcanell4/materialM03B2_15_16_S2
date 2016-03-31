@@ -44,6 +44,9 @@
                     <a href="#" onclick = 'return $("#goals_info").togglePanelOnClick();'>Objectius</a>
                 </li>
                 <li>
+                    <a class="toProjectStatement" onclick = '$("#menu-close").click();' >Enunciat del projecte</a>
+                </li>
+                <li>
                     <a href="#" onclick ='return $("#more_reinforcement").togglePanelOnClick(); '>Per reforçar</a>
                 </li>
                 <li>
@@ -304,7 +307,9 @@ public class GestorDadesAlumnes {
                                     <p>Noteu que a JAVA, tots els tipus simples (short, int, long, float, double, char, ...) s'inicialitzem sempre a zero i per tant no és necessari indicar-ho a la inicilització.</p>
                                     <h4>altres usos del gestor de dades</h4>
                                     <p>La classe especifica de gestió de les dades de l'estructura, pot contenir a més de les funcions que que ajudin a minimitzar la incoherència, totes aquelles altres que considerem útils per ajudar-nos a manipular l'estructura de dades. De fet aquestes classes poden admetre funcions de consulta, de càlcul, etc. Sovint és molt més senzill cridar una funció i esperar el resultat que haver de pensar con tractar l'estructura per obtenir el resultat desitjat, sobretot si cal repetir diverses vegades un tractament determinat. Tot allò que ens ajudi a tractar les dades específiques de l'estructura pot tenir cabuda dins la classe.</p>      
-                                    <p>Seguint doncs, els consells que acabeu de llegir, implementeu un classe anomenda GestorDeDadesCicliCat on hi posareu totes les funcions que us ajudin a mantenir la coherència de l'estructura creada i us ajudin a tractar les seves dades. Recordeu que algunes d'aquestes funcions ja les heu implementat a les activitats A404 i A407.</p>
+                                    <p>Seguint doncs, els consells que acabeu de llegir, implementeu un classe anomenda GestorDeDadesCicliCat on hi posareu totes les funcions que us ajudin a mantenir la coherència de l'estructura creada i us ajudin a tractar les seves dades. Implementeu aquestes funcions, ja que coneixeu ja l'estructura de dades i sabeu que han de fer.</p>
+                                    <p>És important que recordeu  que es tracta de funcions auxiliars. Heu de suposar que totes les dades entre i surten via paràmetres / retorn. Més endavant ja implementareu les demandes explicites de dades i les sortides per la pantalla. No us precipiteu. Aquí només cal implementar funcions de tractament  de les dades.</p>
+                                    <p>Recordeu també que algunes d'aquestes funcions ja les heu implementat a les activitats A404 i A407.</p>
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                             data-toggle="button"
@@ -355,7 +360,7 @@ public class GestorDadesAlumnes {
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Per últim, i malgrat que no sigui imprescindible, pot resultar molt aconsellable implementar també un biblioteca d'utilitats i funcions reutilitzables que ens pugui facilitar la codificació de l'aplicació. A l'activitat A501, ja vàreu començar a implementar una biblioteca estàtica d'utilitats per tractar cadenes. Aquí us proposem que de manera opcional implementeu una biblioteca reusable que us serveixi d'ajuda per crear qualsevol interfíci d'usuari de tipus consola. A les activitats A404 i A405, vareu implementar les funcions <em>EntrarText</em> i <em>EntrarUnEnter</em>. Si t'hi fixes, són funcions que faciliten la demanda de dades (text o enters) a través de consola i son prou genèriques i estan prou parametritzades com per poder-les usar en qualsevol situació.</p>
+                                    <p>Per últim, i malgrat que no sigui imprescindible, pot resultar molt aconsellable implementar també un biblioteca d'utilitats i funcions reutilitzables que ens pugui facilitar la codificació de l'aplicació. A l'activitat A501, ja vàreu començar a implementar una biblioteca estàtica d'utilitats per tractar cadenes. Aquí us proposem que de manera opcional implementeu una biblioteca reusable que us serveixi d'ajuda per crear qualsevol interfíci d'usuari de tipus consola. A les activitats A404 i A405, vareu implementar les funcions <em>EntrarText</em>, <em>EntrarUnEnter</em>, etc. Si t'hi fixes, són funcions que faciliten la demanda de dades (text, enters, ...) a través de consola i son prou genèriques i estan prou parametritzades com per poder-les usar en qualsevol situació.</p>
                                     <p>Agrupeu doncs, ambdues funcions en una classe i amplieu la implementació amb altres funcions que us puguin ajudar a crear interfícies d'usuari. Recordeu que aquí les funcions ha de ser genèriques i han d'estar parametritzades per tal que es puguin fer servir en múltiples contextos i situacions. </p>
                                     <p>Per exemple, podeu implementar una funció que us ajudi a mostrar les opcions d'un menú i demani a l'usuari que seleccioni una de les opcions mostrades. O potser podeu implementar una funció que permeti mostrar per pantalla, en un format determinat els títols d'una pantalla a fi que l'usuari pugui identificar sempre on es troba. O mostrar un missatge d'error fent servir un format específic d'errades. També podríeu implementar una funció que permeti escriure un nombre fix de salts de línia de forma que simuli una neteja de pantalla a fi de poder començar a escriure amb la consola neta de missatges anteriors. </p>
                                      <!-- Button trigger pannel -->
