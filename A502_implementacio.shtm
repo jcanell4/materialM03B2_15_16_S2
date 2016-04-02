@@ -60,7 +60,7 @@ public class ModulXXX {
     
     ...
     
-    public void pantallaPerAfegirCiclistes(DadesCiclicat dades){}
+    public void tascaAfegirCiclistes(DadesCiclicat dades){}
         //A CODIFICAR
     }
     
