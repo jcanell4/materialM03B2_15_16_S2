@@ -167,8 +167,9 @@
                             <div class="col-lg-12">
                                 <div class=bodySlide>
                                     <p>La darrera tasca d'aquesta activitat, consistirà en dissenyar i implementar la interfície de l'usuari del nostre projecte. En primer lloc caldrà detectar on serà necessari escriure codi destinat a intercanviar informació amb els usuaris de l'aplicació. Feu servir el sentit comú, però d'entrada, segur que els menús necessiten mostrar les opcions a seleccionar i requerir a l'usuari que n'esculli una. D'altra banda, com ja heu vist, les tasques, tal com les hem descrit, són unitats complertes de processament que impliquen a la vegada, el processament de les accions que les composen. Almenys dues d'aquestes accions han de fer referència a l'entrada i sortida de dades (en el nostre cas les dades es demanaran i mostraran sempre a l'usuari). Generalment seran les accions primera i darrera seguint l'ordre d'execució i segurament respondran a noms com <em>demanarXXX</em>, <em>mostrarYYY</em>, o similars. Penseu que fins i tot les tasques que no calculin resultat i per tant no hagin de mostrar res per pantalla, haurien de tenir una funció de sortida (segons els criteris de qualitat), ni que sigui per informar que els procediment s'ha realitzat i indicar-li si s'han acabat amb èxit o no.</p>
-                                    <p>Recupereu els criteris de qualitat que heu analitzat a la <a href="#slc-discussion__slc-discussion24">secció de fòrums</a> i planifiqueu cada una de les pantalles de les tasques. Recordeu que cada una d'elles hauria de disposar d'un títol específic que doni informació a l'usuari de la pantalla on es troba. Panifiqueu la informació a donar a l'usuari a fi que sàpiga sempre el que a de fer i intenteu estandarditzar les pantalla tant com us sigui possible a fi d'homogeneïtzar-les i facilitar els seu aprenentatge.</p>
-                                    <p>No cal que implementeu aquí les funcions que no siguin d'interfície, deixeu aquesta codificació per la darrera activitat. Ara, només cal que us centreu en codificar les funcions de la interfície. Ara bé, per tal que pugueu fer proves executant l'aplicació, podeu codificar les funcions que no siguin d'interfície d'usuari amb un <em>System.out.println("nomDeLaFuncio()");</em> si no ha de retornar res, i afegir un valor de retorn fictici en cas que la funció hagi de retornar una valor. Per exemple</p>
+                                    <p>Recupereu els criteris de qualitat que heu analitzat a la <a href="#slc-discussion__slc-discussion24">secció de fòrums</a> i planifiqueu cada una de les pantalles de les tasques. Recordeu que cada una d'elles hauria de disposar d'un títol específic que doni informació a l'usuari de la pantalla on es troba. Planifiqueu la informació a donar a l'usuari a fi que sàpiga sempre el que a de fer i intenteu estandarditzar les pantalla tant com us sigui possible a fi d'homogeneïtzar-les i facilitar els seu aprenentatge.</p>
+                                    <p>De moment, en aquesta tasca només us heu de centrar en la codificació de les funcions pròpies de la interfície (demanda de dades, mostra de resultats, llistes, etc.) i també en les verificacions de dades perquè aquestes últimes estan íntimament relacionades amb les funcions de demanda de dades, ja que si l'usuari fa una entrada errònia, caldrà avisar-lo i demanar-li que repeteixi l'acció.</p>
+                                    <p>No cal, però, que implementeu la resta de funcions que no siguin d'interfície o de verificació, ja ho fareu a la darrera la darrera activitat. Ara bé, per tal que pugueu fer proves executant l'aplicació, us proposem que a les funcions que no hagueu de codificar les ompliu amb un <em>System.out.println("nomDeLaFuncio()");</em> a fi de constatar la seqüència de crides durant l'execució. En cas que alguna funció hagi de retornar algun valor, caldrà afegir, a més de la impressió per pantalla del nom de la funció, un valor de retorn fictici. Per exemple</p>
                                     <pre><code class="java">
 ...
 public void guardarValor(EstructuraDeDades dades, int valor){
@@ -181,7 +182,7 @@ public int calcularValor(EstructuraDeDades dades){
 }
 ...
                                     </code></pre>
-                                    <p>D'aquesta manera podreu comprovar, a més de la interfície, la seqüencialitat de les accions i en simular el retorn de dades, podreu també comprovar les funcions destinades a mostrar els resultats obtinguts després d'un tractament. No cal que les dades siguin reals, ni que siguin gaire extenses, només fa falta simular el retorn de dades vàlides del tipus esperat.</p>
+                                    <p>D'aquesta manera podreu comprovar també si la seqüencialitat de les accions és correcte i, en simular el retorn de dades, podreu també provar les funcions destinades a mostrar els resultats obtinguts després d'un tractament. No cal que les dades siguin reals, ni que siguin gaire extenses, només fa falta simular un retorn de dades vàlides del tipus esperat.</p>
                                     <p>En cas que hàgiu creat una biblioteca genèrica per ajudar a crear interfícies d'usuari basades en consola, ara és el moment de fer-la servir. Malgrat tot, si no la teniu implementada, però teniu clares quines funcions hauria de tenir, podeu implementar-les a mida que les aneu necessitant, en una classe específica i independent de la resta, de manera que tingueu sempre les funcions disponibles per a ser utilitzades en les següents ocasions.</p>
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
@@ -322,6 +323,55 @@ public class ClassePrincipal{
 }
                                        </code></pre>
                                     </div>  
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo2" 
+                                            data-selector-clue="#slc-toDo2-clue3">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-toDo2-clue3" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
+                                        <p>Tingueu en compte a l'hora de validar les dades que l'usuari hagi d'entrar, que generalment serà necessari un bucle que permeti preguntar de nou el valor erroni. Valoreu també la possibilitat de permetre a l'usuari avortar un tasca durant la introducció de dades prement una tecla o combinació de tecles determinades. Exemple:</p>
+                                        <pre><code class="java">
+String obtenirData(){
+    String data;
+    boolean dataOk;
+    data = entrarCadena("Entra una data vàlida o [ENTRAR] per a cancel·lar?");
+
+    //Si l'usuari escriu una cadena buida indica que vol avortar la tasca
+    //Si la cadena no és buida, però no aconsegueix validar, caldrà repetir la demanda    
+    while(data.lenght()&gt;0 && !validarData(data)){
+            error("La data no era vàlida.")
+            data = entrarCadena("Entreu de nou una data vàlida:");
+    }
+    return data;
+}
+
+void afegirData(EstructuraDeDades dades){
+    String data = obtenirData();
+    //Si la data és buida cal avortar l'acció.
+    if(data.lenght()&gt;0){
+         //tractament ...
+    }else{
+        //Avisar que l'acció s'ha cancel·lat per ordre de l'usuari
+    }
+}
+                                        </code></pre>
+                                    </div>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo2" 
+                                            data-selector-clue="#slc-toDo2-clue4">
+                                        Pista 4
+                                    </button>                                        
+                                    <div id="slc-toDo2-clue4" class="iocClue hidden">
+                                        <h2>Pista 4</h2>
+                                        <p>Després de córrer cada etapa, els jutges han d'entrar els temps emprats per els corredors. Cal tenir en compte que els jutges indicaran les hores, minuts i segons que cada ciclista ha trigat. Podeu optar per recollir tren números enters, corresponent cada un d'ells a les hores, els minuts i els segons respectivament o bé, podeu optar per demanar una cadena amb el format "HH:MM:SS". Si opteu per la segona opció caldria verificar que el format és l'adequat.</p>
+                                    </div>
                                 </div> 
                             </div>
                         </div>
