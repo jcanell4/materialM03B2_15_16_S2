@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Activitat d'aprenetatge per introduir el concepte de funció i la operativa bàsica per a declarar-les i fer-les servir durant la codificació.">
+    <meta name="author" content="Alicia" >
+    <title>A505. Implementació III</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css"/>
+<!--    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">-->
+    <link rel="stylesheet" href="../js/styles/default.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Custom CSS -->
+    <!--link to css slides-->
+    <link href="../css/m03b2Activities.css" rel="stylesheet">
+    <link href="../css/scrolling-slides.css" rel="stylesheet">
+    <link href="../css/highlightActivities.css" rel="stylesheet">
+</head>
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top">
+<!-- Navigation hidden panel -->
+    <aside>
+        <a id="menu-toggle" href="#" class="btn btn-dark toggle after-top-menu" title="Informació"><i class="glyphicon glyphicon-info-sign"></i></a>
+        <nav id="sidebar-wrapper" class=" after-top-menu">           
+            <ul class="sidebar-nav">
+                <a id="menu-close" href="#" class="btn btn-light pull-right toggle">
+                    <i class="glyphicon glyphicon-remove-circle"></i>
+                </a>
+                <li class="sidebar-brand">
+                    <a href="#slc-toStart"  onclick = '$("#menu-close").click();' >Inici activitat</a>
+                </li>
+                <li>
+                    <a href="#" onclick = 'return $("#goals_info").togglePanelOnClick();'>Objectius</a>
+                </li>
+                <li>
+                    <a class="toProjectStatement" onclick = '$("#menu-close").click();' >Enunciat del projecte</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_reinforcement").togglePanelOnClick(); '>Per reforçar</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_info").togglePanelOnClick(); '>Més informació per ampliar</a>
+                </li>
+            </ul>
+        </nav>
+        <nav id="bottom-wrapper">
+             <!-- SCROLL PREVIOUS BUTTON -->
+            <span id="prevArrow" class="btn arrownav previousSection" ></span>
+            <!-- END SCROLL PREVIOUS BUTTON -->
+             <!-- SCROLL NEXT BUTTON -->
+            <span id="nextArrow" class="btn arrownav nextSection" ></span>
+            <!-- END SCROLL NEXT BUTTON -->
+        </nav>        
+    </aside>
+    <!--=========== BEGIN HEADER SECTION ================-->
+     <header id="header">
+         <!-- BEGIN TOP MENU -->
+        <div class="menu_area">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+                <!-- LOGO -->
+                <span class="navbar-brand navbar-left logo-nav"><img src="../images/logo.png" title="{{$LOGO_TITLE}}" /></span>
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                    <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                          <span class="sr-only">Menú</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
+                          <li class="active"><a href="#slc-toStart">Inici</a></li> 
+                          <li><a href="#slc-toDo">Tasques a realitzar</a></li>
+                          <li><a href="#slc-toDelivery">Lliurament</a></li> 
+                          <li><a href="#slc-toContinue">Com continuar</a></li> 
+                        </ul>           
+                    </div>
+                </div>     
+            </nav>  
+        </div>
+        <!-- END TOP MENU -->
+   </header>
+    <!--=========== END HEADER SECTION ================-->
+    
+    <!--=========== BEGIN MAIN SLIDER SECTION ================-->    
+    <div id="mainSlider" class="iocMainPanel">
+        <div class="slides">
+            <!--=========== BEGIN SECTION toStart ================-->    
+            <section id="slc-toStart" class="section">
+                <div class="container">  <!--Bootstrap container-->
+                    <!-- header -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Inici activitat A505 - Implementació III</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- body -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <div class=bodySlide>
+                                <p>Aquesta és la darrera activitat d'implementació abans de lliurar tot el projecte. Per tant, caldrà centrar els esforços en anar acabant totes les tasques que ens quedin pendents. Fem una recapitulació per repassar el que ja tenim fet, així serà més fàcil reconèixer el que encara ens falta. A l'activitat anterior es van implementar les funcions que mostren (pantalles) i gestionen (controls) els menús de l'aplicació (el menú principal i el menú de cada mòdul). També es van implementar les funcions per gestionar les pantalles necessàries per executar les diferents tasques, entenent per pantalles la interfície de l'usuari que permet l'intercanvi d'informació:
+                                <ul>
+                                    <li>Impressió de títol/s informatius a la pantalla per recordar la tasca que s'està executant</li>
+                                    <li>Demanda de dades quan sigui necessari</li>
+                                    <li>Llista de dades si la tasca ho requereix</li>
+                                    <li>
+                                        Impressió de resultats o d'informació de com ha anat l'execució de la tasca
+                                        <ul>
+                                            <li>Mostra de resultats si la tasca en contempla</li>
+                                            <li>Informació de si la tasca ha tingut èxit quan no contempli la impressió de resultats</li>
+                                            <li>Indicació de les causes d'una execució anòmala, quan això passi.</li>
+                                        </ul>
+                                    </li>
+                                    <li>...</li>
+                                </ul>
+                                <p>En anteriors activitats, també es va implementar l'estructura de dades i una part important de les funcions del gestor de dades.</p>
+                                <p>També se us va demanar la implementació de les biblioteques Strings (amb utilitats pel tractament de cadenes) i InterficieConsola (amb utilitats per generar interfícies d'usuari basades en consola).</p>
+                                <p>A més, és probable que ja hagueu codificat la funció <em>main</em>, si en algun moment heu començat a fer proves d'execució.</p>
+                                <p>No us preocupeu si encara no teniu el 100% del codi descrit a la relació, hi ha cert marge de temps per contemplar imprevistos, retards i rectificacions.</p>
+                                <p>Passem així, a veure el que ens queda per implementar, que bàsicament són els tractaments de càlcul que no impliquen la intervenció de l'usuari. Cal tenir en compte però, que algunes de les funcions necessàries per a fer aquests tractaments ja estan implementades i per tant només caldrà encaixar-les amb el nou codi.</p>
+                                <p>També es dóna el cas que la implementació de tasques que impliquin la impressió per pantalla de llistats de dades bàsiques definides al codi(no elaborades), no requerira cap tractament específic al marge de les funcions pròpies d'interfície que ja hauríeu de tenir fetes.</p>
+                                <p>La resta de tasques que siguin llistats de dades són:</p>
+                                <ul>
+                                    <li>La inscripció de ciclistes</li>
+                                    <li>L'assignació dels temps invertits en córrer cada etapa</li>
+                                    <li>El llistat dels temps invertits</li>
+                                    <li>L' obtenció del guanyador de la competició</li>
+                                    <li>L' obtenció dels guanyadors dels premis patrocinats</li>
+                                </ul>
+                                <p>A la secció de <em>tasques a implementar</em> analitzarem en més detall cada una d'aquestes.</p>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toStart ================-->    
+            <!--=========== BEGIN SECTION implementació ================-->    
+            <section id="slc-toDo" class="vsections">
+                <!--=========== BEGIN SUBSECTION impl 1 ================-->    
+                <section id="slc-toDo1" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar-Implementació III</h2>
+                                     <h3 > <span class="tascaTitle">Tasca</span> - Llistats de dades no elaborades</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Entenem per dades no elaborades aquelles que no requereixen cap mena de tractament a l'hora de llistar-les. És a dir que es poden agafar directament de l'estructura de dades.</p>
+                                    <p>En aquest projecte podem considerar dades no elaborades les del llistat d'equips, d'etapes, de premis, i de ciclistes inscrits.</p>
+                                    <p>El fet de poder agafar les dades directament de l'estructura de dades sense precisar tractament, fa que la implementació d'aquests llistats sigui força senzilla. En cas que us quedi algun llistat per acabar, ara seria el moment de fer-ho. Recordeu que ja teniu implementada la funció per llistar els equips de la competició des de l'activitat A404. Agafeu aquest llistat com a model per implementar els que us faltin.</p>
+                                    <p>En el cas del llistat d'etapes, caldrà que completeu el llistat, amb la informació extra que indiqui quina és l'etapa més llarga i quina mida fa. Recordeu però, que ja teniu implementada la funció que troba la posició de l'etapa més llarga. Òbviament, tenint la posició podem obtenir qualsevol altra informació referent a aquesta etapa. És indiferent l'ordre en que mostreu aquesta informació, podeu optar per mostrar-la abans o després de llistat.</p>
+                                    <p>En aquesta tasca cal, per tant, que implementeu el codi que us falti per tal d'implementar els llistats de totes les dades especificades anteriorment.
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo1" 
+                                            data-selector-clue="#slc-toDo1-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-toDo1-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>No us oblideu que abans de fer servir l'estructura de dades caldrà inicialitzar-la. Seria bo pel projecte que definíssiu una funció per crear una instancia de l'estructura, inicialitzada de forma coherent amb les dades que conté immediatament després de la creació.</p>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION impl 1  ================-->    
+                <!--=========== BEGIN SECTION impl 2 ================-->    
+                <section id="slc-toDo2" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar-Implementació III</h2>
+                                     <h3 > <span class="tascaTitle">Tasca</span> - Inscripció de ciclistes</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>La inscripció de ciclistes és ja una tasca complexa. Us aconsellem que escriviu el disseny descendent de tota la tasca, així veureu el que ja teniu implementat i el que us falta.</p>
+                                    <p>Consulteu l'enunciat per a major detall, però a mode de resum direm que per poder inserir un ciclista cal indicar l'equip, el DNI, el nom i la data de naixement. El sistema verificarà:</p>
+                                    <ol>
+                                        <li>Que l'equip indicat existeix en el sistema i porta inscrits menys de 5 ciclistes</li>
+                                        <li>Que la data de naixement sigui vàlida.</li>
+                                    </ol>
+                                    <p>Si tot l'indicat en els punts anteriors es compleix, el sistema inscriurà al ciclista afegint a les dades indicades el dorsal en el format que l'enunciat indica.</p>
+                                    <p>Recordeu que ja teniu implementades, al menys, la validació de la data de naixement i també de l'equip.</p>
+                                    <p>Afegir ciclistes implica que el nombre d'inscrits a l'equip corresponent, creix a cada inscripció. Segons com hàgiu optat per solucionar aquest problema a l'activitat A503, necessitareu fer diferents tractaments que manipulin l'estructura per tal que es mantingui coherent.</p>
+                                    <p>La coherència, en el cas de la inscripció de ciclistes no només afecte al nombre variable de ciclistes afegits, sinó també al nombre de ciclistes comptabilitzats per equip.</p>
+                                    <p>Probablement ja tingueu implementada gran part de les accions que composarien aquesta tasca. Feu un repas del que us falti i acabeu-ho d'implementar-ho.</p>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo2" 
+                                            data-selector-clue="#slc-toDo2-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-toDo2-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Recorda que les instancies de classes que només contenen codi, poden crear-se tantes vegades com necessitem, però que això no passa amb els tipus compostos de dades. Per usar-los de forma coherent un cop creats, cal passar-los per paràmetre.</p>
+                                    </div>  
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SECTION impl 2 ================-->    
+                <!--=========== BEGIN SECTION impl 3 ================-->    
+                <section id="slc-toDo3" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar-Implementació III</h2>
+                                     <h3 > <span class="tascaTitle">Tasca</span> - Assignació dels temps invertits en cada etapa</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>El temps és una dada complexa que pot donar força maldecaps. En el nostre cas l'enunciat ens diu que el temps s'entrarà especificant les hores, els minuts i els segons emprats. Però aquesta dada expressada així només serveix per a fer el llistat de temps, però no pas per poder comparar entre valors a fi de descobrir quin és el ciclista guanyador.</p>
+                                    <p>Probablement ja us vàreu plantejar això, en el moment de definir l'estructura de dades. La solució no és trivial totes elles presenten pros i contres. Per si no heu acabat de resoldre-ho us proposem 3 possibles solucions:</p>
+                                    <ol>
+                                        <li>Emmagatzemar les dades en el format original, diferenciant les hores, els minuts i els segons. Aquest opció implica que serà necessari convertir el temps en segons cada cop que necessitem fer comparacions.</li>
+                                        <li>Emmagatzemar les dades convertint el format original en segons. Aquesta opció implica la pèrdua de l'entrada original i per tant requerirà d'un procés extra de conversió al format original de hores, minuts i segons cada cop que necessitem llistar els temps. A favor tindrem el fet que un cop convertit a segons i emmagatzemat, es pot usar per a fer comparacions de forma directa.</li>
+                                        <li>Emmagatzemar ambdós format a l'hora. En aquest cas es tracta de mantenir dues col·leccions de temps equivalents, el format d'entrada (hores, minuts i segons) i també la seva conversió a segons. Els avantatges d'aquesta opció és que un cop convertida l'entrada a segons i un cop emmagatzemats ambdós formats, l'accés a la informació per comparar valors o per llistar els temps no necessitat tractament en cap cas. És directa per ambdós. La contra d'aquesta opció ve donada per l'ús redundant de memòria i també per un possible problema de coherència si no es va en compte de modificar sempre ambdós valors a l'hora. Malgrat tot, és el més senzill d'implementar.</li>
+                                    </ol>
+                                    <p>Si aneu justs de temps, us aconsellem que trieu la segona opció i treballeu amb el temps en segons tal com vareu fer a una de les tasques de l'A407.</p>
+                                     <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo3" 
+                                            data-selector-clue="#slc-toDo3-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-toDo3-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Per demanar a l'usuari que entri el temps indicant les hores, els minuts i els segons, podeu optar per demanar-li 3 enters corresponents, respectivament, a les hores, els minuts i els segons, o be demanar-li que entri una cadena de format "HH:MM:SS".</p>
+                                        <p>Si decidiu la segona opció potser us interessi saber que:</p>
+                                        <ul>
+                                            <li>
+                                                Donada un cadena que contingui diverses dades compostes, separades per una seqüència de caràcter especial, podem invocar el mètode split de la mateixa, passant-li com a paràmetre quin és el valor separador. Això ens retornarà un array amb tantes cadenes com el nombre de dades en que es trobava composta la cadena.
+                                                <div class="iocexample">
+<pre><code class="java">
+String[] valors;
+String cadena = "25:10:01";
+
+valors = cadena.split(":"); //això retorna una array equivalent a: {"25", "10", "01"}
+
+</code></pre>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <p>Per convertir una cadena a número cal cridar al mètode estàtic de la biblioteca Integer anomenat: parseInt, apassant-li una cadena de números </p>
+                                                <div class="iocexample">
+<pre><code class="java">
+String valor = "1345";
+int resultat = Integer.parseInt(valor); //aquí resultat valdrà 1345;
+</code></pre>
+                                                </div>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>  
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo3" 
+                                            data-selector-clue="#slc-toDo3-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-toDo3-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Per convertir el format d'hores , minuts i segons a segons, només cal multiplica les hores per 3600, els minuts per 60 i sumar el resultats afegint també el segons. Exemple:</p>
+                                        <div class="iocexample">
+<pre>
+    1 hora, 28 minuts i 46 segons equival a:
+    1*3600 + 28*60 + 46 = 5326
+    
+</pre>
+
+                                        </div>
+
+                                        <p>Per convertir els segons al format de hores, minuts i segons cal:</p>
+                                        <ol>
+                                            <li>Dividir els segons per 3600. El quocient seran les hores.</li>
+                                            <li>Agafar el residu de la divisió anterior i dividir-lo per 60. El quocient seran els minuts.</li>
+                                            <li>El residu de la divisió anterior seran els segons</li>
+                                        </ol>
+                                        <p>Exemple:</p>
+                                        <div class="iocexample">
+<pre>
+5326 segons equival a:
+5326 / 3600 = 1  =>  1 hora
+5326 % 3600 = 1726; 1726 / 60 = 28  => 28 minuts
+1726 % 60 = 46  => 46 segons
+</pre>
+                                        </div>
+                                    </div>  
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SECTION impl 3 ================-->    
+                <!--=========== BEGIN SECTION impl 4 ================-->    
+                <section id="slc-toDo4" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar-Implementació III</h2>
+                                     <h3 > <span class="tascaTitle">Tasca</span> - Llistat de temps invertit per etapa</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Aquesta tasca, depenent de l'opció que finalment hàgiu escollit, pot ser un llistat normal, o be pot necessitar convertir els segons al format de hores, minuts segons.</p>
+                                    <p>Si cal, podeu implementar un mètode del gestor de dades que retorni el valor convertit (cadena de format HH:MM:SS), de la posició passada per paràmetre, o be, crear un utilitat (biblioteca genèrica) que se li passi el valor per paràmetre i retorni una cadena ben formatada (HH:MM:SS)</p>
+                                    <p>En definitiva, el que haureu de fer en aquesta tasca és la implementació de codi que us permeti llistar el temps invertit per cada ciclista en cada etapa. </p>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo4" 
+                                            data-selector-clue="#slc-toDo4-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-toDo4-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Per convertir els segons al format de hores, minuts i segons cal:</p>
+                                        <ol>
+                                            <li>Dividir els segons per 3600. El quocient seran les hores.</li>
+                                            <li>Agafar el residu de la divisió anterior i dividir-lo per 60. El quocient seran els minuts.</li>
+                                            <li>El residu de la divisió anterior seran els segons</li>
+                                        </ol>
+                                        <p>Exemple:</p>
+                                        <div class="iocexample">
+<pre>
+5326 segons equival a:
+5326 / 3600 = 1  =>  1 hora
+5326 % 3600 = 1726; 1726 / 60 = 28  => 28 minuts
+1726 % 60 = 46  => 46 segons
+</pre>
+                                        </div>
+                                    </div>  
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SECTION impl 4 ================-->    
+                <!--=========== BEGIN SECTION impl 5 ================-->    
+                <section id="slc-toDo5" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar-Implementació III</h2>
+                                     <h3 > <span class="tascaTitle">Tasca</span> - Informe de guanyadors</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Recordeu que ja teniu implementada una funció a l'activitat A407, que troba el guanyador de la competició.  La funció retorna la posició del ciclista guanyador, però disposant de la posició, podreu optar a qualsevol altra dada del ciclista.</p>
+                                    <p>N'hi ha prou en que integreu la funció en un codi més ampli que respongui al que es demana a la tasca de generar l'informe de guanyadors.</p>
+                                    <p>L'informe necessita també saber qui són els guanyadors de les etapes de plana, les etapes de muntanya i les etapes d'alta muntanya.</p>
+                                    <p>El vencedor de cadascuna de les etapes serà aquell ciclista que hagi fet el menor temps en l'etapa específica.</p>
+                                    <p>Segur que podeu refinar la funció que troba el guanyador de la competició afegint un paràmetre que permeti identificar cada premi i canviant aquella part del codi que permeti descartar o capturar els temps en funció de la característica de l'etapa.</p>
+                                    <p>Un cop refinada la funció, només quedarà encaixar-la dins la tasca que genera l'informe de guanyadors.</p>
+                                    <p>A fi de facilitar la implementació, podeu suposar que els ciclistes mai quedaran empatats a temps.També podeu suposar, malgrat el que indica l'enunciat, que els ciclistes no abandonen i sempre acaben la competició.</p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SECTION impl 5 ================-->    
+                <!--=========== BEGIN SECTION impl 6 ================-->    
+                <section id="slc-toDo6" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar-Implementació III</h2>
+                                     <h3 > <span class="tascaTitle">Tasca</span> - Prova final</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Aquesta tasca consisteix en, una vegada finalitzat el codi del projecte, realitzar l'execució del programa i, a partir de diversos exemples, comprovar el correcte funcionament del programa </p>
+                                    <p>Recordeu que, per realitzar aquesta prova, haureu de:</p>
+                                    <ol>
+                                            <li>Llistar les dades dels equips, etapes, premis (que ja teniu definits per codi) i ciclistes.</li>
+                                            <li>Inscriure ciclistes (introduireu un conjunt de dades per teclat)</li>
+                                            <li>Assignar el temps realitzat per cada ciclista en cada etapa (introduireu el temps, en el format que hagueu definit, per teclat) </li>
+                                            <li>Mostrar el guanyador de la competició</li>
+                                            <li>Mostrar el guanyador per cada tipus d'etapa</li>
+                                        </ol>
+                                    <p>Es valorarà l'organització del programa en quant a classes i funcions definides, així com també el control d'errors realitzat.</p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SECTION impl 6 ================-->    
+     <!--=========== BEGIN SECTION toDelivery ================-->    
+            <section id="slc-toDelivery">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Lliurament -Implementació I</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>El lliurament serà un únic fitxer ZIP que penjareu a la <span class="bustiaLliurament"></span> i que contindrà el codi sencer del projecte CicliCat.</p>
+                                <p>Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
+                                <p>És molt important que lliureu aquest projecte ja que és el tancament de la unitat i així el professor us podrà avaluar. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toDelivery ================-->    
+            <!--=========== BEGIN SECTION toContinue ================-->    
+            <section id="slc-toContinue">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Com continuar - Implementació I</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+                                <p>Passeu a la següent <a class="toNextActivity">activitat</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toContinue ================-->    
+        </div>
+    </div>
+    <!--=========== END MAIN SLIDER SECTION ================-->            
+    <!--=========== BEGIN META-INFO PANELS ================-->    
+    <div id="sidepanel-wrapper" class="left-position after-top-menu">
+        <a id="panel-close" href="#" class="panel-close btn btn-light pull-right toggle"><i class="glyphicon glyphicon-remove-circle"></i></a>
+        <div id="goals_info" class="bodySlide hidden"> 
+            <h2>Objectius d'aprenentatge de l'activitat</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran els objectius específics d'aprenentatge treballats en aquesta activitat</p>
+
+            <h2>Resultats d'aprenentatge del mòdul treballats en aquesta activitat</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran els resultats d'aprenentatge del mòdul que es treballen en aquesta activitat</p>
+        </div>
+        <div id="more_reinforcement" class="hidden"> 
+            <h2>Més activitats i idees per reforçar l'aprenentatge</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran exercicis, activitats, lectures o referencies externes per tal que l'estudiant, pugui reforçar el conceptes estudiats </p>
+        </div>
+        <div id="more_info" class="hidden"> 
+            <h2>Informació sobre funcions  per ampliar</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran lectures, activitats referències externes o bibliografia on l'estudiant, pugui ampliar l'aprenentatge si ho desitja</p>
+        </div>
+    </div>
+    <!--=========== END META-INFO PANELS ================-->    
+    
+    <!--=========== BEGIN EMPTY PANEL ================-->    
+    <div id="emptypanel-wrapper" class="right-position after-top-menu">
+    </div>
+    <!--=========== END EMPTY PANEL ================-->    
+    
+    <!--=========== BEGIN EMPTY MODAL WINDOW ================-->    
+    <div id="modalWindow" class="iocModal hidden">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-selector-to-set-class="#modalWindow" data-class-to-set-class="iocModal hidden" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--=========== END EMPTY MODAL WINDOW ================-->    
+
+    <!--=========== BEGIN EMPTY LEFT COLUMN PANEL ================-->    
+    <div id="leftColumnPanel" class="left-position column-panel after-top-menu">
+    </div>
+    <!--=========== END EMPTY LEFT COLUMN PANEL ================-->    
+
+    <!--=========== BEGIN EMPTY HIDDEN PANEL ================-->    
+    <div id="hiddenContent" class="hidden">
+    </div>
+    <!--=========== END EMPTY HIDDEN PANEL ================-->    
+
+    <!--=========== BEGIN SCRIPTS ================-->    
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- highlight.js plugin -->
+    <script src="../js/highlight.pack.js"></script>
+
+    <!-- jssor.js plugin -->
+    <script src="../js/jssor.js"></script>
+    <script src="../js/jssor.slider.js"></script>
+    
+    <!-- to run jssor here-->
+    <script src="../js/jssorActivities.js"></script>
+
+    <!-- slides functionality-->
+    <script src="../js/scrolling-slides.js"></script>
+
+    <!-- specific functionality for IOC activities-->
+    <script src="../js/m03b2Activities.js"></script>
+
+    <!-- specific functionality for this activ¡ty-->
+    <script>
+        $(document).ready(function(){
+            var activityManager = new ActivityManager();
+            
+            activityManager.init("../data/toReplace.json", "A505");
+            var iocSlider = new IocSlider();
+            activityManager.updateDisplayButtons(iocSlider);
+        });
+    </script>
+    <!--=========== END SCRIPTS ================-->    
+
+</body>
+
+</html>
