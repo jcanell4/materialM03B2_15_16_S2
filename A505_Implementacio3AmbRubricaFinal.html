@@ -113,7 +113,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                              <div class=bodySlide>
-                                <p>Aquesta és la darrera activitat d'implementació abans de lliurar tot el projecte. Per tant, caldrà centrar els esforços en anar acabant totes les funcionalitats que ens quedin pendents. Fem una recapitulació per repassar el que ja tenim fet, així serà més fàcil reconèixer el que encara ens falta. A l'activitat anterior es van implementar les funcions que mostren (pantalles) i gestionen (controls) els menús de l'aplicació (el menú principal i el menú de cada mòdul). També es van implementar les funcions per gestionar les pantalles necessàries per executar les diferents tasques, entenent per pantalles la interfície de l'usuari que permet l'intercanvi d'informació:
+                                <p>Aquesta és la darrera activitat d'implementació abans de lliurar tot el projecte. Per tant, caldrà centrar els esforços en anar acabant totes les coses que ens quedin pendents. Fem una recapitulació per repassar el que ja tenim fet, així serà més fàcil reconèixer el que encara ens falta. A l'activitat anterior es van implementar les funcions que mostren (pantalles) i gestionen (controls) els menús de l'aplicació (el menú principal i el menú de cada mòdul). També es van implementar les funcions per gestionar les pantalles necessàries per executar les diferents tasques, entenent per pantalles la interfície de l'usuari que permet l'intercanvi d'informació:
                                 <ul>
                                     <li>Impressió de títol/s informatius a la pantalla per recordar la tasca que s'està executant</li>
                                     <li>Demanda de dades quan sigui necessari</li>
@@ -139,8 +139,8 @@
                                     <li>La inscripció de ciclistes</li>
                                     <li>L'assignació dels temps invertits en córrer cada etapa</li>
                                     <li>El llistat dels temps invertits</li>
-                                    <li>L'obtenció del guanyador de la competició</li>
-                                    <li>L'obtenció dels guanyadors dels premis patrocinats</li>
+                                    <li>La obtenció del guanyador de la competició</li>
+                                    <li>La obtenció dels guanyadors dels premis patrocinats</li>
                                     <li>El càlcul de les remuneracions de cada ciclista.</li>
                                 </ul>
                                 <p>A la secció de <em>tasques a implementar</em> analitzarem en més detall cada una d'aquestes.</p>
@@ -213,7 +213,7 @@
                                     <p>Recordeu que ja teniu implementades, al menys, la validació de la data de naixement i també de l'equip.</p>
                                     <p>Afegir ciclistes implica que el nombre d'inscrits creix a cada inscripció. Segons com hàgiu optat per solucionar aquest problema a l'activitat A503, necessitareu fer diferents tractaments que manipulin l'estructura per tal que es mantingui coherent.</p>
                                     <p>La coherència, en el cas de la inscripció de ciclistes no només afecte al nombre variable de ciclistes afegits, sinó també al nombre de ciclistes comptabilitzats per equip.</p>
-                                    <p>Probablement ja tingueu implementada gran part de les accions que composarien aquesta tasca. Feu un repas del que us falti i acabeu-ho d'implementar.</p>
+                                    <p>Probablement ja tingueu implementada gran part de les accions que composarien aquesta tasca. Feu un repas del que us falti i acabeu-ho d'implementar-ho.</p>
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                             data-toggle="button"
@@ -396,11 +396,11 @@ int resultat = Integer.parseInt(valor); //aquí resultat valdrà 1345;
                                 <div class=bodySlide>
                                     <p>Recordeu que ja teniu implementada una funció a l'activitat A407, que troba el guanyador de la competició.  La funció retorna la posició del ciclista guanyador, però disposant de la posició, podreu optar a qualsevol altra dada del ciclista.</p>
                                     <p>N'hi ha prou en que integreu la funció en un codi més ampli que respongui al que es demana a la tasca de generar l'informe de guanyadors.</p>
-                                    <p>L'informe necessita també saber qui són els guanyadors de les etapes de plana, les etapes de muntanya i les etapes d'alta muntanya. És a dir necessita també saber els guanyador per a cada tipologia d'etapa.</p>
-                                    <p>El vencedor de les etapes etapes d'una tipologia concreta (plana, muntanya o alta muntanya) serà aquell ciclista que hagi fet el menor temps en aqelles les etapes específiques de categoria indicada. </p>
-                                    <p>Segur que podeu refinar la funció que troba el guanyador de la competició afegint un paràmetre que permeti identificar cada premi i canviar aquella part del codi de la funció que permeti descartar o no els temps d'acord de la categoria de l'etapa.</p>
-                                    <p>Un cop refinada la funció, només quedarà encaixar-la de nou dins la tasca que genera l'informe de guanyadors per adaptar-la a la nova demanda.</p>
-                                    <p>A fi de facilitar la implementació, podeu suposar que els ciclistes mai quedaran empatats a temps. També podeu suposar, malgrat el que indica l'enunciat, que els ciclistes no abandonen i sempre acaben la competició.</p>
+                                    <p>L'informe necessita també saber qui són els guanyadors de les etapes de plana, les etapes de muntanya i les etapes d'alta muntanya.</p>
+                                    <p>El vencedor de l'es etapes de plana serà aquell ciclista que hagi fet el menor temps tenint només en comte les etapes específiques de plana. De forma similar per saber el vencedor de les etapes de Muntanya o Alta muntanya només es comptabilitzaran els temps de les etapes que pertanyin a la classificació concreta. </p>
+                                    <p>Segur que podeu refinar la funció que troba el guanyador de la competició afegint un paràmetre que permeti identificar cada premi i canviant aquella part del codi que permeti descartar o capturar els temps en funció de la característica de l'etapa.</p>
+                                    <p>Un cop refinada la funció, només quedarà encaixar-la dins la tasca que genera l'informe de guanyadors.</p>
+                                    <p>A fi de facilitar la implementació, podeu suposar que els ciclistes mai quedaran empatats a temps.També podeu suposar, malgrat el que indica l'enunciat, que els ciclistes no abandonen i sempre acaben la competició.</p>
                                 </div> 
                             </div>
                         </div>
@@ -442,127 +442,131 @@ int resultat = Integer.parseInt(valor); //aquí resultat valdrà 1345;
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Abans de lliurar el projecte us recomanem que feu proves exhaustives per valorar el fucionament de l'aplicació i la seva qualitat.</p>
-                                    <p>Les proves funcionals haurien de consistir en provar el bon funcionament de cada una de les funcionalitats (tasques) en que es divideix l'aplicació, aplicant els següents criteris, que d'altra banda seran també els utilitzats per fer la correció i la qualificació d'acord amb la ponderació expressada a continuació:</p>
-                                    <ul>
-                                        <li>
-                                            Llistats d'etapes, equips, premis i ciclistes (0,25 per llistat):
-                                            <ul>
-                                                <li>Complerta (100%): El llistat mostra totes les ben formatades</li>
-                                                <li>Incomplerta (50%): El llistat no mostra totes les dades o, en mostre més del compte o bé, aquestes no estan ben formatades en columnes</li>
-                                                <li>Deficient (0%): El llistat no mostra dades</li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            Inscripció de ciclistes(0,75):
-                                            <ul>
-                                                <li>Complerta (100%): Els ciclistes s'insereixen corrrectament respectant els criteris i restriccions de les dades.</li>
-                                                <li>Incomplerta (50%): Els ciclistes s'insereixen corrrectament. Es respecten tots els criteris i restriccions de les dades excepte un d'ells</li>
-                                                <li>Deficient (0%): No s'insereixen els ciclistes o, tot i que s'insereixen les dades no compleixen les restriccions demanades o bé la inserció provoca incoherència a les dades</li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            Assignació de temps(0,5):
-                                            <ul>
-                                                <li>Complerta (100%): S'aconsegeuix assignar el temps invertit en les etapes </li>
-                                                <li>Incomplerta (50%): Les dades entrades poden suposar temps errònis.</li>
-                                                <li>Deficient (0%): No s'aconsegueix assignar els temps invertits en les etapes.</li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            Llistat del temps invertit en cada etapa(0,5):
-                                            <ul>
-                                                <li>Complerta (100%): S'aconsegeuix llistar correctament tots els temps invertits en cada etapa en el format indicat.</li>
-                                                <li>Incomplerta (50%): S'aconsegeuix llistar correctament tots els temps invertits en cada etapa, però els formats de sortida són incorrectes o els temps errronis.</li>
-                                                <li>Deficient (0%): No s'aconsegueix obtenir el llistat dels temps invertits.</li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            Informes dels ciclistes guanyadors(0,75):
-                                            <ul>
-                                                <li>Complerta (100%): L'informe contempla tots els guanyadors dels premis patrcinats.</li>
-                                                <li>Incomplerta (50%): L'informe contempla al menys el guanyador de la competició o bé, malgrat que contempli altres guanyadors el càlcul d'algun d'ells és erroni..</li>
-                                                <li>Deficient (0%): No es genera l'informe de guanyadors o bé, es genera però els guanaydors mostrats no són els correctes.</li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            Listat de remuneracions(0,75):
-                                            <ul>
-                                                <li>Complerta (100%): Es genera el llistat correctament.</li>
-                                                <li>Incomplerta (50%): Es genera correctement, però es comptabilitza només la part fixa.</li>
-                                                <li>Deficient (0%): No es genera el llistat o, les dades d'aquest són errònies.</li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                    <p>Aquesta tasca preten donar-vos criteris que us ajudin a valorar el projecte implementat a fi que pogueu detectar els punts fluixos i us plantejeu si fora possible, la seva correcció.</p>
                                     
-                                    <p>A banda de les proves funcional, també caldria que anàlisi els criteris de qualitat següents, els quals també s'usaran per a calcular la qualificació d'acord amb la poderació i els criteris definits:</p>
-                                    <ul>
-                                        <li>
-                                            LLegibilitat del codi (2):
-                                            <ul>
-                                                <li>Correcta (100%): Es fan servir constants de forma habitual en lloc de valors literals.<br />
+                                    <table border="1" cellspacing="0" cellpadding="2" style="text-align:left;">
+                                        <tr>
+                                            <th style="background-color:#000000; color:#FEFEFE;" colspan="4">Criteris de qualitat per l'avaluació de lliurament final</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="background-color:#FEFEFE;"> </th>
+                                            <th colspan="3">Nivell de qualitat</th>
+                                        </tr>
+                                        <tr>
+                                            <th>Criteri</th>
+                                            <th>Valoració màxima (100%)</th>
+                                            <th>Valoració mitjana (50%)</th>
+                                            <th>Valoració deficient (0)</th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Correctesa<br/>
+                                                (2,5 punts)
+                                            </td>
+                                            <td>
+                                                El programa realitza totes les funcionalitats demanades a l'enunciat de forma correcta d'acord amb el pla de proves previst.
+                                            </td>
+                                            <td>
+                                                Funcionen totes les funcionalitats excepte una o dues.
+                                            </td>
+                                            <td>
+                                                L'aplicació falla en més de dos casos.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Robustesa<br/>
+                                                (1,5 punts)
+                                            </td>
+                                            <td>
+L'aplicació funciona sense bloquejar-se i controlant els possibles erros que puguin esdevenir.
+                                            </td>
+                                            <td>
+Es bloqueja en alguna ocasió o bé acaba sobtadament  a causa d'algun  error no controlat (no més de dos casos).
+                                            </td>
+                                            <td>
+L'aplicació es queda bloquejada o finalitza sobtadament amb freqüència.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Codi modular i ben  estructurat<br/>
+                                                (1,5 punts)
+                                            </td>
+                                            <td>
+El codi es troba distribuït en mètodes de classes i les classes en paquets  que responen a criteris lògics evidents o bé descrits a la documentació.<br/>
+El codi no es concentra  en pocs mètodes o en poques classes sinó que es troba ben distribuït i segmentat en nivells de profunditat raonables per la mida de l'aplicació que ajuda a fer el seguiment del flux.<br/>
+Hi ha una separació estructural de les classes i mètodes responsables de l'intercanvi d'informació amb l'usuari d'aquelles classes i mètodes encarregats de calcular i processar.<br/>
+Les estructures de dades ajuden a mantenir les dades agrupades i ben identificades al llarg del codi.
+                                            </td>
+                                            <td>
+El codi està estructurat però no hi ha paquets o hi ha classes que concentren bona part del codi.<br/>
+No sempre són evidents els criteris de separació del codi en classes i paquets ni hi ha informació a la documentació.<br />
+Ocasionalment es barreja codi encarregat de calcular i processar les dades   amb l'encarregat d'intercanviar informació amb l'usuari.<br />
+No sempre es fan servir les estructures de dades i de vegades les dades resten disperses.
+                                            </td>
+                                            <td>
+Hi ha mètodes monolítics que són els responsables d'una part important de la funcionalitat.<br />
+No hi ha criteris identificables de les raons usades per separar el codi en mètodes o classes.<br />
+Es difícil de preveure les conseqüències de modificar alguna part del codi.<br />
+Les captures de teclat i les sortides per pantalla es barregen amb la resta processament en gairebé tot el codi.<br />
+Quasi mai es fan servir estructures de dades, treballant amb un nombre gran de variables disperses.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Codi llegible<br/>
+                                                (1,5 punts)
+                                            </td>
+                                            <td>
+Es fan servir constants de forma habitual en lloc de valors literals.<br />
 Els noms de les classes, dels mètodes i les variables són descriptius de manera que és molt intuïtiu saber per a què es fan servir.<br/>
 El codi està  ben indentat.<br/>
 Les estructures de dades ajuden a interpretar el flux de les dades durant l'execució.
-                                            </li>
-                                            <li>Millorable (50%):
+                                            </td>
+                                            <td>
 Es fan servir poques constants.<br />
 Costa deduir la utilització de mètodes i variables a partir dels seus noms.<br />
 El codi no està sempre ben indentat.
-                                            </li>
-                                            <li>Deficient(0%):
+                                            </td>
+                                            <td>
 Mai o quasi bé mai, es fan servir constants.<br />
 Costa deduir la utilització de mètodes i variables a partir dels seus noms.<br />
 No se segueix un criteri fix a l'hora de nombrar variables mètodes i classes.<br />
-Sovint el codi està mal indentat.</li>
-                                        </ul>
-                                            
-                                        </li>
-                                        <li>
-                                            Modularitat i estructura del codi (2):
-                                            <ul>
-                                                <li>Correcta(100%)
-    El codi es troba distribuït en mètodes, els quals s'agrupen en classes seguint criteris lògics o funcionals.<br/>
-    El codi no es concentra  en pocs mètodes o en poques classes sinó que es troba ben distribuït i segmentat en nivells de profunditat raonables per la mida de l'aplicació que ajuda a fer el seguiment del flux.<br/>
-    Mai es barreja codi encarregat de calcular i processar les dades   amb l'encarregat d'intercanviar informació amb l'usuari.<br />
-    Les estructures de dades ajuden a mantenir les dades agrupades i ben identificades al llarg del codi.<br />
-    Hi ha funcions que ajuden a mantenir la coherència de les dades.
-                                                </li>
-                                                <li>Millorable (50%):
-    El codi està estructurat però hi ha poques classes o algunes d'elles concentren bona part del codi.<br/>
-    No sempre són evidents els criteris de separació del codi en classes.<br />
-    Ocasionalment es barreja codi encarregat de calcular i processar les dades   amb l'encarregat d'intercanviar informació amb l'usuari.<br />
-    No sempre es fan servir les estructures de dades i de vegades les dades resten disperses.
-                                                </li>
-                                                <li>Deficient(0%):
-    Hi ha mètodes monolítics que són els responsables d'una part important de la funcionalitat.<br />
-    No hi ha criteris identificables de les raons usades per separar el codi en funcions o classes.<br />
-    Es difícil de preveure les conseqüències de modificar alguna part del codi.<br />
-    Les captures de teclat i les sortides per pantalla es barregen amb la resta processament en gairebé tot el codi.<br />
-    Quasi mai es fan servir estructures de dades, treballant amb un nombre gran de variables disperses.
-                                                </li>
-                                            </ul>
-                                            
-                                        </li>
-                                        <li>
-                                            Interficie d'usuari (1,75):
-                                            <ul>
-                                                <li>Correcta(100%)
-    L'usuari sempre sap on es troba i com sortir o tronar a la pantalla anterior.<br />
-    Sempre es deixa clar el que l'usuari ha de fer en cada moment.<br />
-    Les accions que l'usuari ha de fer són intuïtives o fàcils de deduir.
-                                                </li>
-                                                <li>Millorable (50%):
-    No resulta fàcil saber en quina pantalla es troba l'usuari.<br />
-    Malgrat que hi ha missatges orientadors per l'usuari, aquest no sempre clarifiquen el que s'espera que l'usuari faci.
-                                                </li>
-                                                <li>Deficient(0%):
-    No hi ha missatges o els missatges que es mostren no expliquen el que l'usuari ha de fer, cosa que provoca que sovint aquest s'equivoqui.
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                    <p>Si cal, intenteu millorar el projecte seguint els criteris anteriors, abans de fer el lliurament definitiu.</p>
+Sovint el codi està mal indentat.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                               Interfície Amigable<br/>
+                                                (1,5 punts)
+                                            </td>
+                                            <td>
+L'usuari sempre sap on es troba i com sortir o tronar a la pantalla anterior.<br />
+Sempre es deixa clar el que l'usuari ha de fer en cada moment.<br />
+Les accions que l'usuari ha de fer són intuïtives o fàcils de deduir.
+                                            </td>
+                                            <td>
+No resulta fàcil saber en quina pantalla es troba l'usuari.<br />
+Malgrat que hi ha missatges orientadors per l'usuari, aquest no sempre clarifiquen el que s'espera que l'usuari faci.
+                                            </td>
+                                            <td>
+No hi ha missatges o els missatges que es mostren no expliquen el que l'usuari ha de fer, cosa que provoca que sovint aquest s'equivoqui.
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo7" 
+                                            data-selector-clue="#slc-toDo7-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-toDo7-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                   <p> </p>
+                                    </div>  
                                 </div> 
                             </div>
                         </div>
@@ -577,15 +581,17 @@ Sovint el codi està mal indentat.</li>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Lliurament -Implementació III</h2>
+                                 <h2 >Lliurament -Implementació I</h2>
                              </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-                                <p>El lliurament cal fer-lo amb un únic fitxer ZIP que penjareu a la <span class="bustiaLliurament"></span> i que contindrà el codi sencer del projecte CicliCat.</p>
-                                <p>Recordeu que la data límit per a fer el lliurament és: <strong class="dataLimit"></strong>. No s'admnatran lliuraments passada aquesta data.</p>
+                                <p>Baixa't l'<span class="informeLliurament"></span> d'aquesta activitat i omple'l per poder fer el lliurament, ja que bàsicament, aquesta és una activitat de seguiment que serveix com indicador per verificar que avanceu correctament. El professor restarà atent al lliurament de l'informe on indicaràs si has aconseguit implementar l'estructura de dades, les funcions del gestor de dades i les biblioteques que se t'han demanat a les diverses tasques. En cas que hagis tingut dificultats, pots exposar-les a l'informe a fi que puguem donar-te una resposta durant la retroacció.</p>
+                                <p>Només cal que enviïs l'informe. Malgrat tot, si ho creus necessari, pots enviar més d'un fitxer empaquetant-los tots junts en un fitxer ZIP que penjareu a la <span class="bustiaLliurament"></span>.</p>
+                                <p>Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
+                                <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu, ja que el professor podrà avaluar l'evolució del projecte i si cal us donarà un cop de mà. </p>
                             </div>
                         </div>
                     </div>
@@ -598,7 +604,7 @@ Sovint el codi està mal indentat.</li>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Com continuar - Implementació III</h2>
+                                 <h2 >Com continuar - Implementació I</h2>
                              </div>
                         </div>
                     </div>
@@ -606,7 +612,7 @@ Sovint el codi està mal indentat.</li>
                         <div class="col-lg-12">
                             <div class=bodySlide>
             <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
-                                <p>De forma volutaria, podeu realitzar la següent <a class="toNextActivity">activitat</a> si desitgeu millorar la qualificació obtinguda amb el projecte.</p>
+                                <p>Passeu a la següent <a class="toNextActivity">activitat</a></p>
                             </div>
                         </div>
                     </div>
