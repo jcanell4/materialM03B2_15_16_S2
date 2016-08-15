@@ -1,164 +1,150 @@
-                <!--=========== BEGIN SUBSECTION implementació 1 ================-->    
-                <section id="slc-toDo1" class="tasca section">
+            <!--=========== BEGIN SECTION toDo10 ================-->    
+            <!--section id="slc-toDo10" class="tasca section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                     <h2 >Tasques a realitzar-Implementació I</h2>
+                                     <h3 ><span class="tascaTitle">Tasca</span> - Ampliació de l'esquelet de classes. </h3>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>A l'activitat anterior us vàrem demanar que implementéssiu l'esquelet de classes fins al nivell de tasques. Ara però, després d'haver discutit al fòrum el concepte de tasca com <em>unitat complerta de processament</em> i, d'haver constatat que la majoria de tasques precisen d'almenys 3 accions, una per obtenir les dades inicials, una processar-les i la tercera per mostrar el resultat, us demanem que descompongueu en accions, les tasques que vàreu definir i, convertiu cada acció en una funció que afegireu a l'esquelet de classes del projecte. És a dir que fareu la declaració de les noves funcions a una de les classe de l'esquelet que vàreu crear.</p>
+                                <p>No us oblideu tampoc dels <em>menús</em>, segur que són necessaris per mostrar el ventall d'opcions a seleccionar i per requerir a l'usuari que n'esculli una. Feu servir el sentit comú per intuir on caldrà definir un menú, on caldrà demanar dades a l'usuari, on presentar informació, etc. Segurament respondran a noms com <em>demanarXXX</em>, <em>mostrarYYY</em>, o similars. Penseu que fins i tot les tasques que no calculin resultat i per tant no hagin de mostrar res per pantalla, haurien de tenir una funció de sortida (segons els criteris de qualitat), per informar que el procediment ha finalitzat l'execució i indicar si aquest ha acabat amb èxit o no.</p>
+                                <p>Doneu també nom a les funcions de tractament, les que calculen. En cas que hagin de retornar alguna dada, retorneu un valor qualsevol per tal que Netbeans no us marqui error. Intenteu que els noms donats siguin significatius.</p>
+                                <p>Segurament, la classe on haureu de declarar les noves funcions serà la mateixa o es trobi la tasca que els accions descomponguin, però poden donar-se excepcions en cas que calgui o hagi calgut fer adaptacions per no repetir codi aplicant criteris de reutilització.</p>
+                                <p>Recordeu que aquí només heu de fer la declaració, no comenceu encara a codificar-les. Espereu una mica a disposar de les biblioteques adequades.</p>
+                                <!-- Button trigger pannel -->
+                                <!--button type="button" class="btn btn-warning btn-lg toggle-off  btn-3d" 
+                                        data-toggle="button"
+                                        data-parent-selector="#leftColumnPanel"
+                                        data-display-on-set-slide="slc-toDo10" 
+                                        data-selector-clue="#slc-toDo10-clue1">
+                                    Consell
+                                </button>                                        
+                                <div id="slc-toDo10-clue1" class="iocClue hidden">
+                                    <p>Com ja es va comentar durant l'anterior implementació de l'esquelet, és impossible deixar-ho tot lligat des del començament. Per tant no us preocupeu encara si us falten o sobren paràmetres, si alguna de les accions necessitarà descompondre's més, etc. Ja arribarà el moment de concretar.</p>
+                                    <p>Quan intuïu que en algunes funcions de demanda de dades o de mostra de resultat, en codificar-les, només caldrà fer una crida a una funció de biblioteca, podeu eliminar la declaració, a la implementació farem una crida directa a la funció de biblioteca corresponent.</p>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toDo10 ================-->    
+                <!--=========== BEGIN SECTION biblioteques ================-->    
+                <section id="slc-biblioteques" class="tasca section">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
-                                     <h2 >Tasques a realitzar-Implementació II</h2>
-                                     <h3 > <span class="tascaTitle">Tasca</span> - Adaptació dels fitxers de l'esquelet de classes i funcions</h3>
+                                     <h2 >Tasques a realitzar-Implementació I</h2>
+                                     <h3 ><span class="tascaTitle">Tasca</span> - Implementació de les biblioteques</h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Abans de continuar amb la implementació, convindria fer un repàs a tot allò que hauríem de tenir ja implementat, si hem realitzat correctament les activitats anteriors:</p>
+                                    <p>Abans d'entrar a la implementació de l'esquelet, us demanarem encara un darrer esforç per completar una biblioteca genèrica que us ajudi a crear de forma eficient interfícies d'usuari basades en consola. És tracta de crear una classe anomenada per exemple <em>BibliotecaInterficieUsuari</em> on hi copiareu totes les funcions que ja hàgiu implementat, d'ajuda a la creació d'interfícies d'usuari. També us demanarem que completeu la biblioteca amb altres funcions que ajudin a estandarditzar la mostra d'informació per pantalla.</p>
+                                    <p>De moment comencem per copiar les que ja teniu fetes:</p>
                                     <ul>
-                                        <li>A l'activitat A503, hem hagut de crear l'estructura de dades de l'aplicació. Es recomanava d'anomenar-la DadesCicliCat<sup id="sup1"><a href="#nota1">1</a></sup>, però qualsevol altre nom pot ser igual de vàlid. L'estructura hauria d'estar continguda almenys, en un fitxer independent anomenat també <em>DadesCiclicat.java</em>.</li>
-                                        <li>També caldria tenir implementada una classe anomenada GestorDeDades (o qualsevol altre nom similar), que contingui funcions que permetin manipular les dades de l'estructura DadesCicliCat mantenint sempre la coherència interna que l'estructura exigeix i en faciliti la validació, l'accés o la manipulació.</li>
-                                        <li>Una classe anomenada <em>Strings</em> amb algunes funcions estàtiques que complementin la gestió de cadenes de caràcters estàndard de JAVA (classe <em>String</em>) </li>
-                                        <li>Opcionalment, una classe contenint una biblioteca de funcions que ens facilitin la creació d'interfícies d'usuari, preparada per crear menús, demanar dades, mostrar informació específica en format determinat, fer un salt de pantalla, aturar l'execució fins que l'usuari permi [ENTRAR], etc.</li>
-                                        <li>Opcionalment, una classe contenint una biblioteca de funcions de tractaments genèrics de dades, potser la conversió d'unitats de temps o altres que hàgiu considerat.</li>
-                                        <li>Un fitxer amb l'aplicació principal on situareu l'esquelet (només la declaració) de la funció d'inicialització de l'estructura de dades, les del menú principal (selecció i control) i si voleu també la funció main. La classe es pot anomenar per exemple <em>AppCiclicat</em> <sup><a href="#nota1">1</a></sup> o similar.</li>
-                                        <li>Un fitxer per cada mòdul que hàgim dissenyat a l'activitat A502. Cada mòdul contindrà l'esquelet (declaració de funcions) del menú específic (selecció i control) i també de les diferents tasques a processar. </li>
-                                        <li>Opcionalment, les funcions declarades en els esquelets tindran ben definits els paràmetres que hauran de rebre i els tipus de dades a retornar. Aquest és un requeriment opcional, perquè a les alçades que estem, encara som a temps de poder afegir canvis i fer refinaments a mida que anem codificant a fi de fer encaixar correctament el trencaclosques final.</li>
-                                        <li>Opcionalment, en els mòduls haurem definit també l'esquelet de les funcions en que es descomponen les tasques (accions).</li>
+                                        <li>A l'exercici 1 de l'activitat A402 vàreu fer una funció per demanar un valor double a l'usuari</li>
+                                        <li>A la tasca 3 de l'activitat A404, vàreu crear 4 funcions per demanar diversos tipus de valor a l'usuari.</li>
+                                        <li>Finalment a l'exercici 1 de l'activitat A405, vàreu implementar una funció per demanar un valor enter.</li>
                                     </ul>
-                                    <p>No us preocupeu si no heu implementat les parts opcionals. Tot i que si podeu l'esforç, fora bo que disposéssiu de les parts opcionals, no totes són imprescindibles i les que ho són les podreu anar completant a mida que implementeu el que encara us queda.</p>
-                                    <p>Comencem a perfilar. No passeu a la següent tasca d'aquesta activitat sense definir, ara si, els tipus de dades dels paràmetres que necessitareu a cada funció de les declarades als vostres esquelets. Recordeu que les dades (l'estructura) s'inicialitzen a l'iniciar l'execució i cal passar-les a les funcions que calgui cridar via paràmetres, ja que és la única manera d'intercanviar informació entre funcions. Penseu que un cop inicialitzades les dades, no es poden tornar a inicialitzar. Si ho féssim perdríem les dades entrades fins el moment, o bé per sobreescriptura de la instancia ja creada, o bé perquè en comptes de treballar amb la instància original, en realitat hauríem creat un instancia nova que no contindria de cap manera les dades esperades (vegeu la pista 1).</p>
-                                    <p>Així doncs assegureu-vos que abans de processar cap tasca, heu instanciat l'estructura de dades i que totes les funcions que necessitin dades de l'estructura, reben la instància via paràmetre.</p>
-                                    <div class="notes">
-                                        <h2 class="em">Notes</h2>
-                                        <table cellspacing="0" cellpadding="2">
-                                            <tbody>
-                                                <tr>
-                                                    <td valign="top"><a href="#sup1"><sup id="nota1">1</sup></a></td>
-                                                    <td align="left">Com ja s'ha insistit en diverses ocasions, és molt important saber torbar noms descriptius a les classes i a les funcions, ja que així facilitarem la lectura de codi per part de tercers i de pas agilitzarem també la codificació i minimitzarem el risc d'equivocacions en escriure el codi.</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-
+                                    <p>Recupereu-les i copieu-les a la casse <em>BibliotecaInterficieUsuari</em></p>
+                                    <p>Ara passem a crear noves funcions d'aquesta biblioteca. Recordeu que aquí les funcions ha de ser genèriques i han d'estar parametritzades per tal que es puguin fer servir en múltiples contextos i situacions. </p>
+                                    <p>Per exemple, podeu implementar una funció que us ajudi a mostrar les opcions d'un menú i demani a l'usuari que seleccioni una de les opcions mostrades. O potser podeu implementar una funció que permeti mostrar en un format determinat, els títols de les diferents pantalles que haurà de tenir l'aplicació. D'aquesta manera l'usuari podrà identificar sempre on es troba. També podeu pensar en funcions que ajudin a estandarditzar els missatges d'error, informatius, etc. Finalment com a darrera idea, apuntem la possibilitat d'implementar una funció que permeti escriure un nombre fix de salts de línia de forma que simuli una neteja de pantalla a fi de poder començar a escriure amb la consola neta de missatges anteriors. </p>
+                                    <p>En aquesta tasca ja no us detallem les funcions a implementar. Penseu-les vosaltres i adapteu la vostra producció al temps que disposeu. Intenteu per poc que pugueu fer les que us recomanem aquí, però si disposeu de poc temps, reduïu-les segons us convingui.</p>
+                                     <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-biblioteques" 
+                                            data-selector-clue="#slc-biblioteques-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-biblioteques-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Suposa que la funció menú pugui mostrar per pantalla totes les opcions d'un menú identificades per un número o un caràcter i després de demanar a l'usuari que seleccioni una opció, retorni la opció escollida. Quins paràmetres creieu que hauria de rebre una funció que pugui ajudar a implementar menús, tenint en compte que cada menú tindrà diferents opcions? Intenta sistematitzar la presentació dels menús. Què creus que pot identificar cada una de les opcions del menú? Tenint en compte això, quin tipus de dada caldria demanar a l'usuari? I per tant, quin tipus de dada creus que hauria de retornar la funció</p>
+                                    </div>  
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                             data-toggle="button"
                                             data-parent-selector="#leftColumnPanel"
-                                            data-display-on-set-slide="slc-toDo1" 
-                                            data-selector-clue="#slc-toDo1-clue1">
-                                        Pista 1
+                                            data-display-on-set-slide="slc-biblioteques" 
+                                            data-selector-clue="#slc-biblioteques-clue2">
+                                        Pista 2
                                     </button>                                        
-                                    <div id="slc-toDo1-clue1" class="iocClue hidden">
-                                        <h2>Pista 1</h2>
-                                        <h4>Sobre la instanciació de tipus compostos</h4>
-                                        <p>Si haguéssim de fer una metàfora per explicar el significat de la instanciació i les implicacions que aquesta comporta, triaríem la construcció d'un armari a partir dels planols que ens mostren com cal muntar-lo. Els plànols serien els tipus de dades, la definició de l'estructura, mentre que la construcció pròpiament dita, de l'armari d'acord amb les instruccions dels plànols, seria realment la instanciació. El llenguatge JAVA té la instrucció <em>new</em> per executar la construcció.</p>
-                                        <p>Seguim amb la metàfora. Un cop realitzada la construcció, l'armari estarà buit, però preparat per emmagatzemar coses. Si no l'haguéssim construït, no hi podríem emmagatzemar res, perquè només tindríem els plànols, però l'armari no hi seria. És el que passa quan declarem una variable d'un tipus compost però no construïm la instància. La declaració de la variable seria equivalent a buscar-li lloc a l'armari, però si no el construïm, només tindrem un lloc buit.</p>
-                                        <p>Imagineu que tenim una classe anomenada <em>DadesJugador</em>, la qual representa un tipus composts com el que veieu tot seguit:</p>
-                                        <pre><code class="java">
-        public class DadesJugador {    
-            String nom;
-            int partidesGuanyades;
-        }
-                                        </code></pre>
-                                        <p>Imagineu també que escrivim un classe que inicialitzi 2 variables d'aquest tipus compost:</p>
-                                        <pre><code class="java">
-        public class AppJoc {
-            public static void main(String[] args) {
-                AppJoc prog = new AppJoc();
-                prog.inici();
-            }
-
-            private void inici() {
-               DadesJugador jugadorA = new DadesJugador();
-               DadesJugador juagadorB;
-               
-               jugadorA.nom = "Sara";
-               jugadorB.nom = "Francesc";
-               
-               ...
-            }
-        }
-                                            
-                                        </code></pre>
-                                        <p>Fixeu-vos que la variable jugadorA està ben inicialitzada i podrem fer.la servir sense problemes. Podem assignar-hi el nom i també el nombre de partides guanyades perquè abans hem construït la instància. L'armari existeix!</p>
-                                        <p>Per contra la variable jugadorB, només està declarada, però no inicialitzada (encara ens cal construir l'armari) i per tant si intentem assignar-hi algun valor obtindrem un error.</p>
-                                        <h5>Diferències entre instanciar un tipus compost o una classe que només conté codi</h5>
-                                        <p>La diferència essencial entre ambdues classes és que les instancies dels tipus compostos serviran per emmagatzemar dades, mentre que les instancies de classes que només contenen codi, no emmagatzemen res. Seguint amb la metàfora anterior, si les estructures de dades fossin armaris, per guardar roba per exemple, les classes de codi serien electrodomèstics que la processessin, posem per cas una planxa.</p>
-                                        <p>Si tinguéssim al capacitat de construir armaris i planxes amb només l'acció de picar els dits, podríem construir una planxa cada cop que en tinguéssim necessitat, sense  detriment de la nostra feina (exceptuant el malbaratament del medi ambient que causaríem), perquè aconseguíem planxar la roba sense cap entrebanc. Ara bé, a ningú se li acudiria construir armaris quan passéssim pel costat d'una planxa i ens agafés el rampell de deixar la roba impecable, perquè els armaris construïts estarien buits i no ens quedaríem sense poder planxar. No tindríem més remei que agafar la planxa i desplaçar-nos a l'armari més proper.</p>
-                                        <p>Quelcom semblant passa amb les estructures de dades i amb les classes que contenen codi. Les primeres no es poden anar creant lleugerament si no volem perdre dades pel camí. Les segones en canvi, són com les planxes.</p>
-                                        <p>Analitzeu el codi d'exemple que us posem a continuació i intenteu esbrinar perquè les crides <em>processaImprimirNom(jugador)</em> (línia 31) i <em>processarImprimirTot(impressora, jugador)</em> (línia 36) tondran èxit, mentre que la crida <em>processaImprimirGuanyades()</em> (línia 33) no aconseguirà imprimir res.</p>
-                                        <pre><code class="linenumbers java">
-    /*Fitxer ioc.m03.uf2.ImpresoraJugador.java*/
-    package ioc.m03.uf2;
-
-    public class ImpresoraJugador {
-        public void imprimirNom(DadesJugador jugador) {
-            System.out.print("Nom del jugador:");
-            System.out.println(jugador.nom);
-        }
-
-        public void imprimirGuanyades(DadesJugador jugador) {
-            System.out.print("Partides guanyades del jugador:");
-            System.out.println(jugador.partidesGuanyades);        
-        }
-    }
-
-    /*Fitxer ioc.m03.uf2.Debat52.java*/
-    package ioc.m03.uf2;
-
-    public class Debat52 {
-       public static void main(String[] args) {
-            Debat52 prog = new Debat52();
-            prog.inici();
-        }
-
-        private void inici() {
-           DadesJugador jugador = new DadesJugador();
-           
-           jugador.nom = "Sara";
-           jugador.partidesGuanyades=10;
-           
-           processaImprimirNom(jugador);
-
-           processaImprimirGuanyades();
-           
-           ImpresoraJugador impressora = new ImpresoraJugador();
-           processarImprimirTot(impressora, jugador);
-
-        }    
-
-        private void processaImprimirNom(DadesJugador jugador) {
-            ImpresoraJugador impressora = new ImpresoraJugador();
-            impressora.imprimirNom(jugador);
-        }
-
-        private void processaImprimirGuanyades() {
-            ImpresoraJugador impressora = new ImpresoraJugador();
-            DadesJugador jugador = new DadesJugador();
-            impressora.imprimirGuanyades(jugador);
-        }
-
-        private void processarImprimirTot(ImpresoraJugador impressora, 
-                                            DadesJugador jugador) {
-            impressora.imprimirNom(jugador);
-            impressora.imprimirGuanyades(jugador);
-        }
-    }
-                                        </code></pre>
-                                        <p>No dubteu d'escriure al professor o fer servir el fòrum de dubtes si trobeu la solució.</p>
+                                    <div id="slc-biblioteques-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>A l'hora de crear interfícies d'usuari de qualsevol aplicació, és important que els usuaris puguin identificar la categoria dels diferents missatges i textos de la pantalla gràcies a la seva situació i format. Aquesta identificació permet a l'usuari cercar la informació de forma més ràpida i predisposar-se a llegir el text amb major o menor atenció, segons l'activitat del moment.</p>
+                                        <p>Així, per exemple podríem definir que cada pantalla de la nostra aplicació contingués a a la part superior dos títols identificant l'aplicació o la pantalla. Per tal d'identificar fàcilment els títols, es podrien formatar d'una forma específica que ajudés a identificar-los. Per exemple: </p>
+                                        <pre>
+************************************************************
+**               Volta Ciclista a Catalunya               **
+**                     Menú principal                     **
+************************************************************                                        </pre>
+                                        <p>També podem identificar de forma específica els missatges informatius que indiquin com ha anat una determinada operació:</p>
+                                        <pre>
+------------------------------------------------------------
+Inscripció realitzada correctament
+------------------------------------------------------------
+                                        </pre>
+                                        <p>O ressaltar els errors de forma prou contrastada per captar l'atenció del client:</p>
+                                        <pre>
+************************************************************
+************************************************************
+**                         ERROR                          **
+************************************************************
+************************************************************
+************************************************************
+L'equip al que voleu inscriure el ciclista
+ ja està complert. La inscripció no és possible.
+************************************************************
+************************************************************                                        
+                                        </pre>
                                     </div>  
-                                </div>
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-biblioteques" 
+                                            data-selector-clue="#slc-biblioteques-clue3">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-biblioteques-clue3" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
+                                        <p>Podeu ampliar les funcions segons se us vagin acudint idees. Per exemple potser us podria ser útil afegir una funció que demani prémer la tecla [ENTRAR] per continuar executant. Segur que resulta molt útil per deixar que l'usuari pugui llegir textos llargs com llistes o informes, abans de tornar a demanar noves opcions d'un menú.</p>
+                                    </div>  
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-biblioteques" 
+                                            data-selector-clue="#slc-biblioteques-clue4">
+                                        Pista 4
+                                    </button>                                        
+                                    <div id="slc-biblioteques-clue4" class="iocClue hidden">
+                                        <h2>Pista 4</h2>
+                                        <p>Recordeu que a la tasca 2 de l'activitat A501 vàreu fer un biblioteca de funcions estàtiques de tractament de cadenes, per retallar o farcir text a una mida determinada (la vau anomenar <em>Strings</em>). Potser podeu utilitzar-les aquí per aconseguir ajustar el text seguint un format determinat, per exemple centrant el text, o separant-lo del marge esquerra, ... </p>
+                                        <p>Si encara no ho heu fet, copieu la classe <em>Strings</em> en el projecte de Netbeans per poder-la fer servir.</p>
+                                    </div>  
+                                </div> 
                             </div>
                         </div>
                     </div>
                 </section>
-                <!--=========== END SUBSECTION implementació 1  ================-->    
+                <!--=========== END SECTION integracio ================-->    
                 <!--=========== BEGIN SECTION implementació 2 ================-->    
                 <section id="slc-toDo2" class="tasca section">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
-                                     <h2 >Tasques a realitzar-Implementació II</h2>
+                                     <h2 >Tasques a realitzar-Implementació I</h2>
                                      <h3 > <span class="tascaTitle">Tasca</span> - Disseny de la interfície de l'usuari específica de l'aplicació</h3>
                                  </div>
                             </div>
@@ -166,109 +152,53 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>La darrera tasca d'aquesta activitat, consistirà en dissenyar i implementar la interfície de l'usuari del nostre projecte. En primer lloc caldrà detectar on serà necessari escriure codi destinat a intercanviar informació amb els usuaris de l'aplicació. Feu servir el sentit comú, però d'entrada, segur que els menús necessiten mostrar les opcions a seleccionar i requerir a l'usuari que n'esculli una. D'altra banda, com ja heu vist, les tasques, tal com les hem descrit, són unitats complertes de processament que impliquen a la vegada, el processament de les accions que les composen. Almenys dues d'aquestes accions han de fer referència a l'entrada i sortida de dades (en el nostre cas les dades es demanaran i mostraran sempre a l'usuari). Generalment seran les accions primera i darrera seguint l'ordre d'execució i segurament respondran a noms com <em>demanarXXX</em>, <em>mostrarYYY</em>, o similars. Penseu que fins i tot les tasques que no calculin resultat i per tant no hagin de mostrar res per pantalla, haurien de tenir una funció de sortida (segons els criteris de qualitat), ni que sigui per informar que els procediment s'ha realitzat i indicar-li si s'han acabat amb èxit o no.</p>
-                                    <p>Recupereu els criteris de qualitat que heu analitzat a la <a href="#slc-discussion__slc-discussion24">secció de fòrums</a> i planifiqueu cada una de les pantalles de les tasques. Recordeu que cada una d'elles hauria de disposar d'un títol específic que doni informació a l'usuari de la pantalla on es troba. Planifiqueu la informació a donar a l'usuari a fi que sàpiga sempre el que a de fer i intenteu estandarditzar les pantalla tant com us sigui possible a fi d'homogeneïtzar-les i facilitar els seu aprenentatge.</p>
-                                    <p>De moment, en aquesta tasca només us heu de centrar en la codificació de les funcions pròpies de la interfície (demanda de dades, mostra de resultats, llistes, etc.) i també en les verificacions de dades perquè aquestes últimes estan íntimament relacionades amb les funcions de demanda de dades, ja que si l'usuari fa una entrada errònia, caldrà avisar-lo i demanar-li que repeteixi l'acció.</p>
-                                    <p>No cal, però, que implementeu la resta de funcions que no siguin d'interfície o de verificació, ja ho fareu a la darrera activitat. Ara bé, per tal que pugueu fer proves executant l'aplicació, us proposem que a les funcions que no hagueu de codificar les ompliu amb un <em>System.out.println("Simulació de l'execució de nomDeLaFuncio()");</em> a fi de constatar la seqüència de crides durant l'execució. En cas que alguna funció hagi de retornar algun valor, caldrà afegir, a més de la impressió per pantalla del nom de la funció, un valor de retorn fictici. Per exemple</p>
+                                    <p>Sembla que ja està tot a punt per poder començar a implementar les funcions de l'esquelet. Com que aquesta activitat posa l'èmfasi a la interfície d'usuari, us demanem que de moment, us limiteu a implementar només les funcions de la interfície. És tracta només d'un consell per tal que us pugueu centrar en crear una bona interfície de qualitat.</p>
+                                    <p>Recupereu doncs, els criteris de qualitat que heu analitzat a la <a href="#slc-discussion__slc-discussion24">secció de fòrums</a> i planifiqueu cada una de les pantalles de les tasques. Recordeu que cada una d'elles hauria de disposar de títols específics que donin informació a l'usuari, de la pantalla on es troba. Planifiqueu la informació que caldrà donar a l'usuari a fi que sàpiga sempre el que a de fer i intenteu estandarditzar les pantalla tant com us sigui possible a fi d'homogeneïtzar-les i facilitar els seu aprenentatge.</p>
+                                    <p>Ajudeu-vos de la biblioteca que heu creat per ajudar a generar interfícies d'usuaris. Segur que us pot estalviar molt feina i us evitarà molts, molts errors.</p>
+                                    <p>Repasseu les funcions creades a l'activitat A404, segur que aquí en podeu aprofitar algunes, a banda de les que ja heu incorporat a la <em>BibliotecaIntercicieUsuari</em>. Per exemple, segur que us seran útils les funcions <em>mostrarDetallImmoble</em> i <em>mostrarLlistaImmobles</em>. </p>
+                                    <p>Insistim de nou, que aconsellem que us centreu només en les funcions d'intercanvi d'informació amb l'usuari, per poder-vos centrar en els criteris de qualitat i l'ús de biblioteques. Tot i així, si finalment decidiu implementar-ho tot, per manca de temps o per altres raons, us demanem que abans de començar la implementació, llegiu en paral·lel l'activitat <a class="toNextActivity">següent</a>, a fi de tenir en compte els consells i requeriments que allà se us plantegen.</p>
+                                    <p>Malgrat no es correspongui pròpiament a cap funció d'intercanvi d'informació amb l'usuari, si que considerem una bona idea implementar la instanciació i inicialització dels tipus compostos que ja heu definit (estructura de dades). Per fer-ho caldrà que decidiu quin lloc creieu que és més oportú per a fer la instanciació. Sembla evident que les dades han d'estar instanciades abans que alguna funció comenci a fer-les servir. Per tant intenteu buscar el lloc idoni per tal que cap funció comenci a usar les dades sense estar instanciades, però evitant també que aquestes romanguin mes temps del necessari a la memòria per tal de no malbaratar-la innecessàriament.</p>
+                                    <p>En cas que decidiu seguir el consell de centrar-vos aquí només en la interfície, us pot resultar útil, malgrat l'execució sigui nul·la, incorporar les crides de les funcions de tractament, de forma que després ja no calgui fer cap modificació i n'hi hagi prou només, implementant les funcions que manquin, per acabar el projecte. Per exemple, imaginem un aplicació que disposa d'una tasca que permet actualitzar una sèrie de premis per els participants i posteriorment assignar-los la remuneració pertinent al premi. En aquest cas la nostra implementació podria ser: </p>
                                     <pre><code class="java">
 ...
-public void guardarValor(EstructuraDeDades dades, int valor){
-    System.out.println("Simulació de l'execució de guardarValor(provant execució de dades, valor)");
-}
-
-public int calcularValor(EstructuraDeDades dades){
-    System.out.println("Simulació de l'execució de calcularValor(dades)");
-    return 0;
-}
-...
+    void pantallaActualitzarPremis(DadesCicliCat dades) {
+        boolean ret;
+        //Pantalla per actualitzar premis i remuneracions
+        interficieUsuari.mostrarTitols(TITOL_PANTALLA, "Actualització de les remuneracions i els premis");
+        
+        mostrarMissatgeIniciActualitzacioPremis();
+        
+        actualitzarPremis(dades);
+        ret = actualitzacioRemuneracions(dades);
+        
+        mostrarMissatgeFinalActualitzacioPremis(ret);
+    }
+ 
+ ...
                                     </code></pre>
-                                    <p>D'aquesta manera podreu comprovar també si la seqüencialitat de les accions és correcte i, en simular el retorn de dades, podreu també provar les funcions destinades a mostrar els resultats obtinguts després d'un tractament. No cal que les dades siguin reals, ni que siguin gaire extenses, només fa falta simular un retorn de dades vàlides del tipus esperat.</p>
-                                    <p>En cas que hàgiu creat una biblioteca genèrica per ajudar a crear interfícies d'usuari basades en consola, ara és el moment de fer-la servir. Malgrat tot, si no la teniu implementada, però teniu clares quines funcions hauria de tenir, podeu implementar-les a mida que les aneu necessitant, en una classe específica i independent de la resta, de manera que tingueu sempre les funcions disponibles per a ser utilitzades en les següents ocasions.</p>
+                                    <p>Fixeu-vos, com la funció <em>pantallaActualitzarPremis</em> (corresponent a una tasca), en implementar-la, posem totes les línies de codi necessàries per tal que funcioni quan totes les funcions es trobin implementades. Tot i així sabem que les funcions <em>actualitzarPremis</em> i <em>actualitzacioRemuneracions</em> estaran buides i per tant la actualització no es produirà, però no per això deixem de fer la crida. En canvi, la resta de funcions <em>mostrarMissatgeIniciActualitzacioPremis</em> i <em>mostrarMissatgeFinalActualitzacioPremis</em> si que els haurem d'implementar i si que s'executaran. Tampoc hi haurà cap problema en usar funcions de biblioteca (com <em>mostrarTitols</em>), perquè ja les tenim implementades. D'aquesta manera, podreu executar l'aplicació i comprovar fàcilment si les accions implementades són correctes.</p>
+                                    <p>En cas que alguna funció de tractament, hagi de retornar alguna dada, podeu forçar el retorn d'un valor qualsevol dins la funció buida, per tal de d'evitar un error i recollir un valor vàlid a la funció que estiguem implementant. A l'exemple <em>pantallaActualitzarPremis</em>, s'espera que la funció <em>actualitzacioRemuneracions</em> retorni un valor lògic. Per tant a la classe la nostra funció estarà declarada com segueix:</p>
+                                    <pre><code class="java">
+...
+    boolean actualitzacioRemuneracions(DadesCicliCat dades) {
+        //A IMPLEMENTAR
+        return false;
+    }
+ ...
+                                    </code></pre>
+                                    <p>D'aquesta manera, evitarem l'error i podrem fer la crida igual que si estès realment ben implementada. A més, canviant el valor de retorn, podrem provar diverses situacions, per veure si la nostra interfície respon adequadament a cada una d'elles.</p>
+                                    <p>Tot i així, si haver de fer la crida a una funció encara no implementada us causés algun problema, no hi perdeu gaire temps, ja afinareu al final, quan la implementeu. De moment aquí, comenteu la crida per tal que no doni error o escriviu un comentari en el seu lloc, a mode de recordatori, i continueu amb la resta de la implementació.</p>
+                                    <p>Si durant la codificació us adoneu que us fan falta més funcions, ja sigui a les classes de l'aplicació o en alguna biblioteca (Strings, interficie d'usuari, etc.), no us preocupeu, podeu implementar-les a mida que les aneu necessitant de manera que tingueu sempre les funcions disponibles per a ser utilitzades en les següents ocasions.</p>
                                     <!-- Button trigger pannel -->
-                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                    <button type="button" class="btn btn-warning btn-lg toggle-off  btn-3d" 
                                             data-toggle="button"
                                             data-parent-selector="#leftColumnPanel"
                                             data-display-on-set-slide="slc-toDo2" 
-                                            data-selector-clue="#slc-toDo2-clue1">
-                                        Pista 1
+                                            data-selector-advice="#slc-toDo2-advice">
+                                        Consells
                                     </button>                                        
-                                    <div id="slc-toDo2-clue1" class="iocClue hidden">
-                                        <h2>Pista 1</h2>
-                                        <p>Malgrat que feu servir la biblioteca per facilitar la creació d'interfícies d'usuari, no us oblideu d'independitzar la contextualització (missatges, textos i informació específica d'una aplicació) de la la resta de funcions. És a dir, no us oblideu de crear funcions específiques que permetin encapsular dita contextualització. Per exemple, recordeu el cas del càlcul de la temperatura mínima. Si implementem un codi semblat a aquest:</p>
-                                        <pre><code class="java">
-void trobarTemperaturaMinima(){
-    float[] temperatures;
-    int posMin;            
-    int mida = entrarEnter("Quantes temperatures vols omplir?");
-
-    temperatures = new float[mida];
-            
-    omplirFloats("Entra el valor de les temperatures", "Temperatura %f: ", temperatures);
-
-    posMin=0;
-    for(int i=1; i&lt;temperatures.length; i++){
-        if(temperatures[posMin]&gt;temperatures[i]){
-            posMin=i;
-        }
-    }
-
-    String resultatTxt = "La Temperatura mínima és: " +  temperatures[posMin];
-    mostrarMarcResultat(resultatTxt.lenght());
-    System.out.println(resultatTxt);
-    mostrarMarcResultat(resultatTxt.lenght());
-}                                        </code></pre>
-
-                                        <p>estem fent servir funcions genèriques de la biblioteca d'interfícies d'usuari, però malauradament no hem aïllat la contextualització i la funció serà difícilment reutilitzable. Òbviament i malgrat  que aparentment se'ns compliqui el codi, cal encapsular el context en funcions independents: </p>
-                                        <pre><code class="java">
-void trobarTemperaturaMinima(){
-    float[] temperatures;
-    int posMin;            
-
-    temperatures = obtenirTemperatures();
-    posMin= trobarPosMinim(temperatures);
-    tractarResultat(posMin, temperatures);
-}
-
-
-int trobarPosMinim(float[] valors){
-    int posMin=0;
-    for(int i=1; i&lt;valors.length; i++){
-        if(valors[posMin]&gt;valors[i]){
-            posMin=i;
-        }
-    }
-    return posMin;
-}
-
-float[] obtenirTemperatures(){
-    float[] temperatures;
-    int mida = entrarEnter("Quantes temperatures vols omplir?");
-    temperatures = new float[mida];                
-    omplirFloats("Entra el valor de les temperatures", "Temperatura %f: ", temperatures);
-    return temperatures;
-}
-
-void mostrarTemperaturaMinima(float temperaturaMinima){                
-    String resultatTxt = "La Temperatura mínima és: " +  temperatures[posMin];
-    mostrarMarcResultat(resultatTxt.lenght());
-    System.out.println(resultatTxt);
-    mostrarMarcResultat(resultatTxt.lenght());
-}
-
-                                        </code></pre>
-<p>Fixeu-vos que ara el context es redueix exclusivament a les dues funcions d'entrada i sortida de dades, deixant les altres, força descontextualitzades per facilitar la reutilització o la modificació per a plataformes diferents a les utilitzades aquí.</p>
-                                    </div>
-                                    <!-- Button trigger pannel -->
-                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
-                                            data-toggle="button"
-                                            data-parent-selector="#leftColumnPanel"
-                                            data-display-on-set-slide="slc-toDo2" 
-                                            data-selector-clue="#slc-toDo2-clue2">
-                                        Pista 2
-                                    </button>                                        
-                                    <div id="slc-toDo2-clue2" class="iocClue hidden">
-                                        <h2>Pista 2</h2>
-                                        <p>Ja hem vist que els estructures de dades, cal instanciar-les una vegada i anar-les passant per paràmetre, de funció, en funció. També hem vist que les classes que només contenen codi, podem instanciar-les tantes vegades com necessitem. No caldrà doncs que passem les seves instàncies per paràmetre, podem crear-les dins de cada funció de forma local. Per exemple, suposant que disposem d'una biblioteca per generar interfícies anomenada <em>InterficieConsola</em> i que l'estructura de dades és EstructuraDades, per poder-les usar a la funció següent, caldrà passar l'estructura per paràmetre i instanciar la interfície com a variable local:</p>
+                                    <div id="slc-toDo2-advice" class="iocAdvice hidden">
+                                        <p>Ja hem vist que les estructures de dades, cal instanciar-les una vegada i anar-les passant per paràmetre, de funció, en funció. També hem vist que les classes que només contenen codi, podem instanciar-les tantes vegades com necessitem. No caldrà doncs que passem les seves instàncies per paràmetre, podem crear-les dins de cada funció de forma local. Per exemple, suposant que disposem d'una biblioteca per generar interfícies anomenada <em>InterficieConsola</em> i que l'estructura de dades és EstructuraDades, per poder-les usar a la funció següent, caldrà passar l'estructura per paràmetre i instanciar la interfície com a variable local:</p>
                                         <pre><code class="java">
 void funcioExemple(EstructuraDades dades){
     InterficieConsola interficie = new InterficieConsola();
@@ -309,7 +239,7 @@ public class ClasseSegona{
     ...
 }
                                         </code></pre>
-                                        <p>En creau un instància d'una classe, simultàniament, es creen també totes les instancies de les seves variables globals. Com podeu suposar, això és realment un problema per el codi anterior, ja que mai arribaria a executar-se la instrucció <em>codiDePRova.executar();</em>, doncs en intentar crear la instància de ClassePrimera (des de la classe ClassePrincipal), obtindríem un error de desbordament de pila, degut a que la instancia creada, té una variable global de tipus ClasseSegona. Això farà que dins de la instancia de la variable codiDeProva, es crei un instancia de tipus ClasseSegona  (<em>codiDeProva.codiNecessariDeCSegona</em>). Ara bé, la classe ClasseSegona conté també una variable global de tipus ClassePrimera. D'acord amb el que hem explicat, dins la instancia de la classe ClasseSegona es crearà un nova instancia de ClassePrimera que serà diferent a la original, perquè aquesta es troba dins de  <em>codiDeProva.codiNecessariDeCSegona.codiNecessariDeCPrimera</em>. La nova instància contindrà un nova versió de  ClasseSegona i aquesta una nova de la classe ClassePrimera:  <em>codiDeProva.codiNecessariDeCSegona.codiNecessariDeCPrimera.codiNecessariDeCSegona.codiNecessariDeCPrimera</em>. Entrarem així en un bucle infinit que anirà creant instàncies fins esgotar totalment la memòria de l'ordinador, moment en el que obtindrem l'error de desbordament.</p>
+                                        <p>En crear un instància d'una classe, simultàniament, es creen també totes les instancies de les seves variables globals. Com podeu suposar, això és realment un problema per el codi anterior, ja que mai arribaria a executar-se la instrucció <em>codiDePRova.executar();</em>, doncs en intentar crear la instància de ClassePrimera (des de la classe ClassePrincipal), obtindríem un error de desbordament de pila, degut a que la instancia creada, té una variable global de tipus ClasseSegona. Això farà que dins de la instancia de la variable codiDeProva, es crei un instancia de tipus ClasseSegona  (<em>codiDeProva.codiNecessariDeCSegona</em>). Ara bé, la classe ClasseSegona conté també una variable global de tipus ClassePrimera. D'acord amb el que hem explicat, dins la instancia de la classe ClasseSegona es crearà un nova instancia de ClassePrimera que serà diferent a la original, perquè aquesta es troba dins de  <em>codiDeProva.codiNecessariDeCSegona.codiNecessariDeCPrimera</em>. La nova instància contindrà un nova versió de  ClasseSegona i aquesta una nova de la classe ClassePrimera:  <em>codiDeProva.codiNecessariDeCSegona.codiNecessariDeCPrimera.codiNecessariDeCSegona.codiNecessariDeCPrimera</em>. Entrarem així en un bucle infinit que anirà creant instàncies fins esgotar totalment la memòria de l'ordinador, moment en el que obtindrem l'error de desbordament.</p>
                                         <p>Si encara no controleu massa la instanciació de classes, eviteu l'ús de variables globals i malgrat que us representi una mica més de feina, useu només instàncies de tipus local.</p>
                                        <p>D'altra banda, tingueu també present, que les biblioteques amb funcions estàtiques no s'han d'instanciar. Les seves funcions es poden cridar directament anteposant el nom de la classe seguit d'un punt:</p> 
                                        <pre><code class="java">
@@ -328,49 +258,55 @@ public class ClassePrincipal{
                                             data-toggle="button"
                                             data-parent-selector="#leftColumnPanel"
                                             data-display-on-set-slide="slc-toDo2" 
-                                            data-selector-clue="#slc-toDo2-clue3">
-                                        Pista 3
+                                            data-selector-clue="#slc-toDo2-clue4">
+                                        Pista 1
                                     </button>                                        
-                                    <div id="slc-toDo2-clue3" class="iocClue hidden">
-                                        <h2>Pista 3</h2>
-                                        <p>Tingueu en compte a l'hora de validar les dades que l'usuari hagi d'entrar, que generalment serà necessari un bucle que permeti preguntar de nou el valor erroni. Valoreu també la possibilitat de permetre a l'usuari avortar un tasca durant la introducció de dades prement una tecla o combinació de tecles determinades. Exemple:</p>
-                                        <pre><code class="java">
-String obtenirData(){
-    String data;
-    boolean dataOk;
-    data = entrarCadena("Entra una data vàlida o [ENTRAR] per a cancel·lar?");
-
-    //Si l'usuari escriu una cadena buida indica que vol avortar la tasca
-    //Si la cadena no és buida, però no aconsegueix validar, caldrà repetir la demanda    
-    while(data.lenght()&gt;0 && !validarData(data)){
-            error("La data no era vàlida.")
-            data = entrarCadena("Entreu de nou una data vàlida:");
-    }
-    return data;
-}
-
-void afegirData(EstructuraDeDades dades){
-    String data = obtenirData();
-    //Si la data és buida cal avortar l'acció.
-    if(data.lenght()&gt;0){
-         //tractament ...
-    }else{
-        //Avisar que l'acció s'ha cancel·lat per ordre de l'usuari
-    }
-}
-                                        </code></pre>
-                                    </div>
+                                    <div id="slc-toDo2-clue4" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Plantegeu-vos en quin lloc haureu d'instanciar l'estructura de dades. Recordeu que l'aplicació, abans de començar a ser operativa haurà d'haver importat les dades, des de la base de dades central. Això significa que abans de fer la importació caldrà disposa de les dades inicialitzades.</p>
+                                        <p>Si finalment, heu decidit crear dos tipus compostos, un d'ells per gestionar els filtres i les dades filtrades dels clients que vulguin consultar els anuncis, plantegeu-vos també, on necessitareu instanciar aquest tipus compost, tenint en compte que es tracta de dades temporal que només tindran vigència mentre l'usuari es trobi consultant els anuncis.</p>
+                                    </div>  
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                             data-toggle="button"
                                             data-parent-selector="#leftColumnPanel"
                                             data-display-on-set-slide="slc-toDo2" 
-                                            data-selector-clue="#slc-toDo2-clue4">
+                                            data-selector-clue="#slc-toDo2-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-toDo2-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Recordeu que a la tasca d'afegir anuncis, abans de demanar cap dada, cal verificar si l'usuari té les condicions per poder afegir-lo. És a dir si l'usuari manté donats d'alta menys de tres anuncis. Recordeu també que al gestor de dades ja heu implementat un funció encarregada de fer aquesta verificació. </p>
+                                        <p>Finalment, recordeu també que en el mateix gestor de dades varau implementar també la funció per afegir nous anuncis.</p>
+                                    </div>  
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo2" 
+                                            data-selector-clue="#slc-toDo2-clue1">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-toDo2-clue1" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
+                                        <p>Hi ha tasques, que per la seva transcendència, es necessari desplegar un conjunt de mitjans destinats a assegurar que l'usuari és conscient del que està fent. Un exemple d'això és, per exemple, l'eliminació d'un anunci, ja que un cop eliminat no serà possible recuperar les dades. Valoreu coses que podeu fer per assegurar que les intencions de l'usuari es corresponen amb els actes. Per exemple, potser seria convenient, un cop que l'usuari hagi escollit l'immoble a eliminar, que l'aplicació mostri el detall de totes les dades de l'immoble i demani la confirmació de l'eliminació. D'aquesta manera es força a l'usuari a llegir les dades de l'immoble escollit i a verificar-en l'eliminació.</p>
+                                    </div>  
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo2" 
+                                            data-selector-clue="#slc-toDo2-clue3">
                                         Pista 4
                                     </button>                                        
-                                    <div id="slc-toDo2-clue4" class="iocClue hidden">
+                                    <div id="slc-toDo2-clue3" class="iocClue hidden">
                                         <h2>Pista 4</h2>
-                                        <p>Després de córrer cada etapa, els jutges han d'entrar els temps emprats per els corredors. Cal tenir en compte que els jutges indicaran les hores, minuts i segons que cada ciclista ha trigat. Podeu optar per recollir tren números enters, corresponent cada un d'ells a les hores, els minuts i els segons respectivament o bé, podeu optar per demanar una cadena amb el format "HH:MM:SS". Si opteu per la segona opció caldria verificar que el format és l'adequat.</p>
+                                        <p>A l'hora de demanar a l'usuari, les dades per configurar el filtre, heu de tenir en compte que cada propietat disposa de valors per defecte de manera que l'usuari no estigui obligat a donar valors a totes elles. El valor per defecte indica absència de cribratge associat a la propietat específica. És a dir qualsevol valor corresponent a les propietats que tinguin el valor per defecte serà acceptat com a pertanyent als immobles filtrats en referencia a la propietat específica. Això significa que un filtre constituït exclusivament valors per defecte a les seves propietats, obtindrà tots els anuncis existents a l'aplicació en aplicar el filtre.</p>
+                                        <p>Podeu establir que els valors per defecte dels valors textuals siguin cadenes buides. Pels valors numèrics, com que gestionen el filtre usant rangs amb un límit inferior i un se superior, podeu establir que el valor per defecte del valor mínim sigui 0 i el del valor màxim el major número enter que l'ordinador pot representar i que aconseguireu invocant el valor constant <em>MAX_VALUE</em>, contingut a la classe Integer. Per exemple:</p>
+                                        <pre><code class="java">
+int valorMaxim = Integer.MAX_VALUE; //Aquí s'assigna a la variable valorMaxim, el màxim enter de tipus <em>Integer</em> que JAVA és capaç de representar.
+                                        </code></pre>
+                                        <p>Intenteu també assegurar que a l'hora de donar valor al tipus d'immoble, l'usuari només pugui escriure valors vàlids. Per fer-ho eviteu de demanar que escrigui el valor lliurament. És preferible mostrar els valors vàlids i proposar-li alguna forma per tal que pugui escollir només una de les opcions proposades. Si ho feu així, recordeu que ha de ser possible escollir la opció per defecte que es podria traduir per "<em>qualsevol valor</em>".</p>
                                     </div>
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
@@ -381,9 +317,8 @@ void afegirData(EstructuraDeDades dades){
                                         Pista 5
                                     </button>                                        
                                     <div id="slc-toDo2-clue5" class="iocClue hidden">
-                                        <h2>Pista5</h2>
-                                        <p>Recordeu que a l'activitat A404 vàreu implementar un funció que mostrava la llista dels equips per la pantalla. No dubteu d'utilitzar-la ara.</p>
-                                        <p>Podeu també prendre aquella implementació com a patró, ja que la resta de llistats, caldrà implementar-los de forma molt semblant, canviant només l'origen de dades, els tipus de dades mostrades, etc. Peró de ben segur, que us pot inspirar en la implementació d'altres llistats.</p>
+                                        <h2>Pista 5</h2>
+                                        <p>Si durant la implementació de les accions que heu definit a la primera tasca, us adoneu que, algunes funcions es codifiquen amb només una única crida a una biblioteca, és aconsellable eliminar la funció i cridar directament la biblioteca, des de la tasca original, on s'havia de fer la crida a l'acció.</p>
                                     </div>
                                 </div> 
                             </div>

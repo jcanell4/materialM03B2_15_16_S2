@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Activitat d'aprenetatge per introduir el concepte de funció i la operativa bàsica per a declarar-les i fer-les servir durant la codificació.">
+    <meta name="author" content="Josep Cañellas i Alicia Vila ">
+    <title>A502. Estructura de dades</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css"/>
+<!--    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">-->
+    <link rel="stylesheet" href="../js/styles/default.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Custom CSS -->
+    <!--link to css slides-->
+    <link href="../css/m03b2Activities.css" rel="stylesheet">
+    <link href="../css/scrolling-slides.css" rel="stylesheet">
+    <link href="../css/highlightActivities.css" rel="stylesheet">
+</head>
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top">
+<!-- Navigation hidden panel -->
+    <aside>
+        <a id="menu-toggle" href="#" class="btn btn-dark toggle after-top-menu" title="Informació"><i class="glyphicon glyphicon-info-sign"></i></a>
+        <nav id="sidebar-wrapper" class=" after-top-menu">           
+            <ul class="sidebar-nav">
+                <a id="menu-close" href="#" class="btn btn-light pull-right toggle">
+                    <i class="glyphicon glyphicon-remove-circle"></i>
+                </a>
+                <li class="sidebar-brand">
+                    <a href="#slc-toStart"  onclick = '$("#menu-close").click();' >Inici activitat</a>
+                </li>
+                <li>
+                    <a href="#" onclick = 'return $("#goals_info").togglePanelOnClick();'>Objectius</a>
+                </li>
+                <li>
+                    <a class="toProjectStatement" onclick = '$("#menu-close").click();' >Enunciat del projecte</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_reinforcement").togglePanelOnClick(); '>Per reforçar</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_info").togglePanelOnClick(); '>Més informació per ampliar</a>
+                </li>
+            </ul>
+        </nav>
+        <nav id="bottom-wrapper">
+             <!-- SCROLL PREVIOUS BUTTON -->
+            <span id="prevArrow" class="btn arrownav previousSection" ></span>
+            <!-- END SCROLL PREVIOUS BUTTON -->
+             <!-- SCROLL NEXT BUTTON -->
+            <span id="nextArrow" class="btn arrownav nextSection" ></span>
+            <!-- END SCROLL NEXT BUTTON -->
+        </nav>        
+    </aside>
+    <!--=========== BEGIN HEADER SECTION ================-->
+     <header id="header">
+         <!-- BEGIN TOP MENU -->
+        <div class="menu_area">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+                <!-- LOGO -->
+                <span class="navbar-brand navbar-left logo-nav"><img src="../images/logo.png" title="{{$LOGO_TITLE}}" /></span>
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                    <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                          <span class="sr-only">Menú</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
+                          <li class="active"><a href="#slc-toStart">Inici</a></li> 
+                          <li><a href="#slc-toDo">Tasques a realitzar</a></li>
+                          <li><a href="#slc-toDelivery">Lliurament</a></li> 
+                          <li><a href="#slc-toContinue">Com continuar</a></li> 
+                        </ul>           
+                    </div>
+                </div>     
+            </nav>  
+        </div>
+        <!-- END TOP MENU -->
+   </header>
+    <!--=========== END HEADER SECTION ================-->
+    
+    <!--=========== BEGIN MAIN SLIDER SECTION ================-->    
+    <div id="mainSlider" class="iocMainPanel">
+        <div class="slides">
+            <!--=========== BEGIN SECTION toStart ================-->    
+            <section id="slc-toStart" class="section">
+                <div class="container">  <!--Bootstrap container-->
+                    <!-- header -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Inici activitat A502 - Estructura de dades</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- body -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <div class=bodySlide>
+                                <p>Durant la implementació d'una aplicació, tenir clara l'estructura de dades, és probablement una de les tasques claus per garantir l'èxit del projecte, juntament amb l'anàlisi i el disseny que haureu de realitzar en la següent activitat. De moment, en aquesta, donarem només forma a les estructures que permetin gestionar les dades i implementar les funcions bàsiques que permetin la seva manipulació assegurant que sempre es mantindrà la seva coherència. </p>
+                                <p>Abans de començar, donada la importància d'aquest procés, ens hem posat en contacte amb la immobiliària per demanar-li exactament quines són les dades que haurem de tractar a l'aplicació. Ens confirmen que tal com es desprèn de l'enunciat, el prototipus a desenvolupar només haurà de mantenir les dades dels usuaris (ja siguin venedors, compradors o ambdues coses a la vegada) i també dels anuncis que els venedors publiquin dels immobles que desitgin vendre.</p>
+                                <p>Les dades dels usuaris a mantenir seran:</p>
+                                <ul>
+                                    <li>DNI.</li>
+                                    <li>Nom i cognoms.</li>
+                                    <li>Correu electrònic per poder posar en contacte venedors i compradors.</li>
+                                    <li>Contrasenya d'accés a l'aplicació per validar l'usuari</li>
+                                </ul>
+                                <p>Ens comenten també que aquest prototipus no disposarà encara de les pantalles d'alta, manteniment i baixa d'usuaris, sinó que les dades s'importaran d'una cadena de text convenientment formatada provinent de la base de dades central. Més endavant detallarem aquest procés d'importació.</p>
+                                <p>Respecte les dades dels anuncis, ens indiquen que malgrat que també hi haurà un importació inicial des de la base de dades central, el propietari, a més, ha de poder donar d'alta i eliminar els anuncis dels seus immobles. Cada anunci contindrà la següent informació:</p>
+                                <ul>
+                                    <li>Un identificador únic de l'immoble. A fi d'evitar repeticions, l'identificador estarà composat per una seqüència de text de 6 xifres numèriques. La seqüència iniciarà el seu valor amb "000000" i anirà incrementant una unitat per cada anunci que es doni d'alta. No es permet reutilitzar els identificadors d'anuncis antics, malgrat que aquest s'hagin donat de baixa del sistema.</li>
+                                    <li>El tipus d'immoble. Actualment, la immobiliària classifica els immobles en 6 categories: locals comercials, oficines, pisos, cases, pàrquings i trasters. Per tal de facilitar la cerca als compradors, evitar sinònims o paraules derivades, s'han estandarditzat els noms de les 6 categories a les següents paraules literals:  Local, Oficina, Pis, Casa, Pàrquing i Traster. Ni venedors, ni compradors podran fer servir altres categories que no siguin les paraules estandarditzades.</li>
+                                    <li>Una descripció sense límit de longitud. L'usuari podrà descriure el que cregui convenient sobre el seu immoble per tal de promocionar l'anunci. Per exemple, a la descripció, el propietari podria indicar el nombre d'habitacions que té l'immoble, si es tracta d'un pis assolellat, si cal fer reformes als banys o a la cuina, etc. La descripció és purament informativa i no es farà sevir per a cap cerca. No hi ha una longitud determinada per la descripció, tot i que es recomana que no sigui massa llarga (entre 1 i 3 línies).</li>
+                                    <li>L'adreça on es troba l'immoble. Aquesta no indicarà la població, sinó només el nom del carrer i el número. En cas que s'escaigui també es farà constar el pis, la porta, etc.</li>
+                                    <li>La població on es troba ubicat l'immoble.</li>
+                                    <li>La superfície de l'immobles, expressat amb un valor enter que representa el metres quadrats.</li>
+                                    <li>El preu en Euros, al que el propietari desitja vendre l'immoble. El preu està expressat com un valor enter.</li>
+                                </ul>
+                                <p>A banda d'aquestes dades, ens remarquen que a l'hora de valorar els tipus de dades hem de tenir en compte que els compradors podran filtrar els anuncis per obtenir només aquells que siguin del seu interès, d'acord amb el següents criteris:</p>
+                                <ul>
+                                    <li>El tipus d'immoble. Per aquest criteri, només serà possible escollir una de les 6 categories estandarditzades (Local, Oficina, Pis, Casa, Pàrquing o Traster)</li>
+                                    <li>La població. L'usuari interessat en comprar un immoble podrà escollir la població on desitja que estigui ubicat. De moment el prototipus <strong>no disposarà</strong> dels noms de els poblacions estandarditzats, per tant l'usuari entrarà una cadena lliure de text que s'utilitzarà per comparar-ho amb les poblacions dels anuncis. En cas que l'usuari no escrigui cap població existent, ja sigui per error tipogràfic o per manca d'anuncis amb la població indicada, no obtindrà cap immoble filtrat.</li>
+                                    <li>El rang desitjat de superfície de l'immoble. El rang podrà establir un valor màxim i mínim, només un valor màxim o un valor mínim o bé definir un rang sense límits.</li>
+                                    <li>Un rang idèntic a l de la superfície però aplicat al preu. És a dir, que es podrà definir un preu màxim, un preu mínim, ambdós o cap.</li>
+                                </ul>
+                                <p>Un cop aplicat un filtre, l'usuari interessat només podrà visualitzar, ja sigui en forma de llista, o de detall, els immobles que compleixin el filtre. És a dir malgrat que l'usuari demani el detall, fent servir un identificador existent de l'immoble, si aquest no compleix el filtre aplicat, el programa no en mostrarà el detall i informarà que no hi ha cap immoble amb l'identificador indicat que compleixi el filtre establert.</p>
+                                <p>La immobiliària ha insistit també, que els usuaris propietaris, hauran de poder accedir només els seus propis anuncis, a fi de poder-los consultar o eliminar. Recordeu que segons l'enunciat cada usuari nomé pot tenir donats d'alta 3 anuncis d'immobles i, per tant, a vegades els pot interessar eliminar-ne algun amb poca sortida, per poder afegir-ne un de nou.</p>
+                                <p>Finalment, la immobiliària ens explica que per tal que un usuari pugui  fer alguns del processos que el prototipus permeti, haurà d'autenticar-se sempre amb la seva contrasenya.</p>
+                                <p>A continuació us proposem de fer 2 tasques relacionades amb el disseny de les estructures de dades i la gestió de les mateixes. Tingueu en compte la informació de l'enunciat i la que aquí se us ha donat.</p>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toStart ================-->    
+            <!--=========== BEGIN SECTION implementació ================-->    
+            <section id="slc-toDo" class="vsections">
+                <!--=========== BEGIN SUBSECTION estructura de dades ================-->    
+                <section id="slc-estructuraDeDades" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar-Estructura de dades</h2>
+                                     <h3 > <span class="tascaTitle">Tasca</span> - Disseny i implementació de les estructures de dades</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>A l'activitat <a class="A501ToDo30" target="_blank">A501</a> vau veure que una classe que contingui variables, pot constituir un tipus compost i que els tipus compostos són la base de les estructures de dades de les aplicacions. A la tasca 3, vau veure diferents implementacions d'una mateixa estructura. Com ja vau constatar, les estructures complexes poden implementar-se de múltiple maneres, i segurament no existeix una única implementació millor que les altres, sinó més aviat, cal adonar-se que unes implementacions faciliten uns tractaments en detriment dels altres. L'ideal és poder escollir aquella implementació que suposi més avantatges que inconvenients per els tractaments que caldrà realitzar a la nostra aplicació.</p>
+                                    <p>En primer lloc, donarem una ullada ràpida als criteris principals que haurem de tenir en compte en el disseny de l'estructura de dades.</p>
+                                    <ol class="nestedCounter">
+                                        <li>
+                                            Prengui la forma que pregui la implementació final d'una estructura de dades, cal assegurar-se que serà possible mantenir totes les dades necessàries i obtenir-les de forma senzilla quan ens calguin. Per assegurar.nos donem un repàs al que demana l'enunciat i a la informació que se us acaba de donar a l'apartat inici:
+                                            <ol>
+                                                <li>
+                                                    Cal emmagatzemar les dades dels usuaris de forma que:
+                                                    <ol>
+                                                        <li>Sigui possible localitzar per DNI, l'usuari que vol validar-se  i autenticar-lo amb la contrasenya.</li>
+                                                        <li>Un cop autenticat, passarà a ser l'usuari actiu i caldrà reconèixer-lo i distingir-lo de la resta, per disposar de les seves dades quan calgui.</li>
+                                                        <li>A priori no és possible saber quants usuaris hi haurà. Per això cal preveure que fins el moment de la importació, no serà possible saber-ne la quantitat. Malgrat tot, en tractar-se d'un primer prototipus, no es preveu que el nombre d'usuaris superi els 100.</li>
+                                                    </ol>
+                                                </li>
+                                                <li>
+                                                    Cal emmagatzemar les dades dels immobles tenint en compte que:
+                                                    <ol>
+                                                        <li>L'identificador amb que es donarà d'alta un immoble es generà de forma automàtica a partir d'una seqüència de text de 6 xifres. Recordeu que la seqüència identificadora ha de ser única i que no es permet reutilitzar una seqüència feta servir, ni tant sols si l'immoble identificat ja ha estat eliminat prèviament.</li>
+                                                        <li>Hi hagi un vincle entre el propietari i els seus immobles de manera que sigui fàcil reconèixer quins són, recuperar les seves dades, eliminar els que el propietari indiqui, afegir-ne de nou (vinculats a l'usuari que els dona d'alta), etc. </li>
+                                                        <li>Malgrat que no se sap quants immobles hi haurà, recordeu que cada usuari podrà tenir un màxim de 3 immobles anunciats. Això vol dir que hi haurà usuaris sense cap anunci, altres amb un, d'altres amb dos o amb tres, però cap en tindrà més de tres.</li>
+                                                        <li>En cas que l'usuari tingui 3 anuncis, l'aplicació no li deixarà donar-ne d'alta cap més, fins que no n'elimini algun.</li>
+                                                        <li>Algunes dades dels immobles són de tipus text, però d'altres (al menys superfície i preu) són de tipus enter, per tal de poder aplicar correctament els rangs definits a l'hora de filtrar.</li>
+                                                        <li>El tipus d'immoble està estandarditzat. Caldrà assegurar-se que els usuaris escollin sempre d'entre les 6 opcions vàlides, ja que no ha de ser possible enregistrar ni cercar un tipus diferent al predefinits (Local, Oficina, Pis, Casa, Pàrquing o Traster).</li>
+                                                    </ol>
+                                                </li>
+                                                <li>
+                                                    Les dades dels immobles filtrades segons les condicions expressades per l'usuari que desitja cercar un immoble per comprar:
+                                                    <ol>
+                                                        <li>Configuren un subconjunt del total d'immobles existents. Un cop aplicat el filtre les operacions demanades per l'usuari s'apliquen només al subconjunt d'immobles filtrat i s'ignoren la resta.</li>
+                                                        <li>Probablement sigui una bona idea emmagatzemar d'alguna forma els valors del filtre aplicat a fi de poder-lo mostrar per la pantalla a mode de   recordatori.</li>
+                                                        <li>El filtre es manté per qualsevol operació (veure la llista d'immobles, veure el detall d'un d'ells, etc.) mentre no es demani d'aplicar un nou filtre. És a dir, un cop filtrats els immobles segons les condicions de filtre establertes, el subconjunt d'immobles resultant es mantindrà inalterable, fins que no es modifiquin les condicions del filtre.</li>
+                                                    </ol>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li>Cal intentar que la informació dins de l'estructura estigui ben organitzada, entenent per informació organitzada, l'estructura que es dóna a les dades per tal de facilitar la seva interpretació i mantenir la seva independència sense perdre la seva interrelació. Aquí no hi ha receptes explícites, per això us aconsellem que us deixeu guiar pel sentit comú, i si en algun moment dubtem entre dues opcions, us aconsellem que escolliu sempre la que considereu que es pot interpretar de forma més clara i més explicita. Intenteu sempre que pugueu posar noms significatius i fer servir els tipus de dades que millor s'ajustin a la informació que estan representant. Si tornem a l'exemple del joc de dames vist a l'activitat A501, constatareu que els enters que identifiquen si les caselles del tauler estan buides o contenen una fitxa han d'estar disposats d'alguna forma que s'intueixi que entre tots conformen una entitat més gran (el tauler). Això s'aconsegueix fent servir una matriu, perquè aquest tipus de dades organitza el seus elements en files i columnes de manera similar a com ho fa una tauler d'escacs.</li>
+                                        <li>No us conformeu amb la primera solució que us vingui al cap. Intenteu trobar diverses alternatives sempre que sigui possible. <a class="A501ToDo30" target="_blank">A la tasca 3 de l'activitat A501</a>,trobeu un exemple clar de diverses formes per solucionar la  necessitat de mantenir una col·lecció  de dades on els seus elements hagin de contenir dades de diferent tipus (els noms i el nombre de partides guanyades de cada jugador.). En aquest projecte també hi ha casos que podrien solucionar-se de diverses maneres. No us precipiteu prenent una decisió. Intenteu buscar arguments a favor i contra.</li>
+                                        <li><p>Feu servir constants , sempre que sigui possible, per identificar elements específics dins d'una matriu, en comptes de fer servir la posició. Per exemple, si en una matriu de cadenes emmagatzemem <em>el dni</em> i <em>el nom</em> dels alumnes del IOC, podem definir dins la mateixa estructura la constant DNI (=0) i la constant NOM (=1), de forma que sigui totalment intuïtiu discernir entre una o altre dada. Així per exemple <em><pre>alumnes[5][NOM]</pre></em> fa referència inequívocament, al nom de l'alumne que es troba a la posició 5.</p> <p>En canvi si fem servir directament la posició: <em><pre>alumnes[5][1]</pre></em> serem més proclius a l'error.</p></li>
+                                        <li>En cas que alguna col·lecció pugui presentar un nombre desconegut d'elements, caldrà trobar una solució per saber quants elements hi ha en cada moment, d'acord al nombre d'insercions realitzat. Tingueu en compte que la solució adoptada repercutirà de ben segur en el tipus compost. Consulteu les pistes si és necessari.</li>
+                                    </ol>
+                                    <p>Com podeu suposar, davant dels dubtes, no hi ha varetes màgiques que ens determinin quina és la millor solució, però en qualsevol cas, si feu una valoració raonada i preneu una decisió ben argumentada, potser no encerteu la millor solució, però de ben segur que haureu descartat les tries inviables.</p>
+                                    <p>Sovint, raonar és una tasca lenta. Eviteu les presses i feu servir el <span class="forumDeDiscussio">ERROR - fòrum de discussió del període</span> per expressar ordenadament els vostres raonaments i contrastar-los amb els dels vostres companys. No és necessari que arribeu a cap consens en el fòrum, cada un de vosaltres pot optar per la solució que li sembli més adequada. En el fòrum <strong>HEU D'EVITAR ESCRIURE EXPLÍCITAMENT L'ESTRUCTURA DE DADES</strong> pròpia del projecte, només es tracta d'expressar idees i argumentar-les.</p>
+                                    <div class="frameBox">
+                                            <h4>Qüestions per ajudar a la discussió en el <span class="forumDeDiscussio">ERROR - fòrum de discussió del període</span></h4>
+                                            <ol>
+                                                <li>Segurament, amb els coneixements que teniu actualment, la millor manera de representar el conjunt d'usuaris i d'immobles és fent servir matrius. Quantes matrius i de quin tipus seriem necessàries per representar les dades dels usuaris? Quina dimensió hauria/ien de tenir aquesta/es matriu/s? Se us acudeix una manera diferent de representar aquestes dades? Quins pros i contres li veieu? </li>
+                                                <li>Creieu que una matriu de cadenes de text pot ser adequada per representar les dades dels immobles o necessitarem més d'una matriu?</li>
+                                                <li>Consulteu la pista 1 i intenteu donar resposta a les preguntes que us planteja.</li>
+                                                <li>Consulteu la pista 2, quina opció us semblaria més adient per gestionar la inserció d'usuaris? i per gestionar la inserció d'immobles?</li>
+                                                <li>Consulteu la pista 3, Com et sembla que caldria implementar una estructura que donés suport al model d'exàmens tipus test que es mostra gràficament? Basant-te en l'estructura implementada, com creus que aconseguiries assignar a una variable double, el valor de penalització aplicada a la pregunta 3? Escriu la condició que et permetria saber si la resposta de l'alumne 2 a la pregunta 4 és o no correcte? </li>
+                                                <li>Considereu que per treballar amb les dades filtrades caldria implementar un tipus de compost específic o penseu que aquestes dades es poden integrar al tipus compost on guardarem les dades bàsiques de l'aplicació? Creieu que cal emmagatzemar de forma temporal, els immobles filtrats o cal cercar-los a la col·lecció global cada cop que els necessitem?</li>
+                                            </ol>
+                                        </div>
+                                    <p>Seguint els consells que us hem donat aquí i les conclusions que hàgiu pogut treure de la discussió en el fòrum, creeu un nou projecte de Netbeans i afegiu-hi les classes que considereu oportunes per implementar els tipus compostos que definiran l'estructura de dades del projecte.</p>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-estructuraDeDades" 
+                                            data-selector-clue="#slc-estructuraDeDades-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-estructuraDeDades-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Repasseu mentalment els requisits de dades exposat en aquesta tasca, tingueu també present l'enunciat i la informació oferta a l'apartat <em>inici</em>. Intenteu, amb tot això,  imaginar quines dades seran necessàries a l'hora d'implementar cada un dels processos del projecte. Comproveu en cada cas si les dades necessàries es poden obtenir a partir de l'estructura de dades que estigueu dissenyant. No passa res si us deixeu alguna dada, fent servir tipus compostos és fàcil fer petites modificacions sense haver de realitzar grans canvis en el codi ja implementat. Presteu especial atenció als processos de:</p>
+                                        <ul>
+                                            <li>Inserció de dades en un vector o una matriu quan sigui necessari inserir els elements poc a poc i d'un en un. Quina dimensió haurà de tenir el vector o matriu? Com sabrem on inserir cada nou element? Com sabrem quants elements hi ha en cada moment per poder fer un recorregut, element per element?</li>
+                                            <li>Dimensió de les matrius que contenen conjunts de dades complexos. Malgrat que moltes vegades, per emmagatzemar la majoria d'agrupacions o conjunts d'elements en tindrem prou amb matrius unidimensionals o bidimensionals, en ocasions no hi haurà més remei que incrementar les dimensions per poder relacionar dades entre elles. Assegureu-vos que la dimensió que doneu a les vostres matrius és suficient per poder realitzar els processos del projecte.</li>
+                                            <li>Plantegeu-vos com podreu assegurar que l'usuari utilitzi els textos estandarditzats per els tipus d'immoble i si això afecta a l'estructura de dades</li>
+                                            <li>Tenint en compte que la filtració de dades per part dels usuaris que cerquin immobles del seu interès, es temporal mentre duri la cerca, però un cop abandonat el procés, el filtre deixa de tenir sentit, penseu que caldria implementar tot el conjunt de l'estructura de dades en un únic tipus compost o seria preferible repartir les dades en més d'un tipus compost? </li>
+                                            <li>Creieu que cal emmagatzemar les dades dels immobles filtrats d'acord amb els criteris de selecció escollits per l'usuari, en un espai temporal o penseu que és preferible seleccionar els immobles que compleixin els criteris cada cop que sigui necessari?</li>
+                                            <li>Pensa en el procés de controlar que un usuari no pugui donar d'alta més de 3 anuncis. Necessitaràs anar comptant quants anuncis porten donats d'alta els usuaris. N'hi hauria prou amb un únic comptador? Quants comptadors necessitaries?</li>
+                                        </ul>
+                                    </div>  
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-estructuraDeDades" 
+                                            data-selector-clue="#slc-estructuraDeDades-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-estructuraDeDades-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Un vector, a diferencia d'un tipus de dada simple (int double, boolean, char, etc.), no té una mida predeterminada sinó que la seva ocupació a la memòria RAM dependrà de la quantitat d'elements que contingui i del tipus de dades d'aquests. Quan declarem un tipus de dada simple, el compilador ja sap la quantitat de memòria que cal reservar, per això no ens cal especificar-la. Així, quan declarem una variable de tipus enter, el compilador sap que cal reservar 4 bytes a la RAM per contenir-hi el seu valor. Quina memòria però, cal reservar amb una declaració del tipus <em>double[] notesCurs</em>? Creieu que es possible saber-ho sense indicar res més? Òbviament, la resposta és NO. Caldrà indicar quantes notes d'un curs cal emmagatzemar per poder calcular la dimensió a la memòria RAM. En JAVA és necessari usar una comanda addicional anomenada new on especificarem la mida desitjada. Així una instrucció de l'estil:
+<pre><code class="java">
+double[] notesCurs = new double[10];   
+</code></pre>
+o bé
+<pre><code class="java">
+double[] notesCurs;
+...
+notesCurs = new double[10];
+</code></pre>
+Indicarà al compilador la quantitat de memòria a reservar, 10 vegades el que ocupi un tipus double (64*10 = 640 bytes). .</p>
+<p>Sovint però, no resulta fàcil saber a priori quants elements d'un vector necessitarem durant l'execució d'una aplicació. Si el vector anterior en comptes de guardar les notes de les matèries d'un curs hagués de guardar les dels alumnes. Com podríem saber a priori quants alumnes se'ns matricularien? Què hem de fer en aquest casos? Us proposem diverses solucions.</p>
+                                         <h3>Opció 1</h3>
+                                         <p>La biblioteca Arrays, disposa de la instrucció <em>copyOf</em> que permet crear una copia del contingut d'una array qualsevol, incrementant o reduint la mida de l'original. Això permet crear per cada inserció, un array de mida major a fi que hi càpiga la nova dada i copiar-hi el contingut antic, obtenint un array idèntic a l'original però amb capacitat per una element més.</p>
+                                         <p>Aquesta opció, presenta diversos inconvenients: d'una banda, haver de copiar cada cop que inserim un nou element, tot el contingut original, suposa un cost important que redueix l'eficiència de l'aplicació; d'altra banda, trobem també problemes de memòria, perquè en repetir reiteradament aquesta instrucció, incrementant només, un element cada cop, es pot malmetre la memòria i de retruc empitjorar el rendiment de la màquina on s'executa. Per tant, no és aconsellable anar incrementant una a un els elements. En canvi, si seria adequat de fer servir per obtenir arrays que siguin subconjunts d'un original. Per exemple, si a partir d'un array d'alumnes i un de notes, volem obtenir el subconjunt d'alumnes que hagin aprovat, podríem declarar un variable de dimensió igual al nombre d'alumnes, per si haguessin aprovat tots; després caldria recorre les notes identificant els aprovats i afegint a l'array nou, els alumnes respectius. Un cop incorporats tots els aprovats, es podria reduir l'array generat a la mida ajustada del subconjunt.</p>
+                                             <h3>Opció 2</h3>
+                                             <p>Una altra opció pot passar per establir una mida màxima i mantenir-la sempre, però incorporar un comptador que indiqui quants elements són reals. La resta d'elements, malgrat estiguin disponibles, no s'hauran de fer servir. Aquesta opció presenta l'inconvenient que necessitem saber quina serà la capacitat màxima de l'array, o si més no atribuir-ne una prou gran, a fi de no quedar-nos curts i sense memòria. En el cas de les matrícules d'alumnes, podem suposar que a les aules, el nombre d'alumnes no superarà mai la quantitat de 100. Així, hauríem de crear un vector inicial de 100 posicions i un comptador d'alumnes matriculats. Per indicar que en el moment de la creació el vector és buit, donarem el valor de zero al comptador d'alumnes. Cada cop que afegim un nou element caldrà incrementar el valor d'aquesta variable per tal de fer-lo coincidir amb el nombre d'ítems (alumnes) realment ocupats.</p>
+                                             <p>Gràficament representarem el vector com una successió d'elements consecutius identificats per una posició entre zero i el nombre màxim d'elements menys 1 (doncs incloem el valor zero com a posició vàlida). El comptador del nombre d'elements realment ocupats la representarem amb una fletxa. El valor del comptador serà la posició del vector on assenyali. Inicialment, la representació gràfica d'un vector buit serà:'</p>
+
+<figure>
+    <img src="images/arrayBuit.png" alt="array buit">
+</figure>
+Cada cop que inserim un nou valor, haurem de modificar el valor del comptador. 
+<figure>
+    <img src="images/arrayUnElement.png" alt="array amb un element">
+</figure>
+
+<p>La ocupació real del vector ara val 1 perquè acabem d'inserir un element a la posició zero. </p>
+</br>
+<p>De forma semblant, quan inserim el següent element, ho farem a la posició 1 i la ocupació real (comptador) passarà a valer 2</p>
+<figure>
+    <img src="images/arrayDosElements.png" alt="array amb un element">
+</figure>
+
+<p>És fàcil veure que el valor de la variable ens indica la ocupació real ens indica també la posició on cal guardar cada element nou per tal d'evitar fer malbé les dades ja existents.</p>
+<p>Aquesta opció implica necessàriament fer servir una variable extra, el comptador, a més de l'array. 
+</p>
+<pre><code class="java">
+double[] vectorDeDades = new double[10];
+int midaRealVectorDeDades = 0;    
+</code></pre>
+<p>A quina posició inseriríeu el primer element? Evidentment, és lògic inserir el primer element a la posició zero, no creieu? Fixeu-vos, quin valor té <em>midaRealVectorDeDades</em> abans d'inserir el primer element? Sembla que coincideixen, no?</p>
+<p>Quin valor hauria de tenir <em>midaRealVectorDeDades</em> un cop inserit el primer element si les dades es mantinguessin perfectament coherents? Sembla també lògic, que la resposta és <em>1</em>. Fixeu-vos de nou, A quina posició inseriríeu ara el segon element? Coincideix de nou el valor de <em>midaRealVectorDeDades</em> amb la posició on cal fer la inserció? Podeu concloure alguna regla que us ajudi a saber on cal inserir cada nou element en funció de la ocupació que l'array vagi tenint?</p>
+                                    </div>  
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-estructuraDeDades" 
+                                            data-selector-clue="#slc-estructuraDeDades-clue3">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-estructuraDeDades-clue3" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
+                                        <p>A vegades, ens trobarem que necessitarem relacionar dades que es trobin físicament en diferents vectors. La forma més senzilla d'establir la relació és fent servir la posició. Imaginem per exemple que volem emmagatzemar dos vectors que representin un examen. En un dels vectors podem guardar-hi les preguntes i a l'altre les respostes. Per relacionar preguntes i respostes podem convenir que ambdues llistes es torbaran ordenades de la mateixa manera. Així la resposta a la pregunta situada en la posició 4 del vector de preguntes, caldrà buscar-la també a la posició 4 del vector de respostes. </p>
+                                        <p>Establir aquest tipus de relació es fa quasi imprescindible si hem de treballar amb dades de diferent tipus, doncs recordeu que un vector és una col·lecció de dades d'una mateix tipus. Què passa si volem relacionar els noms dels alumnes (cadenes de text) amb les seves notes (dades numèriques)?</p>
+                                        <p>No hi haurà altre remei que emmagatzemar cada tipus de dades en vectors diferents i relacionar-les a través de la seva posició. </p>
+                                        <p>A mode d'exemple, i sense entrar en detall de com implementar la solució imagineu una aplicació que permeti crear exàmens de tipus test, donar d'alta estudiants que puguin fer els exàmens i calcular-ne la nota tenint en compta la ponderació i penalització de cada pregunta.</p>
+                                        <p>Gràficament tindríem:</p>
+                                        <figure>
+                                            <img src="images/relacionsEntreVectors.png" alt="array buit">
+                                        </figure>
+                                    </div>  
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-estructuraDeDades" 
+                                            data-selector-clue="#slc-estructuraDeDades-clue4">
+                                        Pista 4
+                                    </button>                                        
+                                    <div id="slc-estructuraDeDades-clue4" class="iocClue hidden">
+                                        <h2>Pista 4</h2>
+                                        <p>Un dels problemes que us trobareu, quan us plantegeu com cal implementar l'estructura de dades del projecte, serà trobar un forma per relacionar els propietaris dels immobles amb els seus immobles, per tal que sigui fàcil localitzar-los, afegir-ne de nous (associats al mateix propietari) i eliminar-los. Si us poseu a pensar, segur que trobareu múltiples formes de fer-ho. Aquí us en proposem dues. Valoreu-les i escolliu la que us sembli més adequada.</p>
+                                        <h3>Opcio 1</h3>
+                                        <p>Una opció força senzilla consisteix en emmagatzemar la posició de l'usuari propietari a la matriu on guardem les dades numèriques dels immobles. És a dir, que el propietari (o més ben dit la seva posició) seria una dada més de cada immoble, com pot ser-ho el preu, al superfície, etc.</p>
+                                        <p>És tracta d'una molt bona opció, per la seva senzillesa. Tot i això presenta un problema: per seleccionar els anuncis d'un usuari, caldrà recórrer tots els anuncis existents. Ben mirat és un problema lleu, perquè de moment no hi ha molts anuncis, però si l'aplicació creix, cal tenir en compte que aquí tindrem un punt feble.</p>
+                                        <h3>Opcio 2</h3>
+                                        <p>Una alternativa a la opció 1, seria estructurar els immobles com una matriu de tres dimensions de manera que sigui fàcil relació cada usuari (primera dimensió), amb cada un dels seus immobles -fins un màxim de tres- (segona dimensió) i les diferents dades específiques de cada immoble (tercera dimensió). Vegeu la figura següent:</p>
+                                        <figure>
+                                            <img src="images/opcio2MatriuImmobles.png" alt="array buit">
+                                        </figure>
+                                        <p>Aquesta opció precisaria de matrius tridimensional per representar les dades dels immobles. Gràcies a l'estructura tridimensional, és possible relacionar la posició d'un usuari els seus immobles de manera que no sigui necessari haver de recórrer tota la col·lecció d'immobles per obtenir els anuncis d'un mateix propietari. Per contra, una matriu tridimensional incrementa una mica la complexitat a l'hora d'implementar el projecte. Tot i així, cal considerar aquesta opció ja que l'increment de complexitat no és massa gran. Heu de pensar que en realitat tot es podria veure més senzill si en lloc de diferenciar cada una de les dades dels immobles, prenguéssim tota la fila de dades d'un immoble com un tot. És tracta d'un plantejament exclusivament conceptual, ja que a la pràctica la implementació no variarà, seguirem necessitant 3 dimensions per guardar les dades, però mentalment ens ajudarà a simplificar els processos i tasques a implementar.</p>
+                                        <p>Mireu l'apartat "Arrays multidimesionals" del següent <a class="docArrays">document</a>, per entendre que en realitat un vector bidimensional és un vector unidimensional de vectors. Per extensió podem dir també que un de tridimensional seria un vector bidimensional de vectors. És a dir, en considerar les files com un tot s'ens redueix sempre una dimensió</p>
+                                        <p>Intentem il·lustrar-ho a la següent animació:</p>
+                                        <figure>
+                                            <img src="images/opcio2Simplificacio.gif" alt="array buit">
+                                        </figure>
+                                        <p>A la il·lustració hem considerat la matriu d'usuaris com un vector de vectors i la matriu d'immobles com un vector bidimensional de vectors. Per tant, fixeu-vos  que cada usuari pot tenir relacionat per posició, 3 columnes de la matriu d'immobles, corresponents al nombre màxim d'immobles que un usuari podria tenir anunciats. Cal entendre però, que cada una d'aquestes columnes es correspon amb un anunci i, en realitat, és un vector amb les dades individuals de cada un. </p>
+                                        <p>A la il·lustració s'han representat independentment les dades textuals de les numèriques, tal com haurem de fer a l'hora d'implementar-ho.</p>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION estructura de dades  ================-->    
+                <!--=========== BEGIN SECTION gestor de dades ================-->    
+                <section id="slc-gestorDeDades" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar-Estructura de dades</h2>
+                                     <h3 > <span class="tascaTitle">Tasca</span> - Implementació del gestor dades</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Mantenir les dades juntes i organitzades en una estructura, no garanteix però, la coherència interna d'aquestes. La organització de les dades juga un paper molt important, però quan implementem aplicacions usant estructures de dades, serà també important vetllar per la coherència de les mateixes. Tenir un disseny de dades amb una estructura impecable, amb contingut incoherent vindria a ser com redactar una frase sintàcticament ben escrita però semànticament sense sentit ("la casa caminava lentament" és un exemple de frase ben construïda sintàcticament, però semànticament errònia).</p>
+                                    <p>Malauradament, els errors deguts a una incoherència interna de les dades d'una estructura són molt comuns i cal trobar maneres d'evitar-los. Ja sabem que no disposem de cap vareta màgica per trobar la solució, però sempre que codifiquem ens hauríem d'imposar trobar maneres d'evitar la incoherència o, si més no, de reduir-ne la possibilitat.</p>
+                                    <h4>incoherència en modificar les dades</h4>
+                                    <p>Les incoherències solen produir-se perquè sovint una acció sobre les dades pot implicar canvis en diversos elements de l'estructura. Si durant la codificació ens oblidem de fer algun dels canvis necessaris, ens trobarem davant d'un error realment difícil de detectar.</p>                                    
+                                    <p>Hi ha una manera d'evitar aquest tipus d'errades. Consisteix en crear funcions específiques que s'encarreguin de fer tots els canvis a la vegada. Caldrà identificar aquelles accions que modifiquin l'estructura en diversos llocs i en conseqüència siguin susceptibles de generar incoherències, i crear per aquestes una funció encarregada de fer l'acció de forma sempre complerta i correcta. És aconsellable mantenir totes les funcions específiques de l'estructura de dades agrupades en una classe que podem anomenar <em>gestorDeDades</em>.</p>
+                                    <p>Imaginem que hem de gestionar una estructura que contingui una llista variable de dades. Per exemple, imaginem que hem de codificar el registre d'alumnes matriculats d'una escola. El nombre d'alumnes que es matricularan és impossible de saber a priori. Si s'opta per crear una estructura amb un comptador de matriculats, a més de l'array de dades dels alumnes, tindrem una estructura semblant a:</p>
+                                    <pre><code class="java">
+package ioc.m03.uf2;
+
+public class DadesAlumnes {
+    public String[] alumnes;
+    public int matriculats;
+}
+                                    </code></pre>
+                                    <p>Com es pot suposar, cada cop que fem una matrícula, cal afegir el nom de l'alumne a una posició lliure de l'array <em>alumnes</em> i cal actualitzar el valor de l'element matriculats. També caldria fer quelcom semblant per donar de baixa una matrícula, etc.</p>
+                                    <p>Per gestionar aquestes accions sense errades, decidim crear una classe específica, anomenada GestorDadesAlumnes, encarregada d'implementar accions d'alt nivell sobre instancies del tipus compost <em>DadesAlumnes</em>:</p>
+                                    <pre><code class="java">
+
+public class GestorDadesAlumnes {
+    
+    public void novaMatriculaAlumne(DadesAlumnes dades, String alumne){
+        dades.alumnes[dades.matriculats]=alumne;
+        dades.matriculats++;
+    }
+    
+    public void baixaAlumne(DadesAlumnes dades, int posicioAlumneAEliminar){
+        //Cal traslladar l'alumne a eliminar més enllà del límit indicat pel comptador de matrícules,
+        //a fi quedi amagat i no s'hi pugui accedir; com si s'hagués eliminat.
+        for(int i=posicioAlumneAEliminar; i&lt;dades.matriculats; i++){
+            String[] aux = dades.alumnes[i];
+            dades.alumnes[i]=dades.alumnes[i+1];
+            dades.alumnes[i+1] = aux;
+        }
+        dades.matriculats--;
+    }
+    
+    ...
+}
+                                    </code></pre>
+                                    <p>D'aquesta manera, si a la implementació de l'aplicació es fa servir sempre la funció del gestor, les dades seran sempre coherents.</p>
+                                    <h4>incoherència en la inicialització de les dades</h4>
+                                    <p>La inicialització de les dades d'una estructura també acostuma a ser una font d'incoherències i errades, ja que algunes vegades, abans de fer servir una instancia de tipus compost és necessari donar valors específics a alguns dels seus elements per tal que les seves dades siguin coherents, o s'ajustin al que s'espera. En ocasions n'hi haurà prou només inicialitzant un array a la dimensió correcta o instanciant els tipus compostos interns.</p>
+                                    <p>Per exemple, en el cas anterior de la gestió de matrícules, necessitarem dimensionar l'array d'alumnes a la mida màxima abans de començar a treballar. Com que la mida màxima dependrà del renom de l'escola, del municipi/barri on estigui i fins i tot de l'any en que es faci la matrícula, es pot optar per deixar la dimensió configurable en el moment de començar. Podem encarregar al gestor de dades GestorDadesAlumnes l'acció de crear i d'inicialitzar una instancia dimensionada a una mida especificada des de paràmetre, estimada per l'ajuntament:
+</p>
+                                    <pre><code class="java">
+  public DadesAlumnes crearDadesAlumnes(int dimensio){
+        DadesAlumnes dades = new DadesAlumnes();
+        dades.alumnes=new String[dimensio];
+        return dades;
+    }
+                                    </code></pre>
+                                    <p>Noteu que a JAVA, tots els tipus simples (short, int, long, float, double, char, ...) s'inicialitzem sempre a zero i per tant no és necessari indicar-ho a la inicilització.</p>
+                                    <h4>altres usos del gestor de dades</h4>
+                                    <p>La classe especifica de gestió de les dades de l'estructura, pot contenir a més de les funcions que que ajudin a minimitzar la incoherència, totes aquelles altres que considerem útils per ajudar-nos a manipular l'estructura de dades. De fet aquestes classes poden admetre funcions de consulta, de càlcul, etc. Sovint és molt més senzill cridar una funció i esperar el resultat que haver de pensar con tractar l'estructura per obtenir el resultat desitjat, sobretot si cal repetir diverses vegades un tractament determinat. Tot allò que ens ajudi a tractar les dades específiques de l'estructura pot tenir cabuda dins la classe.</p>
+                                    <h4>Recordeu</h4>
+                                    <p>És important que recordeu que les funcions del gestor de dades són funcions auxiliars que s'ha de poder fer servir en diferents llocs de l'aplicació, per això no és un bona idea que les dades es demanin a l'usuari des d'aquestes funcions, ni que es presentin els resultats per la pantalla. És preferible que les dades entrin via paràmetres i que les dades calculades o els resultats obtinguts es retornin com a paràmetres de sortida, mitjançant la opció de retorn o bé fent servir tipus de dades que es passin com a paràmetres per referència. Més endavant ja implementareu les demandes explicites de dades i les sortides per la pantalla. No us precipiteu. Aquí només cal implementar funcions de tractament  de les dades.</p>
+                                    <h4>Què heu d'implementar</h4>
+                                    <p>Per tal d'anar avançant el projecte, caldrà crear, en el projecte on heu implementat els tipus compostos, un classe anomenada per exemple <em>GestorDeDades</em> on haureu d'implementar al menys les següents funcions:</p>
+                                    <ul>
+                                        <li>Una funció per afegir els usuaris que arribin de la importació. Assegureu-vos que els dades de l'usuari a afegir arribin per paràmetre. Podeu passar també, l'estructura de dades per paràmetre, recordeu que en tractar-se d'un tipus compost, es passa sempre per referència. La funció haurà d'afegir un nou usuari assegurant la coherència de l'estructura de dades un cop afegit el nou usuari. Podeu suposar que el DNI passat per paràmetre serà únic, no cal que comproveu si ja existeix a la col·lecció d'usuaris.</li>
+                                        <li>Una funció que rebi l'estructura de dades adequada, junt amb dos cadenes, una contenint un DNI i l'altra contenint la contrasenya per autenticar l'usuari. Feu que es comprovi si coincideix la contrasenya passada amb l'emmagatzemada, corresponent a l'usuari identificat amb el DNI passat. En cas que les contrasenyes coincideixin, la funció retornarà el valor de la posició on s'ha trobat l'usuari autenticat. En cas que no hi hagi coincidència o que no existeixi cap usuari amb el DNI passat, caldrà retornar el valor -1.</li>
+                                        <li>Una funció per afegir un nou anunci d'un immoble. Assegureu-vos que els dades de l'anunci a inserir, excepte l'identificador que cal generar-lo de forma automàtica, arribin per paràmetre. també caldrà que passeu per paràmetre la posició de l'usuari propietari a fi que quedin permanentment relacionats, propietari i anunci. Podeu passar també, l'estructura de dades per paràmetre, recordeu que en tractar-se d'un tipus compost, es passa sempre per referència. La funció haurà de generar un identificador únic (no repetit en cap altre anunci existent) i afegir l'anunci a la col·lecció existent, tot assegurant la coherència de l'estructura de dades en acabar la inserció. Podeu suposar que ja s'ha comprovat prèviament que l'usuari té menys de tres anuncis donats d'alta, no cal que feu aquí la comprovació.</li>
+                                        <li>Una funció que verifiqui si és possible donar d'alta un anunci, d'un usuari. La funció hauria de rebre, a més de l'estructura de dades adient, la posició de l'usuari del qual cal fer la verificació. La funció comprovarà si l'usuari té actualment menys de 3 anuncis i retornarà cert en cas afirmatiu. En cas negatiu o en cas que la posició de l'usuari no sigui vàlida, retornarà fals.</li>
+                                        <li>Una funció que elimini un anunci d'un usuari. Penseu quines dades haureu de passar per paràmetre per tal d'aconseguir l'eliminació i mantenir la coherència de les dades en acabar.</li>
+                                        <li>Totes aquelles funcions que permetin inicialitzar les dades dels tipus compostos de forma coherent.</li>
+                                        <li>Altres funcions que creieu necessàries d'implementar en el gestor de dades, d'acord amb el vostre disseny de l'estructura de dades i tenint en compte  els consells donats més amunt.</li>
+                                    </ul>
+                                    <p>En el projecte podeu afegir-hi la biblioteca <em>Strings</em> que heu implementat a l'activitat A501, potser podreu reaprofitar alguna funció. Recordeu també que teniu funcions fetes a l'activitat A404, que potser podreu aprofitar aquí.</p>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-gestorDeDades" 
+                                            data-selector-clue="#slc-gestorDeDades-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-gestorDeDades-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Repasseu mentalment el la informació que teniu del projecte, tingueu també present l'estructura elaborada a la tasca anterior i els consells que se us ha donat aquí i, amb tot, intenteu trobar si podeu necessitar alguna funció que no s'hagi descrit a l'enunciat. Si la trobeu, afegiu-la al gestor de dades i implementau-la.</p>
+                                    </div>  
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-gestorDeDades" 
+                                            data-selector-clue="#slc-gestorDeDades-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-gestorDeDades-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>El procediment a realitzar per donar crear i inicialitzar la instancia, per donar d'alta usuaris i immobles, etc. dependrà totalment dels disseny que finalment hàgiu donat a l'estructura de dades. a l'enunciat d'aquesta tasca, podreu trobar exemples que es correspondrien a un vector sobredimensionat del qual se simula la seva mida real, utilitzant una variable auxiliar que indica la quantitat d'alumnes que hi ha matriculats. Ara bé, si haguéssim dissenyat d'una altra manera el tipus compost, la funció hauria de canviat també. Per exemple si ens haguéssim decantat per redimensionar el vector cada cop que calgués inserir o eliminar un alumne, la funció, en comptes de manipular el comptador de matrícules hauria de manipular la dimensió del vector.   </p>
+                                                                            <pre><code class="java">
+
+public class GestorDadesAlumnes {
+    public DadesAlumnes crearDadesAlumnes(int dimensio){
+        DadesAlumnes dades = new DadesAlumnes();
+        dades.alumnes=new String[dimensio];
+        return dades;
+    }
+    
+    public void novaMatriculaAlumne(DadesAlumnes dades, String alumne){
+        int mida = dades.alumnes.length;
+        dades.alumnes = Arrays.copyOf(dades.alumnes, mida+1);
+        dades.alumnes[mida]=alumne;
+    }
+    
+    public void baixaAlumne(DadesAlumnes dades, int posicioAlumneAEliminar){
+        int novaMida = dades.alumnes.length-1;
+        for(int i=posicioAlumneAEliminar; i&lt;novaMida; i++){
+            dades.alumnes[i]=dades.alumnes[i+1];
+        }
+        dades.alumnes = Arrays.copyOf(dades.alumnes, novaMida);
+    }
+    
+    ...
+}
+                                        </code></pre>
+                                        <p>Fixeu-vos com en ambdós casos (al codi de l'enunciat de la tasca i el d'aquí), essencialment, es fa el mateix: detectar on cal inserir l'alumne i assignar-hi el nou valor, en cas de la inserció, o desplaçar l'alumne a eliminar cap a el final, en cas de l'eliminació. El que canvia però (manipulació del comptador o redimensió del vecor), és important perquè és el que dóna realment coherència a les dades.</p>
+                                    </div>  
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-gestorDeDades" 
+                                            data-selector-clue="#slc-gestorDeDades-clue3">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-gestorDeDades-clue3" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
+                                        <p>Quina decisió heu acabat prenent a l'hora de treballar amb els anuncis filtrats per certes condicions? Si heu decidit fer un emmagatzematge temporal, potser podríeu implementar aquí una funció que rebi les condicions i les dades, detecti els anuncis que compleixin les condicions i els emmagatzemi.</p>
+                                    </div>  
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SECTION gestor de dades ================-->    
+
+            </section>
+            <!--=========== END SECTION implementació ================-->    
+            <!--=========== BEGIN SECTION toDelivery ================-->    
+            <section id="slc-toDelivery">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Lliurament -Estructura de dades</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>Baixa't l'<span class="informeLliurament"></span> d'aquesta activitat i omple'l per poder fer el lliurament, ja que bàsicament, aquesta és una activitat de seguiment que serveix com indicador per verificar que avanceu correctament. El professor restarà atent al lliurament de l'informe on indicaràs si has aconseguit implementar l'estructura de dades, les funcions del gestor de dades i les biblioteques que se t'han demanat a les diverses tasques. En cas que hagis tingut dificultats, pots exposar-les a l'informe a fi que puguem donar-te una resposta durant la retroacció.</p>
+                                <p>Només cal que enviïs l'informe. Malgrat tot, si ho creus necessari, pots enviar més d'un fitxer empaquetant-los tots junts en un fitxer ZIP que penjareu a la <span class="bustiaLliurament"></span>.</p>
+                                <p>Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
+                                <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu, ja que el professor podrà avaluar l'evolució del projecte i si cal us donarà un cop de mà. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toDelivery ================-->    
+            <!--=========== BEGIN SECTION toContinue ================-->    
+            <section id="slc-toContinue">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Com continuar - Estructura de dades</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+                                <p>Passeu a la següent <a class="toNextActivity">activitat</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toContinue ================-->    
+        </div>
+    </div>
+    <!--=========== END MAIN SLIDER SECTION ================-->    
+
+    <!--=========== BEGIN META-INFO PANELS ================-->    
+    <div id="sidepanel-wrapper" class="left-position after-top-menu">
+        <a id="panel-close" href="#" class="panel-close btn btn-light pull-right toggle"><i class="glyphicon glyphicon-remove-circle"></i></a>
+        <div id="goals_info" class="bodySlide hidden"> 
+            <h2>Objectius d'aprenentatge de l'activitat</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran els objectius específics d'aprenentatge treballats en aquesta activitat</p>
+
+            <h2>Resultats d'aprenentatge del mòdul treballats en aquesta activitat</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran els resultats d'aprenentatge del mòdul que es treballen en aquesta activitat</p>
+        </div>
+        <div id="more_reinforcement" class="hidden"> 
+            <h2>Més activitats i idees per reforçar l'aprenentatge</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran exercicis, activitats, lectures o referencies externes per tal que l'estudiant, pugui reforçar el conceptes estudiats </p>
+        </div>
+        <div id="more_info" class="hidden"> 
+            <h2>Informació sobre funcions  per ampliar</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran lectures, activitats referències externes o bibliografia on l'estudiant, pugui ampliar l'aprenentatge si ho desitja</p>
+        </div>
+    </div>
+    <!--=========== END META-INFO PANELS ================-->    
+    
+    <!--=========== BEGIN EMPTY PANEL ================-->    
+    <div id="emptypanel-wrapper" class="right-position after-top-menu">
+    </div>
+    <!--=========== END EMPTY PANEL ================-->    
+    
+    <!--=========== BEGIN EMPTY MODAL WINDOW ================-->    
+    <div id="modalWindow" class="iocModal hidden">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-selector-to-set-class="#modalWindow" data-class-to-set-class="iocModal hidden" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--=========== END EMPTY MODAL WINDOW ================-->    
+
+    <!--=========== BEGIN EMPTY LEFT COLUMN PANEL ================-->    
+    <div id="leftColumnPanel" class="left-position column-panel after-top-menu">
+    </div>
+    <!--=========== END EMPTY LEFT COLUMN PANEL ================-->    
+
+    <!--=========== BEGIN EMPTY HIDDEN PANEL ================-->    
+    <div id="hiddenContent" class="hidden">
+    </div>
+    <!--=========== END EMPTY HIDDEN PANEL ================-->    
+
+    <!--=========== BEGIN SCRIPTS ================-->    
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- highlight.js plugin -->
+    <script src="../js/highlight.pack.js"></script>
+
+    <!-- jssor.js plugin -->
+    <script src="../js/jssor.js"></script>
+    <script src="../js/jssor.slider.js"></script>
+    
+    <!-- to run jssor here-->
+    <script src="../js/jssorActivities.js"></script>
+
+    <!-- slides functionality-->
+    <script src="../js/scrolling-slides.js"></script>
+
+    <!-- specific functionality for IOC activities-->
+    <script src="../js/m03b2Activities.js"></script>
+
+    <!-- specific functionality for this activ¡ty-->
+    <script>
+        $(document).ready(function(){
+            var activityManager = new ActivityManager();
+            
+            activityManager.init("../data/toReplace.json", "A502");
+            var iocSlider = new IocSlider();
+            activityManager.updateDisplayButtons(iocSlider);
+        });
+    </script>
+    <!--=========== END SCRIPTS ================-->    
+
+</body>
+
+</html>
+

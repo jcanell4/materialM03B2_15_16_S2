@@ -114,8 +114,10 @@
                         <div class="col-lg-12">
                              <div class=bodySlide>
                                 <p>Aquesta activitat us servirà per començar a implementar alguna funcionalitat senzilla del projecte que heu de desenvolupar individualment per la UF2, posant en pràctica el que heu aprés fins el moment.</p>
-                                <p>El primer pas que heu de realitzar és consultar l'enunciat del projecte en el següent enllaç: <a class="toProjectStatement">enunciat del projecte</a>. Així us podeu fer una idea del que se us demanarà.</p>
-                                <p>En relació a la implementació d'una funcionalitat senzilla del projecte, a l'apartat <a href="#slc-individuals">tasques a realitzar</a> se us proposarà fer tres funcions que més endavant podreu utilitzar en el vostre projecte. Així podeu practicar implementant codi que reutilitzareu en algun moment.</p>
+                                <p>Si encara no ho heu fet, podeu consultar l'enunciat del projecte en el següent enllaç: <a class="toProjectStatement">enunciat del projecte</a>, així contextualitzareu el que se us anirà demanant al llarg de la UF2. </p>
+                                <p>En relació a les tasques que haureu d'implementar en aquesta activitat, es tracta de funcions que podreu reutilitzar quan implementau tot el projecte. En aquesta activitat, encara no teniu els coneixements suficients per començar a implementar el projecte de forma global, però en canvi si que sabeu implementar funcions.</p>
+                                <p>Totes les funcions que se demanaran aquí, podreu reutilitzar-les posteriorment en el projecte. Algunes, perquè són de caire genèric i es podrien aprofitar en qualsevol projecte, però d'altres són específiques i plantejades expressament per aquest projecte. Potser de moment, encara no els veureu una aplicació pràctica, però quan entreu a la fase de disseny i implementació, ja trobareu la manera d'incorporar-les a fi que us ajudin reduir la quantitat de línies a escriure.</p>
+                                <p>Passeu a l'apartat <a href="#slc-individuals">tasques a realitzar</a> per començar la implementació.</p>
                              </div>
                         </div>
                     </div>
@@ -125,63 +127,103 @@
 
             <!--=========== BEGIN SECTION individuals ================-->    
             <section id="slc-individuals" class="vsections">
-                <!--=========== BEGIN SUBSECTION individuals0 ================-->    
-                <section id="slc-individuals0" class=" section">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class= "headSlide">
-                                     <h2 >Tasques a realitzar- Projecte I</h2>
-                                     <h3> Lectura enunciat</h3>
-                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class=bodySlide>
-                                    <p>Obriu l'<a class="toProjectStatement">enunciat del projecte</a> i llegiu-lo atentament. Es tracta d'una lectura inicial que us ajudarà a situar-vos en el context del projecte. </p>
-                                    <p>Abans de començar a codificar és important fer-se una idea mental de com funcionarà l'aplicació. Com veieu, es tracta d'una aplicació prou gran com per reflexionar-hi una mica abans de començar a escriure el codi.</p>
-                                    <p>A aquestes alçades de curs, és normal que encara no sapigueu com codificar tota l'aplicació, però amb el que heu aprés fins ara, sí que podeu començar a intuir funcions que podreu necessitar més endavant quan calgui encarar tota la implementació. </p>
-                                    <p>El projecte que heu de desenvolupar és un prototipus d'aplicació que gestiona la informació d'una volta ciclista, amb totes les dades corresponents a ciclistes, equips i etapes, així com el tractament dels resultats una vegada realitzada la competició.</p>
-                                    <p>Al llarg de les successives fases del projecte, s'aniran detallant les funcionalitats a realitzar per tal que, quan hagueu de desenvolupar el projecte complet, tingueu clara l'estructura del programa. </p>
-                                    <p>En les següents pantalles teniu detallades les tasques a realitzar que, bàsicament, seran funcions del projecte a implementar. Passa a la següent pantalla per veure les propostes.</p>
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!--=========== END SUBSECTION individuals0 ================-->    
-                
                 <!--=========== BEGIN SUBSECTION individuals10  ================-->    
-                <section id="slc-individuals10" class=" section">
+                <section id="slc-individuals10" class="tasca section">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Tasques a realitzar - Projecte I</h2>
-                                     <h3> Tasca 1 - Funció <em>entrarText</em></h3>
+                                     <h3> <span class="tascaTitle">Tasca</span> - Funció <em>extreuColumna</em></h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Inspirant-te en la funció implementada a l'activitat <a href="../A402_funcions2.html#slc-toDo__slc-toDo21" target="_blank">A402</a>, es demana que codifiquis una funció que rebi un missatge de text a mostrar per la pantalla i un cop mostrat esperi l'entrada per teclat de l'usuari fins que aquest premi la tecla [ENTRAR].</p>
-                                    <p>La funció comprovarà que el text entrat no sigui una cadena buida. Si l'entrada no fos correcta, caldria indicar a l'usuari que no s'accepten valors de text buits i que caldrà que escrigui de nou un text i premi [ENTRAR]. Quan l'entrada sigui correcta, es retornarà el valor i s'abandonarà la funció.</p>
-                                    <p>Per codificar la funció creeu un projecte de Netbeans on hi afegireu un fitxer de codi anomenat <em>Tasca1.java</em> contenint la funció <em>entrarText</em>. Complementeu la codificació amb la funció main i un funció <em>prova</em> que us permeti provar el bon funcionament de funció <em>entrarText</em>.</p>
+                                    <p>En aquesta funció us demanarem que implementeu una funció que rebi una matriu (array de dues dimensions) i extregui el contingut d'una única columna, emmagatzemant els valors extrets, en un array o vector (de dimensió única) adequadament dimensionat. Un cop finalitzat l'emmagatzematge, la funció retornarà l'array recent creat i inicialitzat amb els valors extrets de la columna per tal que pugui ser utilitzat allà on es necessiti.</p>
+                                    <p>Recordeu que les matrius són conjunts de dades organitzades en format de taula. Les files i les columnes s'identifiquen per la seva posició, començant per zero com tots els arrays. Qualsevol element de la matriu es podrà identificar indicant la seva fila i la seva columna. És fàcil recorre una matriu amb una doble iteració que ens referenciï cada una de les columnes, per cada una de les seves files. Sovint però, a les aplicacions no es necessiten totes les dades contingudes a la matriu i poder extreure parcialment una columna o una fila, ens pot ajudar a reutilitzar funcions que només estiguin preparades per treballar vectors (arrays unidemensionals) i no amb matrius. La funció que heu d'implementar us ajudarà a fer-ho. Tingueu-ho present quan hagueu de dissenyar la implementació final del projecte.</p>
+                                    <p>La funció rebrà per paràmetre una matriu de tipus <em>String</em>. la posició de la columna de la que es volen extreure els valors i també un valor enter indicant de quants files es vol fer l'extracció. Si aquest darrer paràmetre valgués 5, significaria que només es desitja extreure el valor de les 5 primeres files (de la zero a la quatre), la resta caldria ignorar-les.</p>
+                                    <p>La raó d'aquest tercer paràmetre es fonamenta en que sovint els arrays es troben sobredimensionat i que només una part dels seus valors són útils a l'aplicació. Generalment la porció de valors útils es situen a l'inici de l'array, a partir de la posició zero fins un límit indicat. En els nostre cas el valor del tercer paràmetre.</p>
+                                    <p>L'array retornat, serà també de tipus <em>String</em> i haurà de tenir la mínima mida possible, és a dir, la mida coincidirà amb el valor indicat pel tercer paràmetre. El contingut de l'array, com ja s'ha indicat coincidirà amb el valor dels elements de la columna que identifiqui el segon paràmetre des de la fila zero fins a completar en nombre correcte d'extraccions (valor del tercer paràmetre).</p>
+                                    <p>Òbviament aquesta funció no servirà per extreure dades de matrius d'altres tipus. En principi, pel projecte actual, no serà necessari, però si algn dia en teniu necessitat, aquesta funció us servirà de patró per implementar l'extracció de dades de qualsevol tipus.</p>
+                                    <p>Només se us demana que implementeu la funció <em>extreuColumna</em>. Malgrat tot, per tal que pugueu provar el vostre codi us demanem que codifiqueu la solució en una classe anomenada <em>Tasca1</em> on podreu copiar el codi que se us facilita mes a sota. Allà trobareu la declaració de la funció que us demanem, cal que hi implementeu el vostre codi allà. També trobareu la funció main i una funció anomenada <em>prova</em> que ja estan implementades. La funció <em>prova</em> fa una crida a la funció <em>extreuColumna</em> usant dades simulades. Això us permetrà poder provar la vostra funció, un cop implementada, executant la classe <em>Tasca1</em> i observant si els resultats són o no coherents.</p>
+                                    <pre><code class="java">
+public class Tasca1 {
 
+    String[] extreuColumna(String[][] valors, int columna, int quants){
+        //escriviu aquí la vostra codificació
+    }
+        
+    /*******************************************************/
+    /*                   Codi per provar                   */
+    /*******************************************************/
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Tasca1 prg = new Tasca1();
+        prg.prova();
+    }
+    private void prova() {
+        String[][] valors = {
+             {"001-1", "", "", "", ""}
+            ,{"001-2", "", "", "", ""}
+            ,{"002-1", "", "", "", ""}
+            ,{"002-2", "", "", "", ""}
+            ,{"002-3", "", "", "", ""}
+            ,{"003-1", "", "", "", ""}
+            ,{"003-2", "", "", "", ""}
+            ,{"005-2", "", "", "", ""}
+            ,{"006-1", "", "", "", ""}
+            ,{"006-2", "", "", "", ""}
+            ,{"ERROR", "", "", "", ""}
+            ,{"ERROR", "", "", "", ""}
+            ,{"ERROR", "", "", "", ""}
+        };
+        int quantitat = 10;
+
+        String[] columnes = extreuColumna(valors, 0, quantitat);
+        
+        System.out.println("Les dades de la columna extreta són:");
+        System.out.println("----------------------------------------------------");
+        for(int i=0; i&lt;columnes.length; i++){
+            System.out.print(i);
+            System.out.print(") ");
+            System.out.println(columnes[i]);
+        }
+        System.out.println("----------------------------------------------------");
+    }
+}
+
+                                    </code></pre>
                                  <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                             data-toggle="button"
                                             data-parent-selector="#leftColumnPanel"
                                             data-display-on-set-slide="slc-individuals10" 
                                             data-selector-clue="#slc-individuals10-clue1">
-                                        Pista
+                                        Pista 1
                                     </button>                                        
                                     <div id="slc-individuals10-clue1" class="iocClue hidden">
-                                        <h2>Pista</h2>
-                                        <p>Tenint en compte que un text pot ser una combinació de qualsevol caràcter (lletres, números, signes de puntuació, espais en blanc etc.), creus que serviria d'alguna cosa validar si l'entrada ha estat o no correcta amb un <em>hasNextLine</em>?</p>
-                                        <p>Si penses que no, quina hauria de ser la comparació alternativa que permetés verificar que l'entrada de l'usuari no és una cadena buida?</p>
+                                        <h2>Pista 1</h2>
+                                        <figure id ="fig_menu_informacio_addicional" class="left">
+                                            <img width="470" src="images/matriuTaula.png" alt="Menú d'informació addicional">
+                                            <figcaption style="width: 449px; max-width: 75%;">
+                                                <span class="figuretitle">figura </span>Botó per accedir al menú d'informació addicional'.
+                                            </figcaption>
+                                       </figure>
+                                        <p>La forma més habitual de representar un matriu, es en forma de taula. Cada element de la matriu es pot identificar per mitjà de la intersecció entre una fila i una columna. Per saber com accedir i com recórrer als seus elements podeu consultar l'apartat titulat <em>Arrays multidimensionals</em> del document de repàs que trobareu <a class="docArrays">aquí</a></p>
+                                    </div>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals10" 
+                                            data-selector-clue="#slc-individuals10-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-individuals10-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Recordeu que és possible retornar un array instanciat en una funció. Repasseu si cal <a class="A403" target="_blank">l'exercici 3 de l'activitat A403</a></p>
                                     </div>
                                 </div> 
                             </div>
@@ -189,28 +231,211 @@
                     </div>
                 </section>
                 <!--=========== END SUBSECTION individuals10 ================-->    
-                <!--=========== BEGIN SUBSECTION individuals20  ================-->    
-                <section id="slc-individuals20" class=" section">
+
+                <!--=========== BEGIN SUBSECTION individuals30  ================-->    
+                <section id="slc-individuals30" class="tasca section">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Tasques a realitzar - Projecte I</h2>
-                                     <h3> Tasca 2 - Funció <em>obteDorsalCiclista</em> </em> </h3>
+                                     <h3> <span class="tascaTitle">Tasca</span> - Funció <em>trobarPosCoincident</em> </h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Com heu llegit a l'enunciat del projecte, una de les funcionalitats que ha de tenir el programa és la inscripció de ciclistes. Una vegada s'han emmagatzemat les dades dels ciclistes, el programa retornarà un codi de dorsal que serà l'identificador del ciclista.</p>
-                                    <p>Per realitzar aquesta activitat es demana:</p>
-                                    <p>Suposant que les dades d'un ciclista són conegudes, implementeu la funció <em>obteDorsalCiclista</em> en un fitxer de codi anomenat <em>Tasca2.java</em>. Recordeu que, segons podeu consultar a l'enunciat,
-                                    el valor del dorsal del ciclista s'obté concatenant les <em>tres primeres lletres del nom del ciclista + numero ordre inscripcio + codi de l'equip al que pertany</em>.
-                                    Per exemple, si el ciclista Perico Indurain s'ha inscrit el 4t i és de l'equip ONZ, el seu dorsal serà: Per4ONZ.</p>
-                                    <p>Intenteu esbrinar quins paràmetres haurà de rebre la funció. El retorn de la funció serà una cadena de caràcters que ens donarà el dorsal.</p>
-                                    <p>Per codificar la funció caldrà crear un projecte de Netbeans on hi afegireu un fitxer de codi contenint la funció <em>obteDorsalCiclista</em>. 
-                                    Complementeu la codificació amb la funció main i un funció <em>prova</em> que us permeti provar el bon funcionament de funció <em>obteDorsalCiclista</em>.</p>
+                                    <p>Aquesta funció us pot servir també per ajudar-vos a tractar matrius. En aquest cas, l'objectiu de la funció consistirà en esbrinar si algun dels valors d'una de les columnes de la matriu identificada per un dels paràmetres coincideix amb un determinat valor, passat també per paràmetre. Concretament la funció rep 4 paràmetres que a partir d'ara anomenarem <em>valor</em> per referir-nos al paràmetre arribat en primer lloc, que contindrà la cadena a cercar; Amb el nom de <em>matriu</em> ens referirem al segon paràmetre, el qual contindrà una matriu bidimensional de tex; el tercer paràmetre, que anomenarem <em>columna</em>, serà de tipus enter i indicarà quina és la columna sobre la qual es vol fer la cerca; el darrer paràmetre (<em>quantitat</em>) indicarà quantes files de la matriu són realment vàlides, doncs haurem de desestimar les files que es trobin des de la posició indicada pel quart paràmetre inclòs en endavant. Només les primeres seran vàlides.</p>
+                                    <p>La funció cercarà, entre totes les files vàlides de la matriu, en quina posició es troba aquella que contingui, a la columna indicada pel paràmetre <em>columna</em> el mateix text que el paràmetre valor, ignorant es troba escrit amb majúscules o minúscules.</p>
+                                    <p>Si es troba el valor, es retornarà la posició de la fila en la que hi ha hagut coincidència. Si no es troba es tornarà el valor del paràmetre <em>quants</em>, indicant que la cerca ha sortit del rang permès i per tant no hi ha cap valor coincident a la matriu.</p>
+                                    <p>De forma semblant a la tasca anterior, aquí també us fem arribar el codi que us permetrà provar la vostra codificació. Crea una classe anomenada Tasca2 i copia el codi següent:</p>
+                                                <pre><code class="java">
+public class Tasca2 {
+
+    int trobarPosCoincident(String valor, String[][] matriu, int columna, int quantitat) {
+        //Codifiqueu aquí
+    }
+
+    /*******************************************************
+     *                                                     *
+     *                  Codi per provar                    *
+     *                                                     *
+     *******************************************************/
+    public static void main(String[] args) {
+        //adapteu la instanciació del programa d'acord amb el nom del fitxer (i nom de la classe) on treballeu.
+        Tasca3 prg = new Tasca3();  //canvieu FuncionsIArrays pel nom del vostre fitxer.
+        prg.prova();
+    }
+
+    private void prova() {
+        String[][] valors = {
+            {"001-1", "", "", "", "005-2"}, 
+            {"001-2", "", "005-2", "", ""}, 
+            {"002-1", "", "", "005-2", ""}, 
+            {"002-2", "", "", "", ""}, 
+            {"002-3", "005-2", "", "", ""}, 
+            {"003-1", "", "", "", ""}, 
+            {"003-2", "", "", "", ""}, 
+            {"005-2", "", "", "", ""}, 
+            {"006-1", "", "", "", ""}, 
+            {"006-2", "", "", "", ""}, 
+            {"ERROR", "", "", "", ""}, 
+            {"ERROR", "", "", "", ""}, 
+            {"ERROR", "", "", "", ""}
+        };
+        int quantitat = 10;
+        
+        int posicio = trobarPosCoincident("005-2", valors, 0, quantitat);
+        System.out.println("La posició real on es troba el valor '005-2' és la 7");
+        System.out.print("La posició trobada és la ");
+        System.out.print(posicio);
+        System.out.println("");
+    }
+}
+
+</code></pre>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals30" 
+                                            data-selector-clue="#slc-individuals30-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-individuals30-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <figure id ="fig_menu_informacio_addicional" class="left">
+                                            <img width="470" src="images/matriuTaula.png" alt="Menú d'informació addicional">
+                                            <figcaption style="width: 449px; max-width: 75%;">
+                                                <span class="figuretitle">figura </span>Botó per accedir al menú d'informació addicional'.
+                                            </figcaption>
+                                       </figure>
+                                        <p>La forma més habitual de representar un matriu, es en forma de taula. Cada element de la matriu es pot identificar per mitjà de la intersecció entre una fila i una columna. Per saber com accedir i com recórrer als seus elements podeu consultar l'apartat titulat <em>Arrays multidimensionals</em> del document de repàs que trobareu <a class="docArrays">aquí</a></p>
+                                    </div>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals30" 
+                                            data-selector-clue="#slc-individuals30-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-individuals30-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Recordeu que és una bona pràctica de programació identificar els valors literals de l'aplicació mitjançant constants. trobareu informació de com declarar i usar constants a al <a href="http://ioc.xtec.cat/materials/FP/Materials/2251_ASIX/ASIX_2251_M03/web/html/WebContent/u1/a2/continguts.html#constants" target="_blank">material didàctic del mòdul</a> </p>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION individuals30 ================-->
+                
+                <!--=========== BEGIN SUBSECTION individuals20  ================-->    
+                <section id="slc-individuals20" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar - Projecte I</h2>
+                                     <h3> <span class="tascaTitle">Tasca</span> - Funcions d'interfície d'usuari</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>En aquesta tasca us proposem que escriviu 4 funcions d'interfície d'usuari. Es tracta, però de 4 funcions molt relacionades. Si us esforceu un mica trobareu maneres de reutilització entre ells, de forma que malgrat sembli que caldrà escriure molt, en realitat no és tant. Tot seguit passem a comentar cada una de les funcions:</p>
+                                    <ul>
+                                        <li><em>String <strong>entrarText</strong>(String missatge)</em>: Aquesta funció mostrarà per pantalla el missatge que rebi com a únic paràmetre i seguidament esperarà a que l'usuari escrigui per teclat qualsevol text fins que premi la tecla <em>[ENTRAR]</em>. És important que només se surti prement la tecla <em>[ENTRAR]</em> i no cap altre. El text escrit no ha de complir cap requisit. Pot ser una cadena buida o qualsevol altre combinació de caràcters sense límit de longitud. La funció retornarà el text introduït sense el caràcter de sortida. És a dir, sense la tecla [ENTRAR] equivalent al salt de línia.</li>
+                                        <li><em>String <strong>entrarTextAmbValorDef</strong>(String missatge, String valorPerDefecte)</em>: Aquesta funció rep dos paràmetres en lloc d'un. El primer servirà, igual que en el cas anterior, per mostrar el contingut a la pantalla, el segon es farà servir com a valor per defecte en cas que l'usuari escrigui una cadena buida. És a dir, si l'usuari prem la tecla <em>[ENTRAR]</em> sense haver escrit res prèviament (cadena buida), la funció substituirà el valor de text buit pel valor de text passat en el segon paràmetre. En qualsevol altre cas es respectarà sempre el text original escrit per l'usuari.</li>
+                                        <li><em>String <strong>entrarTextNoBuit</strong>(String missatge)</em>: De nou una funció similar a la primera. En aquest cas però, aquesta funció es comportarà exactament de la mateixa manera que la primera funció, amb l'excepció que si l'usuari prem la tecla <em>[ENTRAR]</em> sense haver escrit res prèviament (cadena buida), s'indicarà que la cadena buida és un valor no vàlid i se li demanarà que repeteixi la introducció fins que l'usuari escrigui una cadena no buida. El missatge emprat per avisar que no s'admeten cadenes buides pot ser semblant al següent: <code>"Una cadena buida no és un entrada vàlida. Escriviu un text vàlid, si us plau"</code>. </li>
+                                        <li>
+                                            <p><em>boolean <strong>confirmar</strong>(String missatge, int defaultValue)</em>: Aquesta funció és potser, la que presenta més diferencies en relació a les altres. Es tracta d'una funció que ha de servir perquè l'usuari confirmi amb un "si" o un "no" la informació que se li passa en el primer paràmetre i que es mostrarà per la pantalla en el moment de l'execució. Un cop mostrat el missatge s'esperarà que l'usuari escrigui per teclat i premi la tecla <em>[ENTRAR]</em>. La funció retornarà un valor lògic (booleà) de manera que si el text escrit per l'usuari comença pel caràcter 's' o 'S', es retornarà cert. En qualsevol altre cas es retornarà fals. El segon paràmetre es fa servir per indicar si hi ha valor per defecte i si aquest és el valor afirmatiu ('si') o el valor negatiu ('no'). El paràmetre es de tipus numèric. Si el valor passat val 0, indicarà que el valor per defecte serà 'no'. Si el valor és 1, el que s'interpretarà és que el valor per defecte és afirmatiu, és a dir 'si'. Qualsevol altre valor caldrà interpretar-lo com absència de calor per defecte.</p>
+                                            <p>Suposeu que el missatge serà explicit amb els valors demanats i que presentarà coherència en funció que quina sigui la opció per defecte. És a dir suposarem que el text del primer paràmetre, a més d'explicar el que cal confirmar, indicarà en algun lloc les opcions que es reconeixeran (per exemple amb la cadena 's/n', 'S/n' o 's/N'), entenent que el valor de la opció en majúscula és el valor per defecte. Sigui com sigui, no heu de fer cap comprovació, heu de suposar que el missatge arriba seguint aquest requeriments.</p>
+                                        </li>
+                                    </ul>
+                                    <p>Per tal que pugueu provar el vostre codi, en aquest cas, també us passem la classe amb el <em>main</em> i la funció de <em>prova</em> que us ha de permetre saber si la vostra codificació funciona bé. </p>
+                                    <pre><code class="java">
+import java.util.Scanner;
+
+public class Tasca3 {
+
+    String entrarText(String missatgeExplicatiu){
+        //PENDENT!
+    }
+    
+    String entrarTextAmbValorDef(String missatgeExplicatiu, String defaultValue){
+        //PENDENT!
+    }      
+
+    String entrarTextNoBuit(String missatgeExplicatiu){
+        //PENDENT!
+    }
+
+    
+    boolean confirmar(String missatge, int defaultValue){
+        //PENDENT!
+    }
+    
+    /*******************************************************/
+    /*                    Codi per provar                  */
+    /*******************************************************/
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Tasca2 prg = new Tasca2();
+        prg.prova();
+    }
+    
+    public void prova() {
+        boolean confirmacio;
+        String valor;
+        
+        //Prova la funció entrarText
+        valor = entrarText("Entra un text qualsevol. Pot ser buit:\n");
+        System.out.print("El texte entrat per teclat és: " );
+        System.out.println(valor);
+
+        System.out.println();
+        System.out.println("---------------------------------------------------------------------------------------");
+        valor = entrarTextAmbValorDef("Entra un text qualsevol. Si entres una cadena buita, retornarà \"hola\":\n"
+                                      , "hola");
+        System.out.print("El texte entrat per teclat és: " );
+        System.out.println(valor);
+
+        System.out.println();
+        System.out.println("---------------------------------------------------------------------------------------");
+        valor = entrarTextNoBuit("Entra un text qualsevol. No deixa entrar cadenes buides:\n");
+        System.out.print("El texte entrat per teclat és: " );
+        System.out.println(valor);
+        
+        System.out.println();
+        System.out.println("---------------------------------------------------------------------------------------");
+        confirmacio = confirmar("Confirmació 1: afirmatiu per defecte. Vols confirmar? (S/n) ", 1);
+        System.out.print("La resposta a la confirmació ha estat: " );
+        System.out.println(confirmacio?"Si":"No");
+
+        System.out.println();
+        System.out.println("---------------------------------------------------------------------------------------");
+        confirmacio = confirmar("Confirmació 2: negatiu per defecte. Vols confirmar? (s/N) ", 0);
+        System.out.print("La resposta a la confirmació ha estat: " );
+        System.out.println(confirmacio?"Si":"No");
+
+        System.out.println();
+        System.out.println("---------------------------------------------------------------------------------------");
+        confirmacio = confirmar("Confirmació 3: cal contestar. Vols confirmar? (s/n) ", 2);
+        System.out.print("La resposta a la confirmació ha estat: " );
+        System.out.println(confirmacio?"Si":"No");
+
+    }
+    
+}
+
+                                    </code></pre>
                                  <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                             data-toggle="button"
@@ -221,7 +446,9 @@
                                     </button>                                        
                                     <div id="slc-individuals20-clue1" class="iocClue hidden">
                                         <h2>Pista 1</h2>
-                                        <p>Tenint en compte quines dades dels ciclistes s'han de tractar per generar el dorsal, nom del ciclista(cadena caràcters), ordre inscripció(enter), codi de l'equip(cadena de caràcters), quins paràmetres haurà de rebre la funció? Recordeu que només heu d'implementar la funció obteDorsalCiclista, es suposarà conegut el nom del ciclista, el número d'inscripció i el codi de l'equip.</p>
+                                        <p>Consulta l'API de la <a href="https://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html" target="_blank">classe Scanner</a> i de la <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/String.html" target="_blank">classe String</a> de JAVA, per refrescar quines instruccions poden ajudar-te a forçar que només se sorti del procés de detecció de tecles, si es prem [ENTRAR] i no cap altra tecla o, per saber com es pot averiguar si una cadena és buida o no.</p>
+                                        <p>Específicament aturat a les instruccions de tipus <em>hasNextXXX</em> i <em>nextXXX</em> de la classe Scanner.</p>
+                                        <p>De la classe String, estigues atent als mètodes <em>long</em>, <em>isEmpty</em> i <em>charAt</em>.</p>
                                     </div>
                                  <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
@@ -233,23 +460,7 @@
                                     </button>                                        
                                     <div id="slc-individuals20-clue2" class="iocClue hidden">
                                         <h2>Pista 2</h2>
-                                        <p>Per extreure informació d'una cadena de caràcters, hi ha diferents mètodes a la classe String que podem fer servir. </p>
-                                        <p>Un dels mètodes que ens permet extreure un determinat nombre de caràcters és: 
-													<code>substring(posicióInicial, posicióFinal)</code>                                         
-                                        </p>
-                                    </div>
-                                 <!-- Button trigger pannel -->
-                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
-                                            data-toggle="button"
-                                            data-parent-selector="#leftColumnPanel"
-                                            data-display-on-set-slide="slc-individuals20" 
-                                            data-selector-clue="#slc-individuals20-clue3">
-                                        Pista 3
-                                    </button>                                        
-                                    <div id="slc-individuals20-clue3" class="iocClue hidden">
-                                        <h2>Pista 3</h2>
-                                        <p>El resultat de la funció ha de ser el dorsal del ciclista, de quin tipus serà el retorn de la funció?</p>
-                                        
+                                        <p>Per fer aquesta tasca, us podeu inspirar en la funció implementada a l'exercici 1 de l'activitat <a href="../A402_funcions2.html#slc-toDo__slc-toDo21" target="_blank">A402</a>.</p>
                                     </div>
                                 </div> 
                             </div>
@@ -258,122 +469,76 @@
                 </section>
                 <!--=========== END SUBSECTION individuals20 ================-->  
           
-                <!--=========== BEGIN SUBSECTION individuals30  ================-->    
-                <section id="slc-individuals30" class=" section">
+              <!--=========== BEGIN SUBSECTION individuals40  ================-->    
+                <section id="slc-individuals40" class="tasca section">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Tasques a realitzar - Projecte I</h2>
-                                     <h3> Tasca 3 - Funció <em>posEtapaMesLlarga</em> </h3>
+                                     <h3> <span class="tascaTitle">Tasca</span> - Funció <em>mostrarDetallImmoble</em> </h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Com haureu vist a l'enunciat, la competició ciclista està formada per un conjunt d'etapes de les quals coneixem, entre altres, el nombre de kilòmetres que tenen. En aquesta tasca se us proposa la implementació d'una funció que correspondrà al càlcul de l'etapa més llarga, és a dir, quina etapa té més kilòmetres (<em>posEtapaMesLlarga</em>).</p>
-                                    <p>Així, tenim que la competició ciclista consta de 7 etapes de diferents tipus: plana, mitja muntanya i muntanya. Suposeu que teniu definits els arrays que se us especifiquen a l'enunciat en referència a les dades generals de les etapes (nom, tipus i km): </p>
-												<p>Els tipus generals de les etapes seran:</p>
-                                                
-                                                <pre><code class="java">
-    String[][] etapes = {
-        {"Etapa 1","Barcelona", "Girona","Plana"}
-       ,{"Etapa 2","Girona", "Berga", "Muntanya"}
-       ,{"Etapa 3","Berga", "Sort", "Alta muntanya"}
-       ,{"Etapa 4","Sort", "Balaguer", "Alta muntanya"}
-       ,{"Etapa 5","Balaguer", "Amposta", "Plana"}
-       ,{"Etapa 6","Amposta", "Manresa", "Plana"}
-       ,{"Etapa 7","Manresa", "Mataró", "Muntanya"}
-    };
-
-    double[] distanciaEtapa ={185.2, 191.8, 156.6, 188.4, 195.4, 194.1, 126.6};</code></pre>
-                    
-                                    <p>Es demana:</p>
-                                   <ul>
-                                    <li>Implementar, en un fitxer de codi anomenat <em>Tasca3.java</em>, la funció posEtapaMesLlarga que que busqui quina és l'etapa més llarga i retorni la posició en la que aquesta es troba dins l'array d'etapes.</li>
-     											<li>Implementeu també una funció de prova que cridi a posEtapaMesLlarga i mostri per pantalla les dades de l'etapa (nom, distància i tipus).</li>
-									 		  </ul>
-
-                                    <!-- Button trigger pannel -->
-                                    <button type="button" class="btn btn-warning btn-lg toggle-off  btn-3d" 
-                                            data-parent-selector="#leftColumnPanel"
-                                            data-display-on-set-slide="slc-individuals30" 
-                                            data-selector-advice="#slc-individuals30-consells">
-                                        Consell
-                                    </button>                                        
-                                    <div id="slc-individuals30-consells" class="iocClue hidden">
-                                        <h2>Consell</h2>
-                                        <p>A partir dels arrays definits que emmagatzemen per una banda, la informació de l'etapa per una banda i, per altra, la distància de cadascuna d'elles, cal que tingueu en compte que en el cas del càlcul de l'etapa màxima, haureu de recórrer l'array de distàncies per esbrinar quin és el màxim i recollir la posició per tal de referenciar-la a l'array que conté les dades de les etapes i mostrar el nom, la distància i el tipus d'etapa. </p> 
+                                    <p>A l'enunciat del projecte podeu veure que el client ha de poder visualitzar totes les dades d'un immoble per pantalla. Quan hem de llegir moltes dades a la pantalla, ens resulta de gran ajuda i claredat que aquestes es trobin situades espacialment en llocs identificables. Quan les dades se situen aleatòriament per la pantalla segons la mida i dimensió de les seves veïnes, ens costa localitzar-les i identificar-les. La millor manera de facilitar la lectura de les dades és disposant-les a mode de formulari estructurat en files i columnes més o menys definides, de manera que sigui possible deduir on es troba una dada determinada a partir de la seva posició a la pantalla.</p>
+                                    <p>Ens hem posat en contacte amb la immobiliària per saber quines són exactament les dades emmagatzemades de cada immoble i ens han contestat que per aquest prototipus n'hi ha prou en tenir en compte les següents dades:</p>
+                                    <ul>
+                                        <li><strong>Id</strong>: és un identificador únic de l'immoble de tipus cadena de text. Ens comenten que té un mida fixa de 5 caràcters.</li>
+                                        <li><strong>tipus d'immoble</strong>: identifica la categoria de l'immoble segons l'us al que es vulgui destinar. La immobiliària ens comenta que actualment hi ha 6 tipus definits: local, oficina, pis, casa, pàrquing i traster. Per tant aquesta és també una característica de tipus text de longitud variable que oscil·la entre 3 i 8 caràcters.</li>
+                                        <li><strong>descripció</strong>: es tracta d'un text que pot ser llarg, ja que conté la descripció que el propietari vol fer de l'immoble, com ara el número d'habitacions, si hi ha terrassa, si hi toca el sol, etc. És possible que el text contingut hagi d'ocupar diverses línies de pantalla. Tot i així ens comenten que no ens hem de preocupar de dividir el text en múltiples línies, perquè el text ja arriba amb els salts de línia des de la base de dades central. No hi ha límit de mida.</li>
+                                        <li><strong>Adreça</strong>: conté el carrer o plaça, el número i també el pis si és necessari. Arriba com una única cadena de longitud variable, però no es preveu que la mida superi mai els 30 caràcters.</li>
+                                        <li><strong>Població</strong>: identifica el municipi on es troba ubicat l'immoble. Ens comenten que podem estimar una mida màxima de 25 caràcters.</li>
+                                        <li><strong>Superfície</strong>: aquest és un valor enter que es mesura en metres quadrats. No es tenen en compte decimals. Els immobles que la immobiliària gestiona no ha sobrepassat mai els 4 dígits.</li>
+                                        <li><strong>Preu</strong>: indica el preu de l'immoble. No es treballa amb decimals, els preus són sempre valors enters. No s'estima que de moment es puguin sobrepassar el 9 dígits.</li>
+                                    </ul>
+                                    <p>Malgrat que la immobiliària ens deixa carta blanca per organitzar la distribució del contingut de la pantalla com ens sembli millor, ens ha fet arribar un model a mode d'exemple a fi que ens serveixi de guia:</p>
+                                    <div class="iocexample">
+                                        <div class="ioccontent">
+                                        <pre>
+--------------------------------------------------------------------------------
+| Id: 003-2                              Tipus immoble: Local                  |
+|                                                                              |
+| Descripció: Bla, bla, bla ...
+  segona línia bla, bla ...
+|                                                                              |
+| Adreça: C/ València 32, baixos         Població: Esplugues de Llobregat      |
+| Superfície:  108m2                     Preu:    326912.-€                    |
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+</pre>
+                                        </div>
                                     </div>
-                                 <!-- Button trigger pannel -->
-                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
-                                            data-toggle="button"
-                                            data-parent-selector="#leftColumnPanel"
-                                            data-display-on-set-slide="slc-individuals30" 
-                                            data-selector-clue="#slc-individuals30-clue1">
-                                        Pista 1
-                                    </button>                                        
-                                    <div id="slc-individuals30-clue1" class="iocClue hidden">
-                                        <h2>Pista 1</h2>
-                                        <p>En els casos en que definiu un array de més d'una dimensió, com és el cas de l'array d'etapes definit a l'enunciat, és una bona pràctica definir constants què descriguin cadascuna de les components per tal que el codi sigui més entenedor. Per exemple,
-													si definirem les dades d'un alumne (nom i mòdul matriculat) de la següent manera: <code>String[][] dadesAlumnes={{"Joan","M03"},{"Pep","M03"}}</code>, seria bo que, al codi, definim:
-													<code>public static final int NOM_ALU=0;
-													public static final int NOM_MODUL=1;</code></p>
-													<p>Així, quan vulguem conèixer un valor determinat de l'array farem, per exemple: <code>dadesAlumne[0][NOM_ALU]</code> que serà el nom del primer alumne de l'array, és a dir, Joan. </p>	                                        
-                              			<p>Reflexioneu i, si cal comenteu-ho al <span class="forumDeDiscussio">[FALTA TEXT: forum de discussió]</span>, com podeu aplicar aquests arguments a l'array d'etapes.</p>
-                                 <!-- Button trigger pannel -->
-                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
-                                            data-toggle="button"
-                                            data-parent-selector="#leftColumnPanel"
-                                            data-display-on-set-slide="slc-individuals30" 
-                                            data-selector-clue="#slc-individuals30-clue2">
-                                        Pista 2
-                                    </button>                                        
-                                    <div id="slc-individuals30-clue2" class="iocClue hidden">
-                                        <h2>Pista 2</h2>
-                                        <p>Si suposeu que els arrays estan definits a la funció 'prova', reflexioneu i si fos necessari discutiu-ho al fòrum, quants paràmetres i de quin tipus rebrà la funció posEtapaMesLlarga, tenint en compte que heu de recórrer els diferents arrays? </p>
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!--=========== END SUBSECTION individuals20 ================-->
-                          <!--=========== BEGIN SUBSECTION individuals20  ================-->    
-                <section id="slc-individuals40" class=" section">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class= "headSlide">
-                                     <h2 >Tasques a realitzar - Projecte I</h2>
-                                     <h3> Tasca 4 - Funció <em>mostrarLlistaEquips</em> </h3>
-                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class=bodySlide>
-                                    <p>Una de les funcionalitats de la gestió d'equips del prototipus que heu de desenvolupar serà llistar les dades dels equips. És a dir, s'haurà de mostrar per pantalla la informació dels equips (codi, nom de l'equip i nombre de ciclistes que ha inscrit) però, compte, la informació a mostrar per pantalla ha de tenir un determinat format.</p>
-                                    <p>Per realitzar aquesta activitat es demana que, suposant que les dades dels equips i ciclistes inscrits siguin conegudes, implementeu la funció <em>mostrarLlistaEquips.</em></p>
-                                    <p>Cal que tingueu en compte que el resultat a obtenir ha de ser semblant a aquest:</p>
-<div class= "iocexample single">
-<pre>
- CODI EQUIP            CICLISTES INSCRITS
------------------------------------------
- ONZ  ONZE                      2
- TNK  Tinkof                    3
- BCH  Biancho                   1
- BRW  Bartoloworld              5
- MVX  Movixtar                  4
- BIC  Bich                      4
- CFD  Cofidos                   5
- FON  Fono                      1
- MTX  Matrix                    3
- </pre>
-</div>    
-                                    <p>Per codificar la funció caldrà crear un projecte de Netbeans on hi afegireu un fitxer de codi, anomenat <em>Tasca4.java</em>, contenint la funció <em>mostrarLlistaEquips</em>. 
-                                    Complementeu la codificació amb la funció main i un funció <em>prova</em> que us permeti provar el bon funcionament de la funció <em>mostrarLlistaEquips</em>.</p>
+                                    <p>Es demana que implementeu la funció <em>mostrarDetallImmoble</em>, la qual rebrà 7 paràmetres, un per cada una de les característiques descrites més a munt i exactament en el mateix ordre que s'han descrit. La funció ha haurà de mostrar per la pantalla les dades arribades seguint un format semblant al model que ens han passat.</p>
+                                    <p>A fi de poder provar adequadament el vostre codi, us passem la classe que podeu executar, un cop hàgiu escrit el codi de la funció.</p>
+                                    <p>Heu de crear la classe Tasca4 i copiar-hi el codi següent:</p>
+                                    <pre><code class="java">
+public class Tasca4 {
+
+    void mostrarDetallImmoble(String id, String tipusImmoble, String descripcio, String adreca, String poblacio, int sup, int preu) {
+        //Per codificar.
+    }    
+    
+    public static void main(String[] args) {
+        Tasca4 prg = new Tasca4();  //canvieu FuncionsIArrays pel nom del vostre fitxer.
+        prg.prova();
+    }
+    private void prova(){
+        String id = "003-2";
+        String tipusImmoble = "Local";
+        String descripcio = "Bla, bla, bla ...";
+        String adreca = "C/ València 32, baixos";
+        String poblacio = "Esplugues de Llobregat";
+        int superficie = 108;
+        int preu = 326912;
+        
+        mostrarDetallImmoble(id, tipusImmoble, descripcio, adreca, poblacio, superficie, preu);
+    }
+}
+
+                                    </code></pre>
                                  <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                             data-toggle="button"
@@ -384,12 +549,7 @@
                                     </button>                                        
                                     <div id="slc-individuals40-clue1" class="iocClue hidden">
                                         <h2>Pista 1</h2>
-                                        <p>Tenint en compte que coneixem les dades dels equips, suposarem que coneixem també les dades dels ciclistes inscrits a cada equip. Caldrà, doncs, que definiu l'array adient per emmagatzemar aquestes dades i proporcionar-les a la funció mostrarLlistaEquips.</p>
-                                        <p>Per tal que d'orientar-vos, a com definir aquest array, fixeu-vos en un exemple en el que volem emmagatzemar les dades dels alumnes (nom, mòdul matriculat i notes). Com que les dades a enregistrar són de diferents tipus, una proposta seria la següent:</p>
-                                        <p><code>String[][] dadesAlumnes={{"Joan","M03"},{"Pep","M03"}};</code></p>
-														<p><code>double[] notes={2.9,5.8};   </code></p>                              
-                                       	<p>Penseu en quina seria l'opció més adient per implementar les dades dels ciclistes inscrits.</p>
-                                        
+                                        <p>Per saber quina solució prové JAVA per dissenyar patrons de formats de dades, consulteu el <a class="docStringFormat">document següent</a>.</p>
                                     </div>
                                  <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
@@ -401,32 +561,143 @@
                                     </button>                                        
                                     <div id="slc-individuals40-clue2" class="iocClue hidden">
                                         <h2>Pista 2</h2>
-                                        <p>Per als casos en que volem mostrar per pantalla una llista amb un determinat format, el llenguatge JAVA disposa de la funció <code>format</code> de la biblioteca <code>String</code>. Aquesta funció rep un primer paràmetre contenint el patró d'alineació i seguidament tants paràmetres com entrades haguem inclòs en el patró. El paràmetres poden ser de qualsevol tipus (cadenes, enters, doubles, ...) i la sortida serà sempre una cadena de text amb les dades passades alineades (amb número i ordre) d'acord amb el patró.
-El patró és una cadena de text que ha de contenir marcades les posicions de tots els paràmetres que se li passaran, així com el tipus de dada corresponent, la mida que caldrà donar-li per alinear-la correctament i en cas que sigui un valor decimal, el nombre de decimals que es desitja visualitzar.
-Cada entrada s'identifica amb el símbol <strong>"%"</strong> i una lletra que discrimina el tipus de dada (d, s, c, f corresponent als tipus enter, cadena de text, caràcter, o double respectivament). Cal aclarir que la lletra d significa dígit, s significa String, c és Character i f, Float. A més, opcionalment, entre el símbol % i la lletra, podem indicar amb números la mida de l'entrada. Per exemple e patró "%10s %8d %c" ens diu que espera 3 entrades la primera de tipus String, la segona, un enter i la tercera, un caràcter. Si la primera cadena de text no conté 10 caràcters, s'ompliran (per l'esquerra) amb espais en blanc, fins aconseguir la mida correcta. El mateix passarà amb el valor enter, si conté menys de 8 dígits, s'afegiran (per l'esquerra) tants espais com calgui. En canvi el caràcter, en no especificar mida s'escriurà sempre a continuació de la segona entrada. 
-Les entrades no es tallaran mai, si alguna dada sobrepassés la mida del patró, es respectaria la mida original, no es tallaria. Això és així per evitar confusions de pèrdua de dades. També cal notar que quan s'afegeixen espais, es fa sempre per l'esquerra. En cas que es desitgi fer de diferent manera, cal indicar-ho canviant de signe el valor numèric "%-10s" començarà a escriure el text 10 posicions a l'esquerra d'on es troba la marca i en cas que la mida de la cadena no arribi a 10 caràcters, s'omplirà (per la dreta) amb espais en blanc.</p>
-                                        <p>Així, per exemple, si teniu el següent fragment de codi:</p>
-                                        <pre><code class="java">
-...
-String nom="Pep";
-String formatText="%3s   %-10s  %d";
-String dia="Avui som ";
-int num=25;
-String resultat= String.format(formatText,nom,dia,num);
-System.out.println(resultat);
-...
-                                        </code></pre>
-                                      <p>Segons el patró formatText definit, la sortida per pantalla en aquest cas seria:</p>
-                                      <code>Pep   Avui som    25 </code>
-                            <p>A partir d'aquest exemple, penseu en quina seria l'opció més adient per mostrar el llistat dels equips.</p>
+                                        <p>Feu un esquema de la fitxa de detall dels immobles i identifica el text, els espais i també la mida que cada dada ocuparà, per cada una de les línies de la fitxa. Només quan tinguis clar aquest esquema, posat a codificar les cadenes patró, escriu el codi, prova'l i si cal, fes els ajustos que consideris.</p>
                                     </div>
-                                
                                 </div> 
                             </div>
                         </div>
                     </div>
                 </section>
-                <!--=========== END SUBSECTION individuals20 ================--> 
+                <!--=========== END SUBSECTION individuals40 ================--> 
+
+              <!--=========== BEGIN SUBSECTION individuals50  ================-->    
+                <section id="slc-individuals50" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar - Projecte I</h2>
+                                     <h3> <span class="tascaTitle">Tasca</span> - Funció <em>mostrarLlistaImmobles</em> </h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>La funció que us proposem aquí té per objectiu fer un llistat de les característiques més significatives dels immobles. La immobiliària ens comenta que al menys en els llistat haurien d'aparèixer: l'identificador, el tipus d'immoble, la població, la superfície i també el preu.</p>
+                                    <p>A mode d'exemple, l'empresa ens ha enviat el següent model:</p>
+                                    <div class="iocexample">
+                                        <div class="ioccontent">
+                                        <pre>
+----------------------------------------------------------
+   ID TIPUS     POBLACIÓ                    SUP.     PREU
+----------------------------------------------------------
+001-1 Pis       Barcelona                   82m2   239450€
+001-2 Pis       Barcelona                  115m2   358450€
+002-1 Local     Hospitalet de Llobregat    210m2   228450€
+002-2 Pis       Hospitalet de Llobregat     65m2   190326€
+002-3 Pàrquing  Hospitalet de Llobregat     12m2    20326€
+003-1 Casa      Sitges                     180m2   420326€
+003-2 Casa      Vilanova                   120m2   220326€
+005-2 Traster   Barcelona                    4m2     6326€
+006-1 Pis       Badalona                    93m2   254326€
+006-2 Casa      Badalona                   170m2   354326€
+</pre>
+                                        </div>
+                                    </div>
+                                    <p>Les dades arribaran a la funció a través de dues matrius, la primera que identificarem com <em>dadesText</em>, contindrà els immobles a llistat (files de la matriu ) i per cada immoble les dades de tipus textual, entre d'altres, els que ens interessen són: l'identificador, el tipus d'immoble i la població. La segona matriu l'identificarem com a <em>dadesNumeriques</em> i contindrà al menys els camps que hem de fer servir: la superfície i el preu. Ambdues matrius es troben relacionades per a posició. És a dir, que el preu de l'immoble que es troba a la fila 3 de la matriu de text, està també a la fila 3 de la matriu numèrica.</p>
+                                    <p>La immobiliària ens comenta que l'ordre dels camps dins la matriu, depèn de nosaltres, però ens informa que la importació de la base de dades central es realitza en el següent ordre: identificador, tipus d'immoble, descripció, adreça, població, superfície i preu. Per tal d'evitar confusions us proposem que seguiu el mateix ordre donat per la importació, tant per les dades de text com per les numèriques.</p>
+                                    <p>La funció rebrà encara un tercer paràmetre, un valor enter que representa la quantitat d'immobles de les matrius que són vàlids i per tant caldrà llistar-los. La resta, els que es trobin en una posició igual o superior al valor del tercer paràmetres caldrà ignorar-los i no treure'ls al llistat.</p>
+                                    <p>Un cop més, us passem, a fi de poder provar adequadament el vostre codi, una classe executable que crida la vostra funció amb unes dades fictícies. L'ordre de la matriu, és el mateix que el descrit per la immobiliària en les dades d'importació. Si voleu canviar l'ordre, haureu de modificar la funció prova. Malgrat tot us aconsellem, que si no teniu uns raó important per canviar-ho, deixeu l'ordre com està.</p>
+                                    <p>Heu de crear la classe Tasca4 i copiar-hi el codi següent:</p>
+                                    <pre><code class="java">
+public class Tasca5 {
+    void mostrarLlistaImmobles(String[][] dadesText, int[][] dadesNumeriques, int nombreImmobles) {
+        //codifiqueu aquí la vostra solució
+    }    
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Tasca5 prg = new Tasca5();  //canvieu FuncionsIArrays pel nom del vostre fitxer.
+        prg.prova();
+    }
+
+    private void prova(){
+        String[][] dadesTextImmobles = {
+             {"001-1", "Pis", "", "", "Barcelona"}
+            ,{"001-2", "Pis", "", "", "Barcelona"}
+            ,{"002-1", "Local", "", "", "Hospitalet de Llobregat"}
+            ,{"002-2", "Pis", "", "", "Hospitalet de Llobregat"}
+            ,{"002-3", "Pàrquing", "", "", "Hospitalet de Llobregat"}
+            ,{"003-1", "Casa", "", "", "Sitges"}
+            ,{"003-2", "Casa", "", "", "Vilanova"}
+            ,{"005-2", "Traster", "", "", "Barcelona"}
+            ,{"006-1", "Pis", "", "", "Badalona"}
+            ,{"006-2", "Casa", "", "", "Badalona"}
+            ,{"ERROR", "ERROR", "", "", "ERROR"}
+            ,{"ERROR", "ERROR", "", "", "ERROR"}
+            ,{"ERROR", "ERROR", "", "", "ERROR"}
+        };
+        int[][] dadesNumeriquesImmobles={
+             {82, 239450}
+            ,{115, 358450}
+            ,{210, 228450}
+            ,{65, 190326}
+            ,{12, 20326}
+            ,{180, 420326}
+            ,{120, 220326}
+            ,{4, 6326}
+            ,{93, 254326}
+            ,{170, 354326}
+        };    
+        int quantitat = 10;
+        mostrarLlistaImmobles(dadesTextImmobles, dadesNumeriquesImmobles, quantitat);
+    }
+}
+
+                                    </code></pre>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals50" 
+                                            data-selector-clue="#slc-individuals50-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-individuals50-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Per saber quina solució prové JAVA per dissenyar patrons de formats de dades, consulteu el <a class="docStringFormat">document següent</a>.</p>
+                                    </div>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals50" 
+                                            data-selector-clue="#slc-individuals50-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-individuals50-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Feu un esquema de la capçalera i el cos del llistat i identifiqueu les mides de cada dada i els espais de separació que precisen. Només quan tinguis clar aquest esquema, posat a codificar la cadena patró i codificar la funció. Potser en provar-la hauràs de modificar-la una mica, però seguir que no serà gaire.</p>
+                                    </div>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals50" 
+                                            data-selector-clue="#slc-individuals50-clue3">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-individuals50-clue3" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
+                                        <p>Recordeu que és una bona pràctica de programació identificar els valors literals de l'aplicació mitjançant constants. trobareu informació de com declarar i usar constants a al <a href="http://ioc.xtec.cat/materials/FP/Materials/2251_ASIX/ASIX_2251_M03/web/html/WebContent/u1/a2/continguts.html#constants" target="_blank">material didàctic del mòdul</a> </p>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION individuals50 ================--> 
             </section>
             <!--=========== END SECTION individuals ================-->    
             
@@ -443,9 +714,9 @@ System.out.println(resultat);
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-                                <p>En aquesta <b>activitat 404</b> heu de lliurar els 4 fitxers de codi corresponents a les quatre tasques a realitzar. Podeu comprimir-los en un ZIP (A404ProjecteI) i lliurar-lo a la <span class="bustiaLliurament"></span>. Heu de tenir en compte que aquesta bústia és multilliurament, per tant, si ja teniu fet algun enviament anterior no us preocupeu que no s’esborrarà.</p>
+                                <p>En aquesta <b>activitat 404</b> heu de lliurar els 5 fitxers de codi corresponents a les tasques a realitzar. Podeu comprimir-los en un ZIP (A404ProjecteI) i lliurar-lo a la <span class="bustiaLliurament"></span>. Heu de tenir en compte que aquesta bústia és multilliurament, per tant, si ja teniu fet algun enviament anterior no us preocupeu que no s’esborrarà.</p>
                                 <p>Es recomana lliurar aquestes activitats abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class='dataLimit'></strong></p>
-                                <p>És molt important per avançar en el vostre aprenentatge i seguiment de la UF2 que feu aquests exercicis proposats i els lliureu. Teniu en compte que aquestes activitats formen part del desenvolupament del projecte i, si no les realitzeu, després serà més complicat fer la següent part del desenvolupament. Per altra banda, el professor també podrà avaluar l’evolució del vostre aprenentatge. A més, i molt important, les <b>tasques</b> esmentades són <b>qualificables</b>.</p>
+                                <p>Recorda que aquesta activitat és qualificable i per tant té una pes important sobre la nota final.</p>
                             </div>
                         </div>
                     </div>
@@ -465,8 +736,7 @@ System.out.println(resultat);
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
-                                <p>Passeu a la següent <a class="toNextActivity">activitat</a></p>
+                                <p>Un cop hàgiu lliurat les tasques demanades podreu passar a la següent <a class="toNextActivity">activitat</a></p>
                             </div>
                         </div>
                     </div>
