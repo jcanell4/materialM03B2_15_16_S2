@@ -1,0 +1,222 @@
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer? Classes, biblioteques i tipus composts</h2>
+                                     <h3> Tasca 2. Codificació de Biblioteques de funcions estàtiques</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Aquí us proposem crear una biblioteca específica de tractament de cadenes que afegeixi funcionalitat extra a les funcions pròpies de la classe String. A fi de practicar el que heu anat descobrint, en aquesta activitat, us proposem la creació d'una biblioteca d'utilitats que no precisi la inicialització de la classe. És a dir que faci servir mètodes estàtics.</p>
+                                    <p>Concretament us proposem que codifiqueu 3 funcions en una classe anomenada Strings:</p>
+                                    <ul>
+                                        <li>La funció <em>retallarFinsMida</em>. Aquesta funció està pensada per evitar que una cadena sobrepassi una mida màxima. La funció rep una cadena de caràcters i un valor numèric que representa la mida màxima de la cadena a partir de la qual començarà a retallar-se. Si la cadena passada no sobrepassa la mida màxima, la funció retornarà exactament la mateixa cadena rebuda. Per contra, si la cadena sobrepassa la mida, es retallarà de manera que en concatenar-hi pres punts esdevingui una cadena de exactament la mida màxima. Així imaginem que fem la següent crida:
+                                        <pre><code class="java">
+String retorn = Strings.retallarFinsMida("Cadena llarga que caldrà retallar", 17);
+                                        </code></pre>
+                                        La variable <em>retorn</em> valdrà "<em><code>Cadena llarga ...</code></em>" que és el valor retornat per la funció. És a dir, la cadena original retallada a 14 caràcters + els 3 punts finals.
+                                        </li>
+                                        <li><p>La funció <em>farcirFinsMida</em>, la qual rebrà també una cadena de caràcter i un valor numèric que indicarà la mida mínima a la que ha de retornar la cadena original. És a dir si la cadena fa una mida superior o igual a la mínima es retronarà exactament el valor original, però si no arriba a la mida mínima caldrà afegir caràcters [ESPAI] per la dreta de la cadena fins aconseguir una cadena de la mida mínima. Per exemple:</p>
+                                        <pre><code class="java">
+String retorn = Strings.farcirFinsMida("Curt", 10);
+                                        </code></pre>
+                                        <p>fa que s'emmagatzemi a la variable <em>retorn</em> el valor "<em><code>Curt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></em>". És a dir, la cadena original + 6 espais.</p>
+                                        <p>Opcionalment i de forma totalment voluntària, podeu incorporar més paràmetres a la funció per tal de poder escollir el caràcter de farciment i també la localització del mateix, de manera que sigui possible decidir quin caràcter es farà servir de farciment i si aquest es farà pel cantó esquerra o pel cantó dret de la cadena original.</p>
+                                        </li>
+                                        <li>La funció <em>midaExacta</em> que rebrà una cadena i un valor numèric i retornarà una cadena d'exactament la mida indicada pel valor del segon paràmetre. En cas que la cadena tingui la mida indicada es retornarà exactament el valor original, si fos més petita es farciria amb tants caràcters com fos necessari per aconseguir la mida indicada. Per contra si la cadena sobrepassés la mida desitjada, aquesta es retornaria retallada i es concatenarien 3 punts de forma que la mida resultant fos la mida exacta.   
+                                        </li>
+                                    </ul>
+                                    <p>A més de les funcions de la classe Strings, feu també una classe anomenada Tasca2 que us permeti provar el bon funcionament de les tres funcions anteriors.</p>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo20" 
+                                            data-selector-clue="#slc-toDo20-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-toDo20-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Recordeu que en la operació + sobre cadenes de caràcters permet concatenar qualsevol valor de qualsevol tipus. Només cal que el primer element de la suma sigui una cadena per tal que el llenguatge converteixi la resta de valors en cadenes i els concateni un darrera l'altre.</p>
+                                        <p>Recordeu també que la classe String (la pròpia de java), ja disposa d'una utilitat anomenada <em>substring</em> que permet retallar cadenes. Trobareu informació de com fer servir aquest mètode consultant <a class="apiStringSubstringUrl" target="_blank">l'API de la classe String</a>. Tot i això les vostres funcions hauran d'afegir 3 punts quan els calgui retallar cadenes.</p>
+                                        <p>D'altra banda haureu de tenir en compte que la classe String no disposa de cap utilitat específica per farcir cadenes. Per aconseguir-ho, podeu anar afegint reiteradament els caràcters de farciment fins aconseguir la mida desitjada.</p>
+                                    </div>  
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo20" 
+                                            data-selector-clue="#slc-toDo20-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-toDo20-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Intenteu escriure les funcions reutilitzant tant codi com pugueu. Si durant la codificació us adoneu que repetiu seqüències de codi molt semblants, plantegeu-vos que potser és possible encapsular el codi en una única funció i fer les crides pertinents quan calgui.</p>
+                                    </div>  
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary btn-lg toggle-off  btn-3d" 
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo20" 
+                                            data-selector-solution="#slc-toDo20-solution">
+                                        Solució
+                                    </button>
+                                    <div id="slc-toDo20-solution" class="iocSolution hidden">
+                                    <p>Classe Strings:</p>
+                                        <pre><code class="java">
+public class Strings {
+    /**
+     * Genera i retorna una nova cadena a partir de la cadena passada al primer 
+     * paràmetre i el caracter de farciment del segon paràmetre. En cas que la 
+     * cadena tingui una mida menor al valor absolut del tercer paràmetre, es genera 
+     * una nova cadena concatenant tants caracters de farciment com sigui 
+     * necessàri. Si el tercer paràmetre és un valor positiu es farcirà la 
+     * cadena per la dreta. Si és un valor negatiu es farcira per l'esquerra.
+     * @param cadena és la cadena base per la que es comença la cadena nova.
+     * @param farciment és el caràcter de farciment per omplir la nova cadena 
+     * fins adquiri la mida demanada
+     * @param mida és la mida de la que es disitja la nova cadena.
+     * @return la nova cadena generada
+     */
+    public static String farcirFinsMida(String cadena, char farciment, int mida){
+        int midaActual = cadena.length();
+        boolean esquerra = mida &lt; 0;
+        
+        mida = Math.abs(mida);
+        
+        while(midaActual&lt;mida){
+            if(esquerra){
+                cadena = farciment + cadena;
+            }else{
+                cadena += farciment;
+            }
+            midaActual++;
+        }
+        return cadena;
+    }      
+
+    /**
+     * Retorna una cadena generada a partir de la cadena passada en el primer 
+     * paràmetre. En cas que la cadena superi la mida del valor del segon 
+     * paràmetre, aquesta es retallarà de manera que en concatenar-hi pres punts 
+     * esdevingui una cadena de la mida exacta indicada en el segon paràmetre.
+     * @param cadena és la cadena base per la que es retallarà si cal.
+     * @param mida és la mida de la que es desitja la nova cadena.
+     * @return la nova cadena generada
+     */
+    public static String retallarFinsMida(String cadena, int mida){
+        int midaActual = cadena.length();
+        
+        if(midaActual&gt;mida){
+            cadena = cadena.substring(0, mida-3);
+            cadena += "...";
+        }
+        return cadena;
+    }      
+
+    /**
+     * Retorna una cadena generada a partir de la cadena passada en el primer 
+     * paràmetre. En cas que la cadena superi la mida del valor del tercer
+     * paràmetre (mida), aquesta es retallarà de manera que en concatenar-hi 
+     * tres punts esdevingui una cadena de la mida exacta indicada per mida.
+     * En cas que la cadena tingui una mida menor al valor de mida, es genera 
+     * una nova cadena concatenant tants caràcters de farciment com sigui 
+     * necessari.
+     * @param cadena és la cadena base per la que es retallarà si cal.
+     * @param mida és la mida de la que es desitja la nova cadena.
+     * @return la nova cadena generada
+     */
+    public static String midaExacta(String cadena, char farciment, int mida){
+        int midaActual = cadena.length();
+        int midaAbs = Math.abs(mida);
+        
+        if(midaActual&gt;Math.abs(midaAbs)){
+            cadena = retallarFinsMida(cadena, midaAbs);
+        }else{
+            cadena = farcirFinsMida(cadena, farciment, mida);
+        }
+        return cadena;
+    }      
+}
+                                        </code></pre>                         
+                                        <p>Classe Tasca2 de prova:</p>
+                                        <pre><code class="java">
+public class Tasca2 {
+
+    public static void main(String[] args) {
+        Tasca2 prg = new Tasca2();
+        
+        prg.prova();
+    }
+
+    private void prova() {
+        String retorn;
+        retorn = Strings.retallarFinsMida("Mira com es retalla aquesta frase tan llarga", 12);
+        System.out.println("Strings.retallarFinsMida(\"Mira com es retalla aquesta frase tan llarga\", 12) = "
+                                                                                     + retorn);
+        System.out.println(retorn.length()&gt;12?"Error":"Correcte");
+        System.out.println("");
+
+        retorn = Strings.retallarFinsMida("Cadena original", 20);
+        System.out.println("Strings.retallarFinsMida(\"Cadena original\", 20) = " + retorn);
+        System.out.println(retorn.length()&gt;20?"Error":"Correcte");
+        System.out.println("");
+        
+        retorn = Strings.farcirFinsMida("Cargol", '-', 35);
+        System.out.println("Strings.farcirFinsMida(\"Cargol\", '-', 35) = " + retorn);
+        System.out.println(retorn.length()&lt;35?"Error":"Correcte");
+        System.out.println("");
+
+        retorn = Strings.farcirFinsMida("25", '0', -6);
+        System.out.println("Strings.farcirFinsMida(\"25\", '0', -6) = " + retorn);
+        System.out.println(retorn.length()&lt;6?"Error":"Correcte");
+        System.out.println("");
+        
+        retorn = Strings.farcirFinsMida("78025", '0', -4);
+        System.out.println("Strings.farcirFinsMida(\"78025\", '0', -4) = " + retorn);
+        System.out.println(retorn.length()&lt;4?"Error":"Correcte");
+        System.out.println("");
+        
+        retorn = Strings.farcirFinsMida("Igual", '0', -4);
+        System.out.println("Strings.farcirFinsMida(\"Igual\", '0', 4) = " + retorn);
+        System.out.println(retorn.length()&lt;4?"Error":"Correcte");
+        System.out.println("");
+
+        retorn = Strings.midaExacta("Frase de prova", '.', 14);
+        System.out.println("Strings.midaExacta(\"Frase de prova\", '.', 14) = " + retorn);
+        System.out.println(retorn.length()!=14?"Error":"Correcte");
+        System.out.println("");
+        
+        retorn = Strings.midaExacta("Frase de prova", '_', 20);
+        System.out.println("Strings.midaExacta(\"Frase de prova\", '_', 20) = " + retorn);
+        System.out.println(retorn.length()!=20?"Error":"Correcte");
+        System.out.println("");
+        
+        retorn = Strings.midaExacta("Frase de prova", '_', -20);
+        System.out.println("Strings.midaExacta(\"Frase de prova\", '_', -20) = " + retorn);
+        System.out.println(retorn.length()!=20?"Error":"Correcte");
+        System.out.println("");
+        
+        retorn = Strings.midaExacta("Frase de prova", '_', 5);
+        System.out.println("Strings.midaExacta(\"Frase de prova\", '_', 5) = " + retorn);                
+        System.out.println(retorn.length()!=5?"Error":"Correcte");
+        System.out.println("");
+
+        retorn = Strings.midaExacta("Frase de prova", '_', -5);
+        System.out.println("Strings.midaExacta(\"Frase de prova\", '_', -5) = " + retorn);                
+        System.out.println(retorn.length()!=5?"Error":"Correcte");
+        System.out.println("");
+    }
+    
+}
+                                        </code></pre>
+                                    </div>                                    
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Debat 2 ================-->     
+
